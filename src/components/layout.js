@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Nav from "./nav";
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
@@ -24,7 +26,10 @@ const Layout = ({ location, title, children }) => {
     <>
       <a href="#main" class="skip-link">Skip to main content</a>
       <div className="global-wrapper" data-is-root-path={isRootPath}>
-        <header className="global-header">{header}</header>
+        <header className="global-header">
+          {header}
+          <Nav />
+        </header>
         <main id="main">{children}</main>
         <footer>
           <ul>
