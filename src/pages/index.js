@@ -26,7 +26,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -44,7 +43,7 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <p>{post.frontmatter.date}</p>
                 </header>
                 <section>
                   <p
@@ -59,6 +58,10 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      <section>
+        <h2>Contact me</h2>
+        <p>If you would like to ask me a question, or you are interested in working with me, <Link to="/contact">get in touch</Link>.</p>
+      </section>
     </Layout>
   )
 }

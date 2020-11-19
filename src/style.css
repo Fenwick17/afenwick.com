@@ -11,7 +11,7 @@
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-2xl);
+  --maxWidth-wrapper: var(--maxWidth-3xl);
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -55,11 +55,27 @@
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
   --color-primary: #005b99;
-  --color-text: #2e353f;
+  --color-text: black;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-hover: #7c2855;
+}
+
+/* Helpers */
+.visually-hidden {
+  -webkit-clip-path: inset(50%);
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 /* HTML elements */
@@ -75,6 +91,7 @@ html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(255, 255, 255);
 }
 
 body {
@@ -233,8 +250,16 @@ a {
   color: var(--color-primary);
 }
 
-a:hover,
+a:hover {
+  color: var(--color-hover);
+  text-decoration: none;
+}
+
 a:focus {
+  background-color: #ffeb3b;
+  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+  color: var(--color-text);
+  outline: 4px solid transparent;
   text-decoration: none;
 }
 
@@ -306,13 +331,13 @@ a:focus {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
 }
 
+.blog-post-nav ul {
+  margin: var(--spacing-0);
+}
+
 .blog-post header p {
   font-size: var(--fontSize-2);
   font-family: var(--font-heading);
-}
-
-.blog-post-nav ul {
-  margin: var(--spacing-0);
 }
 
 .gatsby-highlight {
@@ -330,4 +355,23 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+}
+
+.gatsby-highlight pre code {
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;  
+}
+
+.skip-link {
+  display: inline-block;
+  left: -9999em;
+  position: absolute;
+}
+
+.skip-link:focus {
+  left: 0;
+  z-index: 1;
 }
