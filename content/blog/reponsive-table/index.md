@@ -1,10 +1,10 @@
 ---
 title: Building a responsive accessible table 
 date: "2020-11-16T22:12:03.284Z"
-description: "Tables on mobile suck, lets fix that."
+description: "Tables on mobile suck, let's fix that."
 ---
 
-Tables on mobile suck, whether that is through horizontal scrolling or endlessly resizing and hoping it fits on a 320px viewport. Fortunately, I have a way you can solve that problem (in certain scenarios).
+Tables on mobile suck, whether that is through horizontal scrolling or endlessly resizing and hoping it fits on a 320px viewport. Fortunately, I have a way you can solve that problem.
 
 ## The table
 
@@ -16,7 +16,7 @@ The markup remains the same as it did originally, so when using a screen reader 
 
 ### How it works
 
-Let's start by building our barebones HTML table.  
+Let's start by building our barebones HTML table: 
 ```
 <table class="responsive-table">
   <caption>Table of my favourite movies</caption>
@@ -62,7 +62,7 @@ Let's start by building our barebones HTML table.
 </table>
 ```
 
-And of course our default CSS, nothing fancy here
+And of course our default CSS, nothing fancy here:
 ```
 /* Standard table styling, change as desired */
 table {
@@ -89,9 +89,9 @@ td {
   padding: 0.5em 1em 0.5em 0;
 }
 ```
+Right, now we have a pretty generic table which is the perfect starting point. Let's get down to the fun stuff and add our responsiveness.
 
-Now lets get down to the fun stuff and add our responsiveness.
-So how does it work? well first of all on mobile we are going to modify our talbe rows to be block level rather than table-row. Since that will break the alignment with the table heading, we can visually hide that too (don't use `display: none` we need this for screen readers). 
+First of all, on mobile we are going to modify our table rows to be block level rather than table-row. Since that will break the alignment with the table heading, we can visually hide that too. We do not use `display: none` here as we need this to remain available for screen readers at all times. 
 
 ```
 .responsive-table {
@@ -125,8 +125,7 @@ tbody tr {
   }
 }
 ```
-
-Now we need to get our mobile version remotely resembling a list. To do this we will add `flex` to a our `<td>` which will make a lot more sense a bit later on. I like to add a `border-bottom` to the last `<td>` but this is entirely optional, I just think it breaks things up a bit nicer. And then of course, back to the default `table-cell` on a desktop.
+Now we need to get our mobile version remotely resembling a list. To do this we will add `flex` to our `<td>` (this will make more sense later on). I like to add a `border-bottom` to the last `<td>` but this is entirely optional, I just think it breaks things up a bit nicer. And then of course, back to the default `table-cell` on a desktop.
 
 ```
 tbody tr td {
@@ -152,8 +151,11 @@ tbody tr td {
   }
 }
 ```
-We changed the `display` styling for `<tr>` and `<td>` which means a screen reader is no longer aware these are still table elements, and therefore does no longer read them out as such. To fix this we will use some HTML roles so that no matter what we do to these elements, a screen reader always recognises them as part of the `<table>`.
-We will add `role="row"` to `<tr>` and `role="cell"` to `<td>`. 
+
+![Table with stylings to resemble a list](./table-as-list.png)  
+
+We changed the `display` styling for `<tr>` and `<td>` which means a screen reader is no longer aware these are still table elements, and therefore no longer reads them out as such. To fix this we will use some HTML roles so that no matter what we do to these elements, a screen reader always recognises them as part of the `<table>`.
+We will add `role="row"` to `<tr>` and `role="cell"` to `<td>` elements. 
 
 ```
 <tbody>
@@ -188,7 +190,7 @@ We will add `role="row"` to `<tr>` and `role="cell"` to `<td>`.
 </tbody>
 ```
 
-At this stage it is looking pretty quite good. You have the default table styling on desktop, and a collapsed list view on mobile. But there is a clear problem here, the table headings are gone so we can't see what each cell it meant to mean anymore. Well time to bring those back on mobile.
+At this stage it is looking quite good. You have the default table styling on desktop, and a collapsed list view on mobile. But there is a clear problem here, the table headings are gone due to us hiding the `thead`, now we can't tell what each cell it meant to represent anymore. Well time to bring those back on mobile.
 
 ```
 <tbody>
@@ -227,7 +229,6 @@ At this stage it is looking pretty quite good. You have the default table stylin
 ```
 The CSS to go with it: 
 ```
-<!-- CSS -->
 .responsive-table__heading {
   font-weight: 700;
   padding-right: 1em;
@@ -242,6 +243,7 @@ The CSS to go with it:
 }
 ```
 
+That looks like a lot of extra HTML, but i'll explain.
 We added a `<span>` which replicates what the heading is for that piece of data, then with the use of `aria-hidden="true"` we hid that from a screenreader. This is because the `<thead>` is still fully functional so it would just be extra noise. However, for visual users it is there to directly show what that piece of data relates to. The CSS simply hides and shows it depending on mobile or desktop.
 Remember that `flex` we used before? Well now it comes into full swing, with utilizing `justify-content: space-between` we can seperate the mobile visual heading with the data counterpart.
 
