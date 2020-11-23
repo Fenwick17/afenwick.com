@@ -54,13 +54,14 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  --color-primary: #1d70b8;
   --color-text: black;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
-  --color-hover: #7c2855;
+  --color-hover: #003078;
+  --color-visited: #4c2c92;
 }
 
 /* Helpers */
@@ -261,6 +262,10 @@ a:focus {
   color: var(--color-text);
   outline: 4px solid transparent;
   text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-visited);
 }
 
 /* Custom classes */

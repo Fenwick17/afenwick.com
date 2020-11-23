@@ -9,6 +9,7 @@ const Nav = () => {
       <ul>
         <li><Link to="/" activeClassName="active">Home</Link></li>
         <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+        <li><a href="https://twitter.com/AdamFenwickFE">Twitter</a></li>
       </ul>
     </nav>
   )
