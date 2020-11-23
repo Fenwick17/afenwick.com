@@ -105,6 +105,10 @@ footer {
   padding: var(--spacing-6) var(--spacing-0);
 }
 
+footer ul {
+  margin: 0;
+}
+
 hr {
   background: var(--color-accent);
   height: 1px;
@@ -270,6 +274,12 @@ a:visited {
 
 /* Custom classes */
 
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
@@ -280,8 +290,8 @@ a:visited {
   margin-bottom: var(--spacing-20);
 }
 
-.global-header {
-  margin-bottom: var(--spacing-12);
+.main-content {
+  flex: 1;
 }
 
 .main-heading {
@@ -379,4 +389,21 @@ a:visited {
 .skip-link:focus {
   left: 0;
   z-index: 1;
+}
+
+/* footer styling */
+footer ul {
+  list-style: none;
+}
+
+/* Header styling */
+header ul {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
 }

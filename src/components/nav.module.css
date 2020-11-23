@@ -1,3 +1,18 @@
-.mainNav {
+.mainNav ul li {
   display: inline-block;
+  padding: 0 .5em;
+}
+
+.mainNav ul li:last-child {
+  padding-right: 0;
+}
+
+.mainNav ul li:first-child {
+  padding-left: 0;
+}
+
+@media (min-width: 768px) {
+  .mainNav ul li {
+    padding: 1em;
+  }
 }

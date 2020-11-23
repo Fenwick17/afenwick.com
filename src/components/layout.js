@@ -25,19 +25,21 @@ const Layout = ({ location, title, children }) => {
   return (
     <>
       <a href="#main" class="skip-link">Skip to main content</a>
-      <div className="global-wrapper" data-is-root-path={isRootPath}>
+      <div class="flex-wrapper" data-is-root-path={isRootPath}>
         <header className="global-header">
           {header}
           <Nav />
         </header>
-        <main id="main">{children}</main>
+        <main id="main" class="main-content global-wrapper">{children}</main>
         <footer>
-          <ul>
-            Follow me on
-            <li>Twitter</li>
-            <li>Github</li>
-            <li>LinkedIn</li>
-          </ul>
+          <div className="wrapper">
+            <h2>Follow me on:</h2>
+            <ul>
+              <li>Twitter</li>
+              <li>Github</li>
+              <li>LinkedIn</li>
+            </ul>
+          </div>
         </footer>
       </div>
     </>
