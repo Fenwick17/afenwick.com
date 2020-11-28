@@ -10,36 +10,42 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <p className="main-heading">
-        {title}
-      </p>
+      <div>
+        <p className="header-logo">
+          {title}
+        </p>
+      </div>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {title} 
-      </Link>
+      <div>
+        <Link className="header-link-home" to="/">
+          {title} 
+        </Link>
+      </div>
     )
   }
 
   return (
     <>
       <a href="#main" class="skip-link">Skip to main content</a>
-      <div class="flex-wrapper container" data-is-root-path={isRootPath}>
+      <div class="container" data-is-root-path={isRootPath}>
         <header className="global-header">
           {header}
           <Nav />
         </header>
         <main id="main" class="main-content wrapper">{children}</main>
-        <footer>
-          <h2>Follow me on:</h2>
+      </div>
+      <footer>
+        <div class="container">
+          <h2 class="u-no-margin-top">Follow me on:</h2>
           <ul>
             <li>Twitter</li>
             <li>Github</li>
-            <li>LinkedIn</li>
+            <li class="u-no-margin-bottom">LinkedIn</li>
           </ul>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </>
   )
 }
