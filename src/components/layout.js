@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Nav from "./nav";
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ data, location, children, siteHeading, social }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
@@ -12,7 +12,7 @@ const Layout = ({ location, title, children }) => {
     header = (
       <div>
         <p className="header-logo">
-          {title}
+          {siteHeading}
         </p>
       </div>
     )
@@ -20,7 +20,7 @@ const Layout = ({ location, title, children }) => {
     header = (
       <div>
         <Link className="header-link-home" to="/">
-          {title} 
+          {siteHeading}
         </Link>
       </div>
     )
@@ -40,8 +40,8 @@ const Layout = ({ location, title, children }) => {
         <div class="container">
           <h2 class="u-no-margin-top">Follow me on:</h2>
           <ul>
-            <li>Twitter</li>
-            <li>Github</li>
+            <li><a href={`https://www.twitter.com/${social.twitter}`}>Twitter</a></li>
+            <li><a href={`https://www.github.com/${social.github}`}>Github</a></li>
             <li class="u-no-margin-bottom">LinkedIn</li>
           </ul>
         </div>

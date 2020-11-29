@@ -1,14 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Adam Fenwick`,
+    title: `Adam Fenwick, frontend developer and accessibility consultant, based in Newcastle, UK.`,
+    siteHeading: `Adam Fenwick`,
     author: {
       name: `Adam Fenwick`,
-      summary: `who is a frontend developer.`,
+      summary: `a frontend developer and accessibility engineer.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `AdamFenwickFE`,
+      github: `Fenwick17`,
     },
   },
   plugins: [
