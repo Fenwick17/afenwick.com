@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const siteHeading = data.site.siteMetadata?.siteHeading || `Title`
-  const social = data. site.siteMetadata.social
+  const social = data.site.siteMetadata.social
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -28,6 +28,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle} siteHeading={siteHeading} social={social}>
       <SEO title="All posts" />
+      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -61,7 +62,7 @@ const BlogIndex = ({ data, location }) => {
         })}
       </ol>
       <section>
-        <h2>Contact me {siteHeading}</h2>
+        <h2>Contact me</h2>
         <p>If you would like to ask me a question, or you are interested in working with me, <Link to="/contact">get in touch</Link>.</p>
       </section>
     </Layout>

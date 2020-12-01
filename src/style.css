@@ -183,7 +183,6 @@ h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -265,7 +264,6 @@ a {
 
 a:hover {
   color: var(--color-hover);
-  text-decoration: none;
 }
 
 a:focus {
@@ -338,7 +336,7 @@ a:visited {
 
 .bio {
   display: flex;
-  margin-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-12);
 }
 
 .bio p {
@@ -411,13 +409,25 @@ footer ul {
   list-style: none;
 }
 
+footer a {
+  color: var(--color-text);
+}
+
+footer a:visited {
+  color: inherit;
+}
+
 /* Header styling */
-header ul {
+.global-header { 
+  margin-bottom: var(--spacing-8);
+}
+
+.global-header ul {
   margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-  header {
+  .global-header {
     display: flex;
     justify-content: space-between;
   }
