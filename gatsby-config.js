@@ -6,7 +6,7 @@ module.exports = {
       name: `Adam Fenwick`,
       summary: `a frontend developer and accessibility engineer.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Articles on web accessibility and performance.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `AdamFenwickFE`,
@@ -75,5 +75,11 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.afenwick.com`,
+      },
+    }
   ],
 }
