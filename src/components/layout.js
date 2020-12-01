@@ -1,40 +1,51 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Layout = ({ location, title, children }) => {
+import Nav from "./nav";
+
+const Layout = ({ data, location, children, siteHeading, social }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
 
   if (isRootPath) {
     header = (
-      <p className="main-heading">
-        {title}
-      </p>
+      <div>
+        <p className="header-logo">
+          {siteHeading}
+        </p>
+      </div>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        Home 
-      </Link>
+      <div>
+        <Link className="header-link-home" to="/">
+          {siteHeading}
+        </Link>
+      </div>
     )
   }
 
   return (
     <>
       <a href="#main" class="skip-link">Skip to main content</a>
-      <div className="global-wrapper" data-is-root-path={isRootPath}>
-        <header className="global-header">{header}</header>
-        <main id="main">{children}</main>
-        <footer>
-          <ul>
-            Follow me on
-            <li>Twitter</li>
-            <li>Github</li>
-            <li>LinkedIn</li>
-          </ul>
-        </footer>
+      <div class="container" data-is-root-path={isRootPath}>
+        <header className="global-header">
+          {header}
+          <Nav />
+        </header>
+        <main id="main" class="main-content wrapper">{children}</main>
       </div>
+      <footer>
+        <div class="container">
+          <h2 class="u-no-margin-top">Follow me on:</h2>
+          <ul>
+            <li><a href={`https://www.twitter.com/${social.twitter}`}>Twitter</a></li>
+            <li><a href={`https://www.github.com/${social.github}`}>Github</a></li>
+            <li class="u-no-margin-bottom">LinkedIn</li>
+          </ul>
+        </div>
+      </footer>
     </>
   )
 }

@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteHeading = data.site.siteMetadata?.siteHeading || `Title`
+  const social = data.site.siteMetadata.social
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -24,8 +26,9 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} siteHeading={siteHeading} social={social}>
       <SEO title="All posts" />
+      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -72,7 +75,12 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        title,
+        siteHeading,
+        social {
+          twitter,
+          github
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
