@@ -18,6 +18,9 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            author {
+              name
+            }
             social {
               twitter
             }
@@ -38,6 +41,10 @@ const SEO = ({ description, lang, meta, title }) => {
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
+        {
+          name: `title`,
+          content: title,
+        },
         {
           name: `description`,
           content: metaDescription,
