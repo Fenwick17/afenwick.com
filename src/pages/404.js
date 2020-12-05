@@ -5,14 +5,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+  const siteLogo = data.site.siteMetadata.siteLogo
   const social = data.site.siteMetadata.social
 
   return (
-    <Layout location={location} title={siteTitle} social={social}>
-      <SEO title="404: Not Found" />
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Layout location={location} siteLogo={siteLogo} social={social}>
+      <SEO title="Page Not Found" />
+      <h1>Oh boy, looks like this page does not exist</h1>
+      <p>Let's go <a href="/">back to the homepage</a></p>
     </Layout>
   )
 }
@@ -23,7 +23,7 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        siteLogo 
         social {
           twitter
           github
