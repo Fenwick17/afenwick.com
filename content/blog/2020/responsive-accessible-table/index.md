@@ -235,18 +235,48 @@ At this stage it is looking quite good. You have the default table styling on de
     </td>
   </tr>
   <tr role="row">
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">Title</span>The Lord of the Rings: The Two Towers</td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">Release year</span>2002</td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">Genre</span>Adventure</td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">Director</span>Peter Jackson</td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">IMDb rating</span>8.7 out of 10</td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">Title</span>
+      The Lord of the Rings: The Two Towers
+    </td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">Release year</span>
+      2002
+    </td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">Genre</span>
+      Adventure
+    </td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">Director</span>
+      Peter Jackson
+    </td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">IMDb rating</span>
+      8.7 out of 10
+    </td>
   </tr>
   <tr role="row">
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">Title</span>Anchorman: The Legend of Ron Burgundy</td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">Release year</span>2004</td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">Genre</span>Comedy</td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">Director</span>Adam McKay</td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">IMDb rating</span>7.2 out of 10</td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">Title</span>
+      Anchorman: The Legend of Ron Burgundy
+    </td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">Release year</span>
+        2004
+      </td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">Genre</span>
+      Comedy
+    </td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">Director</span>
+      Adam McKay
+    </td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">IMDb rating</span>
+      7.2 out of 10
+    </td>
   </tr>
 </tbody>
 ```
