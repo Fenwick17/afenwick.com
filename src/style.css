@@ -329,12 +329,11 @@ a:visited {
 }
 
 .header-link-home {
-  display: block;
-  font-weight: var(--fontWeight-bold);
-  font-family: var(--font-heading);
   text-decoration: none;
-  font-size: var(--fontSize-4);
-  padding: .5em .5em .5em 0;
+}
+
+.header-link-home:visited {
+  color: inherit;
 }
 
 .bio {

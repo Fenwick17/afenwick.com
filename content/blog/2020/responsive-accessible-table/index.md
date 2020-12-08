@@ -195,60 +195,91 @@ At this stage it is looking quite good. You have the default table styling on de
 <tbody>
   <tr role="row">
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Title</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Title
+      </span>
       Jurassic Park
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Release year</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Release year
+      </span>
       1993
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Genre</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Genre
+      </span>
       Action, Adventure, Sci-Fi
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Director</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Director
+      </span>
       Steven Spielberg
     </td>
-    <td role="cell"><span class="responsive-table__heading" aria-hidden="true">IMDb rating</span>8.1 out of 10</td>
+    <td role="cell">
+      <span class="responsive-table__heading" aria-hidden="true">
+        IMDb rating
+      </span>
+      8.1 out of 10
+    </td>
   </tr>
   <tr role="row">
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Title</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Title
+      </span>
       Halloween
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Release year</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Release year
+      </span>
       1978
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Genre</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Genre
+      </span>
       Horror
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Director</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Director
+      </span>
       John Carpenter
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">IMDb rating</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        IMDb rating
+      </span>
       7.8 out of 10
     </td>
   </tr>
   <tr role="row">
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Title</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Title
+      </span>
       The Lord of the Rings: The Two Towers
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Release year</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Release year
+      </span>
       2002
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Genre</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Genre
+      </span>
       Adventure
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Director</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Director
+      </span>
       Peter Jackson
     </td>
     <td role="cell">
@@ -258,23 +289,33 @@ At this stage it is looking quite good. You have the default table styling on de
   </tr>
   <tr role="row">
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Title</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Title
+      </span>
       Anchorman: The Legend of Ron Burgundy
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Release year</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Release year
+      </span>
         2004
-      </td>
+    </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Genre</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Genre
+      </span>
       Comedy
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">Director</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        Director
+      </span>
       Adam McKay
     </td>
     <td role="cell">
-      <span class="responsive-table__heading" aria-hidden="true">IMDb rating</span>
+      <span class="responsive-table__heading" aria-hidden="true">
+        IMDb rating
+      </span>
       7.2 out of 10
     </td>
   </tr>
