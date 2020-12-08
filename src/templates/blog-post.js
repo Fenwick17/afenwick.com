@@ -1,18 +1,19 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import styles from "./blog-post.module.css";
+
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteLogo = data.site.siteMetadata?.siteLogo || `Title`
   const social = data.site.siteMetadata.social
   const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle} social={social}>
+    <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -70,7 +71,7 @@ export const pageQuery = graphql`
   ) {
     site {
       siteMetadata {
-        title
+        siteLogo 
         social {
           twitter,
           github

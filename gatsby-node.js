@@ -105,7 +105,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Frontmatter {
       title: String
-      siteHeading: String
+      siteLogo: String
       description: String
       date: Date @dateformat
     }

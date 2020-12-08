@@ -6,14 +6,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const siteHeading = data.site.siteMetadata?.siteHeading || `Title`
+  const siteLogo = data.site.siteMetadata?.siteLogo || `Title`
   const social = data.site.siteMetadata.social
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle} social={social}>
+      <Layout location={location} social={social}>
         <SEO title="Articles on web accessibility and performance." />
         <Bio />
         <p>
@@ -26,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle} siteHeading={siteHeading} social={social}>
+    <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO title="Articles on web accessibility and performance." />
       <Bio />
       <ol style={{ listStyle: `none` }}>
@@ -76,7 +75,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title,
-        siteHeading,
+        siteLogo,
         social {
           twitter,
           github

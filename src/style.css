@@ -62,6 +62,11 @@
   --color-accent: #d1dce5;
   --color-hover: #003078;
   --color-visited: #4c2c92;
+  --color-focus-default: #005a6a;
+  --color-focus-gold: #ffeb3b;
+  --color-language-green: #00703c;
+  --color-language-red: #d13118;
+  --color-language-blue: #003078;
 }
 
 /* Helpers */
@@ -104,7 +109,7 @@ html {
 }
 
 body {
-  border-top: 4px solid #189AB4;
+  border-top: 4px solid var(--color-focus-default);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
@@ -263,14 +268,12 @@ a {
 }
 
 a:hover {
-  color: var(--color-hover);
+  text-decoration: none;
 }
 
 a:focus {
-  background-color: #ffeb3b;
-  box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
   color: var(--color-text);
-  outline: 4px solid transparent;
+  outline: 2px solid var(--color-focus-default);
   text-decoration: none;
 }
 
@@ -326,12 +329,11 @@ a:visited {
 }
 
 .header-link-home {
-  display: block;
-  font-weight: var(--fontWeight-bold);
-  font-family: var(--font-heading);
   text-decoration: none;
-  font-size: var(--fontSize-4);
-  padding: .5em .5em .5em 0;
+}
+
+.header-link-home:visited {
+  color: inherit;
 }
 
 .bio {
@@ -402,7 +404,7 @@ a:visited {
 /* footer styling */
 footer {
   background-color: #D4F1F4;
-  border-top: 4px solid #189AB4;
+  border-top: 4px solid var(--color-focus-default);
 }
 
 footer ul {
@@ -431,4 +433,33 @@ footer a:visited {
     display: flex;
     justify-content: space-between;
   }
+}
+
+/* Code styling */
+.language-html .token.tag {
+  color: var(--color-language-blue);
+}
+
+.language-html .token.attr-name {
+  color: var(--color-language-green);
+}
+
+.language-html .token.attr-value {
+  color: var(--color-language-red);
+}
+
+.language-css .token.selector {
+  color: var(--color-language-green);
+}
+
+.language-css .token.property {
+  color: var(--color-language-red);
+}
+
+.language-css .token.rule {
+  color: var(--color-language-blue);
+}
+
+.language-css .token.atrule {
+  color: var(--color-language-green);
 }
