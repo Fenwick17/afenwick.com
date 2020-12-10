@@ -62,7 +62,7 @@
   --color-hover: #003078;
   --color-visited: #4c2c92;
   --color-focus-default: #005a6a;
-  --color-focus-gold: #ffeb3b;
+  --color-gold: #ffbc00;
   --color-language-green: #00703c;
   --color-language-red: #d13118;
   --color-language-blue: #003078;
@@ -264,7 +264,7 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-text-white);
 }
 
 a:hover {
@@ -272,13 +272,13 @@ a:hover {
 }
 
 a:focus {
-  color: var(--color-text);
-  outline: 2px solid var(--color-focus-default);
+  color: inherit; 
+  outline: 2px solid var(--color-gold);
   text-decoration: none;
 }
 
 a:visited {
-  color: var(--color-visited);
+  color: inherit; 
 }
 
 /* Custom classes */
@@ -333,11 +333,15 @@ a:visited {
 }
 
 .button {
-  background-color: #ffbc00;
+  background-color: var(--color-gold);
   padding: 0.5em;
   color: var(--color-text);
   text-decoration: none;
   display: inline-block;
+}
+
+.button:hover {
+  background-color: #ffdf00;
 }
 
 .button:visited {
