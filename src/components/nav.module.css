@@ -9,19 +9,5 @@
 }
 
 .mainNav ul li a {
-  display: inline-block;
-}
-
-.mainNav ul li:first-child {
-  padding-left: 0;
-}
-
-.mainNav ul li:last-child {
-  padding-right: 0;
-}
-
-@media (min-width: 768px) {
-  .mainNav ul li {
-    padding: 1em;
-  }
+  margin-left: 0.5em
 }
