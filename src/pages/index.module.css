@@ -1,0 +1,31 @@
+.blogHeading {
+  color: var(--color-heading-black);
+}
+
+.blogPosts {
+  background: #FFF;
+  color: var(--color-text);
+}
+
+.blogPostItem {
+  border-top: 1px solid #b1b4b6;
+  padding: 1em;
+}
+
+.blogPostItem time {
+  display: block;
+  margin-bottom: var(--spacing-4);
+}
+
+.blogPostDescription {
+  margin-bottom: var(--spacing-4);
+}
+
+.blogPostItem h2 {
+  margin-bottom: var(--spacing-2);
+  margin-top: var(--spacing-0);
+}
+
+.blogPostItem header {
+  margin-bottom: var(--spacing-4);
+}

@@ -1,9 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Bio from "../components/bio"
+
+import styles from "./index.module.css"
 
 const BlogIndex = ({ data, location }) => {
   const siteLogo = data.site.siteMetadata?.siteLogo || `Title`
@@ -14,7 +16,6 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} social={social}>
         <SEO title="Articles on web accessibility and performance." />
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -28,42 +29,30 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO title="Articles on web accessibility and performance." />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <div className={styles.blogPosts}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-
           return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <p>{post.frontmatter.date}</p>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
+            <article
+              className={styles.blogPostItem}
+              itemScope
+              itemType="http://schema.org/Article"
+            >
+              <h2 className={styles.blogHeading}>{title}</h2>
+              <time datetime={post.frontmatter.date}>{post.frontmatter.formatted_date}</time>
+              <p className={styles.blogPostDescription}
+                dangerouslySetInnerHTML={{
+                  __html: post.frontmatter.description || post.excerpt,
+                }}
+                itemProp="description"
+              />
+              <Link className="button" aria-label={`Read ${title}`} to={post.fields.slug} itemProp="url">
+                Read more
+              </Link>
+            </article>
           )
         })}
-      </ol>
-      <section>
-        <h2>Contact me</h2>
-        <p>If you would like to ask me a question, or you are interested in working with me, <Link to="/contact">get in touch</Link>.</p>
-      </section>
+      </div>
     </Layout>
   )
 }
@@ -89,7 +78,8 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          formatted_date: date(formatString: "MMMM, DD YYYY")
+          date(formatString: "YYYY-M-DD")
           title
           description
         }

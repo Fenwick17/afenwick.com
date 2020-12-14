@@ -1,4 +1,5 @@
 /* CSS Custom Properties Definitions */
+@import url('https://rsms.me/inter/inter.css');
 
 :root {
   --maxWidth-none: "none";
@@ -27,20 +28,18 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily:  Inter, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
-  --font-body: var(--fontFamily-serif);
-  --font-heading: var(--fontFamily-sans);
+  --font-body: var(--fontFamily);
+  --font-heading: var(--fontFamily);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
   --fontWeight-bold: 700;
   --fontWeight-extrabold: 800;
   --fontWeight-black: 900;
-  --fontSize-root: 18px;
+  --fontSize-root: 19px;
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
@@ -56,6 +55,7 @@
   --fontSize-7: 2.986rem;
   --color-primary: #1d70b8;
   --color-text: black;
+  --color-text-white: #FFF;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
@@ -63,10 +63,17 @@
   --color-hover: #003078;
   --color-visited: #4c2c92;
   --color-focus-default: #005a6a;
-  --color-focus-gold: #ffeb3b;
+  --color-gold: #ffbc00;
   --color-language-green: #00703c;
   --color-language-red: #d13118;
   --color-language-blue: #003078;
+
+  --color-primary: #00b0ff;
+  --color-primary-light: #69e2ff;
+  --color-primary-dark: #0081cb;
+  --color-secondary: #1de9b6;
+  --color-secondary-light: #6effe8;
+  --color-secondary-dark: #00b686;
 }
 
 /* Helpers */
@@ -105,11 +112,11 @@ html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(255, 255, 255);
+  background: var(--color-primary);
 }
 
 body {
-  border-top: 4px solid var(--color-focus-default);
+  border-top: 5px solid var(--color-secondary);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
@@ -117,6 +124,7 @@ body {
 
 footer {
   padding: var(--spacing-6) var(--spacing-0);
+  background: var(--color-primary);
 }
 
 footer ul {
@@ -149,13 +157,13 @@ h4,
 h5,
 h6 {
   font-weight: var(--fontWeight-bold);
-  color: var(--color-heading);
+  color: var(--color-text);
 }
 
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
+  color: var(--color-text);
 }
 
 h2 {
@@ -264,21 +272,22 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-text-black);
 }
 
 a:hover {
   text-decoration: none;
 }
 
-a:focus {
-  color: var(--color-text);
-  outline: 2px solid var(--color-focus-default);
-  text-decoration: none;
+a:visited {
+  color: inherit; 
 }
 
-a:visited {
-  color: var(--color-visited);
+a:focus {
+  color: var(--color-text); 
+  background-color: #ffdf00;
+  text-decoration: none;
+  outline: none;
 }
 
 /* Custom classes */
@@ -295,37 +304,9 @@ a:visited {
   padding: var(--spacing-5) var(--spacing-5);
 }
 
-.global-wrapper[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
-}
-
-/* .main-content {
-  flex: 1;
-} */
-
 .header-logo {
   font-size: var(--fontSize-6);
   margin: 0;
-}
-
-.post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
-}
-
-.post-list-item p {
-  margin-bottom: var(--spacing-0);
-}
-
-.post-list-item h2 {
-  font-size: var(--fontSize-4);
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-2);
-  margin-top: var(--spacing-0);
-}
-
-.post-list-item header {
-  margin-bottom: var(--spacing-4);
 }
 
 .header-link-home {
@@ -336,15 +317,6 @@ a:visited {
   color: inherit;
 }
 
-.bio {
-  display: flex;
-  margin-bottom: var(--spacing-12);
-}
-
-.bio p {
-  margin-bottom: var(--spacing-0);
-}
-
 .bio-avatar {
   margin-right: var(--spacing-4);
   margin-bottom: var(--spacing-0);
@@ -352,21 +324,30 @@ a:visited {
   border-radius: 100%;
 }
 
-.blog-post header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
-}
-
-.blog-post-nav ul {
-  margin: var(--spacing-0);
-}
-
-.blog-post header p {
-  font-size: var(--fontSize-2);
-  font-family: var(--font-heading);
-}
-
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+.button {
+  background-color: var(--color-secondary);
+  padding: 0.5em;
+  color: var(--color-text);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button:focus {
+  background-color: var(--color-primary);
+  outline: 2px solid var(--color-secondary);
+  outline-offset: -4px;
+}
+
+.button:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.button:visited {
+  color: var(--color-text);
 }
 
 /* Media queries */
@@ -402,11 +383,6 @@ a:visited {
 }
 
 /* footer styling */
-footer {
-  background-color: #D4F1F4;
-  border-top: 4px solid var(--color-focus-default);
-}
-
 footer ul {
   list-style: none;
 }
@@ -415,23 +391,20 @@ footer a {
   color: var(--color-text);
 }
 
-footer a:visited {
-  color: inherit;
-}
-
 /* Header styling */
-.global-header { 
-  margin-bottom: var(--spacing-8);
-}
+/* .global-header { 
+  background: linear-gradient(225deg, var(--color-secondary), var(--color-secondary) 14%,var(--color-primary) 14%,var(--color-primary) 14%);
+} */
 
 .global-header ul {
   margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-  .global-header {
+  .global-header .navigation {
     display: flex;
     justify-content: space-between;
+    margin-bottom: var(--spacing-10);
   }
 }
 

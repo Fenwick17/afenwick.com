@@ -1,0 +1,12 @@
+.blogPost {
+  background: #FFF;
+  padding: 1em;
+}
+
+.blogPost h1 {
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+}
+
+.blogPost ul {
+  margin: var(--spacing-0);
+}
