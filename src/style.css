@@ -39,7 +39,7 @@
   --fontWeight-bold: 700;
   --fontWeight-extrabold: 800;
   --fontWeight-black: 900;
-  --fontSize-root: 18px;
+  --fontSize-root: 19px;
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
@@ -392,9 +392,9 @@ footer a {
 }
 
 /* Header styling */
-.global-header { 
+/* .global-header { 
   background: linear-gradient(225deg, var(--color-secondary), var(--color-secondary) 14%,var(--color-primary) 14%,var(--color-primary) 14%);
-}
+} */
 
 .global-header ul {
   margin-bottom: 0;
@@ -404,7 +404,7 @@ footer a {
   .global-header .navigation {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5em;
+    margin-bottom: var(--spacing-10);
   }
 }
 

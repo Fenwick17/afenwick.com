@@ -4,6 +4,20 @@
   padding: .5em;
 }
 
-.mainNav ul li a {
+.mainNav ul li:first-child {
+  padding-left: 0;
+}
+
+.mainNav ul li a:first-child {
+  margin-left: 0;
+}
+
+.mainNav ul li a{
   margin-left: 0.5em;
+}
+
+@media(min-width: 768px) {
+  .mainNav ul li:last-child {
+    padding-right: 0;
+  }
 }
