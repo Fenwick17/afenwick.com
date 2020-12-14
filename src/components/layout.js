@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Nav from "./nav";
-import Bio from "../components/bio"
 
 const Layout = ({ data, location, children, siteLogo, social }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -36,7 +35,6 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
             {header}
             <Nav />
           </div>
-          <Bio />
         </div>
       </header>
       <div class="container" data-is-root-path={isRootPath}>

@@ -27,7 +27,7 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily: Inter, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-body: var(--fontFamily);
@@ -66,6 +66,13 @@
   --color-language-green: #00703c;
   --color-language-red: #d13118;
   --color-language-blue: #003078;
+
+  --color-primary: #00b0ff;
+  --color-primary-light: #69e2ff;
+  --color-primary-dark: #0081cb;
+  --color-secondary: #1de9b6;
+  --color-secondary-light: #6effe8;
+  --color-secondary-dark: #00b686;
 }
 
 /* Helpers */
@@ -104,19 +111,19 @@ html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #422680;
+  background: var(--color-primary);
 }
 
 body {
-  border-top: 4px solid #d1193e;
-  color: var(--color-text-white);
+  border-top: 5px solid var(--color-secondary);
+  color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
 }
 
 footer {
   padding: var(--spacing-6) var(--spacing-0);
-  background: #422680;
+  background: var(--color-primary);
 }
 
 footer ul {
@@ -149,13 +156,13 @@ h4,
 h5,
 h6 {
   font-weight: var(--fontWeight-bold);
-  color: var(--color-text-white);
+  color: var(--color-text);
 }
 
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-text-white);
+  color: var(--color-text);
 }
 
 h2 {
@@ -264,7 +271,7 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-text-white);
+  color: var(--color-text-black);
 }
 
 a:hover {
@@ -316,25 +323,12 @@ a:focus {
   border-radius: 100%;
 }
 
-.blog-post header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
-}
-
-.blog-post-nav ul {
-  margin: var(--spacing-0);
-}
-
-.blog-post header p {
-  font-size: var(--fontSize-2);
-  font-family: var(--font-heading);
-}
-
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
 }
 
 .button {
-  background-color: var(--color-gold);
+  background-color: var(--color-secondary);
   padding: 0.5em;
   color: var(--color-text);
   text-decoration: none;
@@ -342,12 +336,13 @@ a:focus {
 }
 
 .button:focus {
-  outline: 3px solid #422680;
-  outline-offset: -5px;
+  background-color: var(--color-primary);
+  outline: 2px solid var(--color-secondary);
+  outline-offset: -4px;
 }
 
 .button:hover {
-  background-color: #ffdf00;
+  background-color: var(--color-secondary-dark);
 }
 
 .button:visited {
@@ -397,7 +392,7 @@ footer a {
 
 /* Header styling */
 .global-header { 
-  background: linear-gradient(225deg,#d1193e,#d1193e 15%,#422680 15%,#422680 15%);
+  background: linear-gradient(225deg, var(--color-secondary), var(--color-secondary) 15%,var(--color-primary) 15%,var(--color-primary) 15%);
 }
 
 .global-header ul {

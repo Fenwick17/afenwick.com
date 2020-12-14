@@ -7,8 +7,8 @@ const Nav = () => {
   return (
     <nav className={styles.mainNav} aria-label="primary">
       <ul>
-        <li><Link to="/" activeClassName="active-page" className="button">Home</Link></li>
-        <li><Link to="/about" activeClassName="active-page" className="button">About</Link></li>
+        <li><Link to="/" activeClassName="active-page">Home</Link></li>
+        <li><Link to="/about" activeClassName="active-page">About</Link></li>
       </ul>
     </nav>
   )

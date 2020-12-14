@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Bio from "../components/bio"
 
 import styles from "./index.module.css"
 
@@ -27,6 +28,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO title="Articles on web accessibility and performance." />
+      <Bio />
       <div className={styles.blogPosts}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
