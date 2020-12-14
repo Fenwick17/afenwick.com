@@ -53,7 +53,7 @@ const Bio = () => {
       )} */}
       {author?.name && (
         <p>
-          Hey there, I'm <strong>{author.name}</strong>. I am a frontend developer who wants to make the web more accessible.
+          Hey there, I'm <strong>{author.name}</strong>. I am a frontend developer and accessibility engineer.
         </p>
       )}
     </div>

@@ -393,7 +393,7 @@ footer a {
 
 /* Header styling */
 .global-header { 
-  background: linear-gradient(225deg, var(--color-secondary), var(--color-secondary) 15%,var(--color-primary) 15%,var(--color-primary) 15%);
+  background: linear-gradient(225deg, var(--color-secondary), var(--color-secondary) 14%,var(--color-primary) 14%,var(--color-primary) 14%);
 }
 
 .global-header ul {
