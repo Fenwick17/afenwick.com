@@ -271,14 +271,15 @@ a:hover {
   text-decoration: none;
 }
 
-a:focus {
-  color: inherit; 
-  outline: 2px solid var(--color-gold);
-  text-decoration: none;
-}
-
 a:visited {
   color: inherit; 
+}
+
+a:focus {
+  color: var(--color-text); 
+  background-color: #ffdf00;
+  text-decoration: none;
+  outline: none;
 }
 
 /* Custom classes */
@@ -340,6 +341,11 @@ a:visited {
   display: inline-block;
 }
 
+.button:focus {
+  outline: 3px solid #422680;
+  outline-offset: -5px;
+}
+
 .button:hover {
   background-color: #ffdf00;
 }
@@ -387,10 +393,6 @@ footer ul {
 
 footer a {
   color: var(--color-text);
-}
-
-footer a:visited {
-  color: inherit;
 }
 
 /* Header styling */

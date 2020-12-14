@@ -1,0 +1,5 @@
+.blogPost {
+  background: #FFF;
+  color: var(--color-text);
+  padding: 1em;
+}
