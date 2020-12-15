@@ -80,6 +80,12 @@ module.exports = {
       options: {
         siteUrl: `https://www.afenwick.com`,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      option: {
+        domain: `afenwick.com`,
+      }
+    },
   ],
 }

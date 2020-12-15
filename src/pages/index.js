@@ -28,17 +28,24 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO title="Articles on web accessibility and performance." />
-      <Bio />
+      <div className={styles.headingContainer}>
+        <h1 style={{
+          marginTop: `0`
+        }}>Frontend developer and accessibility engineer</h1>
+        <Bio />
+      </div>
       <div className={styles.blogPosts}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
+          const titleId = title.replace(/\s/g, "-").toLowerCase();
           return (
             <article
               className={styles.blogPostItem}
               itemScope
               itemType="http://schema.org/Article"
+              aria-labelledby={titleId}
             >
-              <h2 className={styles.blogHeading}>{title}</h2>
+              <h2 id={titleId} className={styles.blogHeading}>{title}</h2>
               <time datetime={post.frontmatter.date}>{post.frontmatter.formatted_date}</time>
               <p className={styles.blogPostDescription}
                 dangerouslySetInnerHTML={{
@@ -78,7 +85,7 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          formatted_date: date(formatString: "MMMM, DD YYYY")
+          formatted_date: date(formatString: "DD MMMM YYYY")
           date(formatString: "YYYY-M-DD")
           title
           description

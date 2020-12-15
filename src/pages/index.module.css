@@ -29,3 +29,11 @@
 .blogPostItem header {
   margin-bottom: var(--spacing-4);
 }
+
+.headingContainer {
+  display: table;
+}
+
+.headingBio {
+  display: table-header-group;
+}
