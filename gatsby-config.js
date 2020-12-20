@@ -6,7 +6,7 @@ module.exports = {
       name: `Adam Fenwick`,
       summary: `a frontend developer and accessibility engineer.`,
     },
-    description: `Articles on web accessibility and web performance.`,
+    description: `Articles on frontend development and accessibility.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `AdamFenwickFE`,
@@ -52,12 +52,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -80,6 +74,12 @@ module.exports = {
       options: {
         siteUrl: `https://www.afenwick.com`,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      option: {
+        domain: `afenwick.com`,
+      }
+    },
   ],
 }

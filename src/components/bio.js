@@ -40,7 +40,9 @@ const Bio = () => {
   const avatar = data?.avatar?.childImageSharp?.fixed
 
   return (
-    <div className="bio">
+    <div className="bio" style={{
+      display: `table-header-group`
+    }}>
       {/* {avatar && (
         <Image
           fixed={avatar}
@@ -52,8 +54,8 @@ const Bio = () => {
         />
       )} */}
       {author?.name && (
-        <p>
-          Hey there, I'm <strong>{author.name}</strong>. I am a frontend developer and accessibility engineer.
+        <p className="u-no-margin-bottom">
+          Hey there, I'm <strong>{author.name}</strong>.
         </p>
       )}
     </div>

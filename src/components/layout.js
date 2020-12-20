@@ -11,17 +11,19 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
   if (isRootPath) {
     header = (
       <div>
-        <p className="header-logo">
+        <span className="header-logo">
           {siteLogo}
-        </p>
+        </span>
       </div>
     )
   } else {
     header = (
       <div>
-        <Link className="header-link-home header-logo" to="/">
-          {siteLogo}
-        </Link>
+        <span>
+          <Link className="header-link-home header-logo" to="/">
+            {siteLogo}
+          </Link>
+        </span>
       </div>
     )
   }
