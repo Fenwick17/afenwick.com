@@ -28,13 +28,11 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO title="Articles on web accessibility and performance." />
-      <div className={styles.headingContainer}>
-        <h1 style={{
-          marginTop: `0`
-        }}>Frontend developer and accessibility engineer</h1>
-        <Bio />
-      </div>
+      <Bio />
       <div className={styles.blogPosts}>
+        <h1 class="u-no-margin-top u-no-margin-bottom" style={{
+          padding: `0.5em`
+        }}>Latest Posts</h1>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const titleId = title.replace(/\s/g, "-").toLowerCase();
