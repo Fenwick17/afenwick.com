@@ -63,17 +63,15 @@
   --color-hover: #003078;
   --color-visited: #4c2c92;
   --color-focus-default: #005a6a;
-  --color-gold: #ffbc00;
+  --color-focus: #ffbc00;
   --color-language-green: #00703c;
   --color-language-red: #d13118;
   --color-language-blue: #003078;
-
-  --color-primary: #0091EA;
-  --color-primary-light: #69e2ff;
-  --color-primary-dark: #0081cb;
-  --color-secondary: #1de9b6;
-  --color-secondary-light: #6effe8;
-  --color-secondary-dark: #00b686;
+  --color-primary: #BBDEFB;
+  --color-primary-dark: #1266c0;
+  --color-secondary: #0d47a1;
+  --color-secondary-light: #5472d3;
+  --color-secondary-dark: #002171;
 }
 
 /* Helpers */
@@ -285,7 +283,7 @@ a:visited {
 
 a:focus {
   color: var(--color-text); 
-  background-color: #ffdf00;
+  background-color: var(--color-focus);
   text-decoration: none;
   outline: none;
 }
@@ -331,23 +329,24 @@ a:focus {
 .button {
   background-color: var(--color-secondary);
   padding: 0.5em;
-  color: var(--color-text);
+  color: var(--color-text-white);
   text-decoration: none;
   display: inline-block;
 }
 
+.button:visited {
+  color: var(--color-text-white);
+}
+
 .button:focus {
-  background-color: var(--color-primary);
-  outline: 2px solid var(--color-secondary);
+  background-color: var(--color-focus);
+  color: var(--color-text);
   outline-offset: -4px;
 }
 
 .button:hover {
   background-color: var(--color-secondary-dark);
-}
-
-.button:visited {
-  color: var(--color-text);
+  color: var(--color-text-white);
 }
 
 /* Media queries */
