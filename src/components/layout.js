@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Nav from "./nav";
+import SkipLink from "../js/utilities";
 
 const Layout = ({ data, location, children, siteLogo, social }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -30,7 +31,7 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
 
   return (
     <>
-      <a href="#main" class="skip-link">Skip to main content</a>
+      <a id="skip-link" href="#main-content" class="skip-link">Skip to main content</a>
       <header className="global-header">
         <div class="container">
           <div class="navigation">
@@ -40,7 +41,7 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
         </div>
       </header>
       <div class="container" data-is-root-path={isRootPath}>
-        <main id="main" class="main-content wrapper">{children}</main>
+        <main id="main-content" class="main-content wrapper">{children}</main>
       </div>
       <footer>
         <div class="container">
