@@ -44,7 +44,6 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
@@ -62,7 +61,19 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `/static/favicon/favicon-32x32.png`,
+        icon: `static/favicons/favicon-32x32.png`,
+        icons: [
+          {
+            src: `static/favicons/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `static/favicons/apple-touch-icon.png`,
+            sizes: `180x180`,
+            type: `image/png`,
+          },
+        ]
       },
     },
     `gatsby-plugin-react-helmet`,
