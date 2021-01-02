@@ -56,13 +56,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Adam Fenwick Blog`,
+        short_name: `afenwickBlog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/favicon/favicon-32x32.png`,
+        icon: `/static/favicon/favicon-32x32.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
