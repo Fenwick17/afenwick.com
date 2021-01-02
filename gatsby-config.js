@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Adam Fenwick, frontend developer and accessibility engineer, based in Newcastle, UK.`,
+    title: `Adam Fenwick, frontend developer and accessibility engineer.`,
     siteLogo: `Adam Fenwick`,
     author: {
       name: `Adam Fenwick`,
@@ -62,7 +62,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon/favicon-32x32.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
