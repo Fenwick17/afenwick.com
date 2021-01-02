@@ -6,7 +6,7 @@ module.exports = {
       name: `Adam Fenwick`,
       summary: `a frontend developer and accessibility engineer.`,
     },
-    description: `Articles on frontend development and accessibility.`,
+    description: `Articles on accessibility and frontend performance.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `AdamFenwickFE`,
