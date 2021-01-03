@@ -367,7 +367,7 @@ pre[class*="language-"] {
 }
 
 .language-html .token.tag {
-  color: var(--color-language-blue);
+  color: var(--color-secondary-dark);
 }
 
 .language-html .token.attr-name {
