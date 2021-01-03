@@ -343,4 +343,5 @@ Remember that `flex` we used before? Now it comes into full swing, with utilizin
 
 ![Mobile view with seperated headings](./finished-mobile.png)
 
-There we have it. A finished responsive and accessible table only using HTML and CSS.
+There we have it. A finished responsive and accessible table only using HTML and CSS.  
+If you have any thoughts or questions, feel free to [contact me on Twitter](https://www.twitter.com/AdamFenwickFE).

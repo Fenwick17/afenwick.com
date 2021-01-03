@@ -11,6 +11,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteLogo = data.site.siteMetadata?.siteLogo || `Title`
   const social = data.site.siteMetadata.social
   const { previous, next } = data
+  const showNav = previous || next;
 
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
@@ -31,46 +32,48 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
       </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
+      {showNav && (
+        <nav className="blog-post-nav" role="pagination" aria-label="Blog post pagination navigation">
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+            }}
+          >
             {previous && (
-              <>
-                Previously:
-                <Link to={previous.fields.slug} rel="prev"
-                  style={{
-                    display: `block`
-                  }}
-                >
-                  {previous.frontmatter.title}
-                </Link>
-              </>
+              <li>
+                <>
+                  Previously:
+                  <Link to={previous.fields.slug} rel="prev"
+                    style={{
+                      display: `block`
+                    }}
+                  >
+                    {previous.frontmatter.title}
+                  </Link>
+                </>
+              </li>
             )}
-          </li>
-          <li>
             {next && (
-              <>
-                Next:
-                <Link to={next.fields.slug} rel="next"
-                  style={{
-                    display: `block`
-                  }}
-                >
-                  {next.frontmatter.title}
-                </Link>
-              </>
+              <li>
+                  <>
+                    Next:
+                    <Link to={next.fields.slug} rel="next"
+                      style={{
+                        display: `block`
+                      }}
+                    >
+                      {next.frontmatter.title}
+                    </Link>
+                  </>
+              </li>
             )}
-          </li>
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      )}
     </Layout>
   )
 }
