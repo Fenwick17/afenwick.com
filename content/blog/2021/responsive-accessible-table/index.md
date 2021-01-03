@@ -4,7 +4,7 @@ date: "2020-11-16T22:12:03.284Z"
 description: "How to build a responsive and accessible table only using HTML and CSS."
 ---
 
-Tables on mobile can sometimes be not the most user-friendly experience. That might be because of horizontal scrolling or endlessly trying to resize content and hoping it fits a 320px viewport.
+Tables on mobile can sometimes be not very user-friendly. That might be because of horizontal scrolling or endlessly trying to resize content and hoping it fits a 320px viewport.
 Fortunately, there is another way.
 
 If you want to check out the HTML and CSS you can [view on Codepen](https://codepen.io/Fenwick17/pen/RwReYXM), [view on Github](https://github.com/Fenwick17/responsive-accessible-table), or [view the example](https://fenwick17.github.io/responsive-accessible-table/).
