@@ -6,7 +6,7 @@ module.exports = {
       name: `Adam Fenwick`,
       summary: `a frontend developer and accessibility engineer.`,
     },
-    description: `Articles on frontend development and accessibility.`,
+    description: `Articles on accessibility and frontend performance.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `AdamFenwickFE`,
@@ -56,13 +56,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Adam Fenwick Blog`,
+        short_name: `afenwickBlog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/favicon/favicon-32x32.png`,
+        icon: `static/favicons/favicon-32x32.png`,
+        icons: [
+          {
+            src: `static/favicons/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `static/favicons/apple-touch-icon.png`,
+            sizes: `180x180`,
+            type: `image/png`,
+          },
+        ]
       },
     },
     `gatsby-plugin-react-helmet`,

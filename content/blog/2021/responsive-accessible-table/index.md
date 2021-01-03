@@ -341,6 +341,7 @@ That looks like a lot of extra HTML, but I’ll explain.
 We added a `<span>` which replicates what the heading is for that piece of data, then with the use of `aria-hidden="true"` we hid that from a screen reader. This is because the `<thead>` is still fully functional, so it would just be extra noise. However, for visual users it is there so we can show what that piece of data relates to. The CSS simply hides and shows it depending on mobile or desktop.
 Remember that `flex` we used before? Now it comes into full swing, with utilizing `justify-content: space-between` we can separate the mobile visual heading with the data counterpart.
 
-![Mobile view with seperated headings](./finished-mobile.png)
+![Completed mobile view with separated headings](./finished-mobile.png)
 
-There we have it. A finished responsive and accessible table only using HTML and CSS.
+There we have it. A finished responsive and accessible table only using HTML and CSS.  
+If you have any thoughts or questions, feel free to [contact me on Twitter](https://www.twitter.com/AdamFenwickFE).
