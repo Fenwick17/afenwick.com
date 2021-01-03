@@ -5,7 +5,7 @@ import styles from "./nav.module.css";
   
 const Nav = () => {
   return (
-    <nav className={styles.mainNav} aria-label="primary">
+    <nav className={styles.mainNav} aria-label="Primary navigation">
       <ul>
         <li><Link to="/" activeClassName="active-page">Home</Link></li>
         {/* <li><Link to="/about" activeClassName="active-page">About</Link></li> */}
