@@ -181,28 +181,23 @@ a:focus {
 }
 
 /* Custom classes */
-.flex-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
 .container {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-5) var(--spacing-5);
 }
 
+.main-content {
+  margin-bottom: var(--spacing-16);
+}
+
 .header-logo {
   font-size: var(--fontSize-6);
   margin: 0;
-}
-
-.header-link-home {
   text-decoration: none;
 }
 
-.header-link-home:visited {
+.header-logo:visited {
   color: inherit;
 }
 
@@ -270,6 +265,6 @@ footer a {
   .global-header .navigation {
     display: flex;
     justify-content: space-between;
-    margin-bottom: var(--spacing-10);
+    margin-bottom: var(--spacing-16);
   }
 }

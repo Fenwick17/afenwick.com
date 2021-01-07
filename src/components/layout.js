@@ -31,26 +31,24 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
   return (
     <>
       <a id="skip-link" href="#main-content" class="skip-link">Skip to main content</a>
-      <header className="global-header">
-        <div class="container">
+      <div class="container">
+        <header className="global-header">
           <div class="navigation">
             {header}
             <Nav />
           </div>
+        </header>
+        <div data-is-root-path={isRootPath}>
+          <main id="main-content" class="main-content" style={{}}>{children}</main>
         </div>
-      </header>
-      <div class="container" data-is-root-path={isRootPath}>
-        <main id="main-content" class="main-content wrapper">{children}</main>
+        <footer>
+            <h2 class="u-no-margin-top">Socials:</h2>
+            <ul>
+              <li><a href={`https://www.twitter.com/${social.twitter}`}>Twitter</a></li>
+              <li class="u-no-margin-bottom"><a href={`https://www.github.com/${social.github}`}>Github</a></li>
+            </ul>
+        </footer>
       </div>
-      <footer>
-        <div class="container">
-          <h2 class="u-no-margin-top">Socials:</h2>
-          <ul>
-            <li><a href={`https://www.twitter.com/${social.twitter}`}>Twitter</a></li>
-            <li class="u-no-margin-bottom"><a href={`https://www.github.com/${social.github}`}>Github</a></li>
-          </ul>
-        </div>
-      </footer>
     </>
   )
 }
