@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Nav from "./nav";
-import SkipLink from "../js/utilities";
 
 const Layout = ({ data, location, children, siteLogo, social }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -45,7 +44,7 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
       </div>
       <footer>
         <div class="container">
-          <h2 class="u-no-margin-top">Follow me on:</h2>
+          <h2 class="u-no-margin-top">Socials:</h2>
           <ul>
             <li><a href={`https://www.twitter.com/${social.twitter}`}>Twitter</a></li>
             <li class="u-no-margin-bottom"><a href={`https://www.github.com/${social.github}`}>Github</a></li>

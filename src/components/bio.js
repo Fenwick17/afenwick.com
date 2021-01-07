@@ -38,7 +38,7 @@ const Bio = () => {
         <p className="u-no-margin-bottom" style={{
           fontSize: `1.5em`
         }}>
-          Hello there. I'm <strong>{author.name}</strong>.
+          I'm <strong>{author.name}</strong>.
         </p>
       )}
         <p style={{
