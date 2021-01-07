@@ -1,6 +1,6 @@
 ---
 title: Building a responsive and accessible table 
-date: "2020-11-16T22:12:03.284Z"
+date: "2021-01-05"
 description: "How to build a responsive and accessible table only using HTML and CSS."
 ---
 
@@ -8,7 +8,6 @@ Tables on mobile can sometimes be not very user-friendly. That might be because 
 Fortunately, there is another way.
 
 If you want to check out the HTML and CSS you can [view on Codepen](https://codepen.io/Fenwick17/pen/RwReYXM), [view on Github](https://github.com/Fenwick17/responsive-accessible-table), or [view the example](https://fenwick17.github.io/responsive-accessible-table/).
-
 ## The table
 
 When viewed on a desktop, the table component will behave like any other table. When viewed on a mobile, the table collapses into  a grouped list-style component.
@@ -339,9 +338,9 @@ The CSS to go with it:
 ```
 That looks like a lot of extra HTML, but I’ll explain.
 We added a `<span>` which replicates what the heading is for that piece of data, then with the use of `aria-hidden="true"` we hid that from a screen reader. This is because the `<thead>` is still fully functional, so it would just be extra noise. However, for visual users it is there so we can show what that piece of data relates to. The CSS simply hides and shows it depending on mobile or desktop.
-Remember that `flex` we used before? Now it comes into full swing, with utilizing `justify-content: space-between` we can separate the mobile visual heading with the data counterpart.
+Remember that `flex` we used before? Now it comes into full swing, with utilising `justify-content: space-between` we can separate the mobile visual heading with the data counterpart.
 
 ![Completed mobile view with separated headings](./finished-mobile.png)
 
 There we have it. A finished responsive and accessible table only using HTML and CSS.  
-If you have any thoughts or questions, feel free to [contact me on Twitter](https://www.twitter.com/AdamFenwickFE).
+If you have any thoughts or questions, [contact me on Twitter](https://www.twitter.com/AdamFenwickFE).

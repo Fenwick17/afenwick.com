@@ -11,6 +11,7 @@ module.exports = {
     social: {
       twitter: `AdamFenwickFE`,
       github: `Fenwick17`,
+      email: `hello@afenwick.com`
     },
   },
   plugins: [

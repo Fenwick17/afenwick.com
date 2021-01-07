@@ -25,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <h1 itemProp="headline">{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
+        <time datetime={post.frontmatter.date}>{post.frontmatter.formatted_date}</time>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -33,7 +33,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <hr />
       </article>
       {showNav && (
-        <nav className="blog-post-nav" role="pagination" aria-label="Blog post pagination navigation">
+        <nav className="blog-post-nav" aria-label="Blog post pagination navigation">
           <ul
             style={{
               display: `flex`,
@@ -101,7 +101,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        formatted_date: date(formatString: "DD MMMM YYYY")
+        date(formatString: "YYYY-M-DD")
         description
       }
     }

@@ -32,17 +32,18 @@ const Bio = () => {
 
   return (
     <div className="bio" style={{
-      display: `table-header-group`
+      display: `table-header-group`,
     }}>
       {author?.name && (
         <p className="u-no-margin-bottom" style={{
           fontSize: `1.5em`
         }}>
-          Hello there. I'm <strong>{author.name}</strong>.
+          I'm <strong>{author.name}</strong>.
         </p>
       )}
         <p style={{
           marginTop: `0`,
+          marginBottom: `var(--spacing-5)`,
           fontSize: `1.5em`,
           fontWeight: `700`
         }}>Frontend developer and accessibility engineer.</p>
