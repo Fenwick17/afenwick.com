@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway 
+  repo: "fenwick17/afenwick-blog"
+
+publish_mode: editorial_workflow
+
+media_folder: "static/images/blog/uploads"
+public_folder: "images/blog/"
+
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog/posts"
+    slug: "{{year}}/{{slug}}"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish date", name: "date", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown"}

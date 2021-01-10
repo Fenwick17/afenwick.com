@@ -87,5 +87,6 @@ module.exports = {
         domain: `afenwick.com`,
       }
     },
+    `gatsby-plugin-netlify-cms`
   ],
 }
