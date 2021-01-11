@@ -1,6 +1,7 @@
 backend:
   name: git-gateway 
   repo: "fenwick17/afenwick-blog"
+  branch: "main"
 
 publish_mode: editorial_workflow
 
