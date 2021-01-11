@@ -50,8 +50,6 @@ Here is some HTML
 </table>
 ```
 
-\
-\
-Here is an image too
+Here is a new image
 
-![y tho](/static/images/blog/uploads/y-tho-meme-846x765.jpg)
+![y tho meme](/static/images/blog/uploads/y-tho-meme-846x765.jpg)
