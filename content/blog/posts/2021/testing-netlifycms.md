@@ -51,5 +51,3 @@ Here is some HTML
 ```
 
 Here is a new image
-
-![y tho meme](/static/images/blog/uploads/y-tho-meme-846x765.jpg)
