@@ -5,7 +5,7 @@ date: 2021-01-11T17:57:05.140Z
 ---
 Here is some HTML
 
-```
+```html
 <table class="responsive-table">
   <caption>My favourite movies</caption>
   <thead>
