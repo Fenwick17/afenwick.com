@@ -20,7 +20,14 @@ module.exports = {
       options: {
         path: `${__dirname}/content/`,
         name: `blog`,
-      },
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/images/blog/upload/`,
+        name: `static/images/blog/upload`,
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
