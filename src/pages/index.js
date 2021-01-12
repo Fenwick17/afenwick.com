@@ -76,20 +76,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          formatted_date: date(formatString: "DD MMMM YYYY")
-          date(formatString: "YYYY-M-DD")
-          title
-          description
-        }
-      }
-    }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       nodes {
         title

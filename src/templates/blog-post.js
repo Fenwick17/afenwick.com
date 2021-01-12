@@ -12,7 +12,6 @@ const BlogPostTemplate = ({ data, location }) => {
   const social = data.site.siteMetadata.social
   const { previous, next } = data
   const showNav = previous || next;
-  console.log(data)
 
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>

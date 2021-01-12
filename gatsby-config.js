@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env${process.env.NODE_ENV}`,
+  path: `.env`,
 });
 
 const contentfulConfig = {
@@ -16,7 +16,7 @@ module.exports = {
       summary: `a frontend developer and accessibility engineer.`,
     },
     description: `Articles on accessibility and frontend performance.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://www.afenwick.com/`,
     social: {
       twitter: `AdamFenwickFE`,
       github: `Fenwick17`,
@@ -55,7 +55,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
