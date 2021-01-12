@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             node {
               title
               slug
+              publishDate
             }
           }
         }
@@ -39,10 +40,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const previousPostId = post.previous?.id 
       const nextPostId = post.next?.id 
-      const postYear = new Date(post.publishDate).getFullYear();
+      const postYear = new Date(post.node.publishDate).getFullYear()
 
       createPage({
-        path: `/blog/${post.node.slug}`,
+        path: `/blog/${postYear}/${post.node.slug}`,
         component: blogPost,
         context: {
           id: post.id,

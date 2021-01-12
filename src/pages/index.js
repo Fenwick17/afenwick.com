@@ -51,7 +51,7 @@ const BlogIndex = ({ data, location }) => {
                 }}
                 itemProp="description"
               />
-              <Link className="button" aria-label={`Read ${title}`} to={`/blog/${post.slug}`} itemProp="url">
+              <Link className="button" aria-label={`Read ${title}`} to={`/blog/${post.postYear}/${post.slug}`} itemProp="url">
                 Read more
               </Link>
             </article>
@@ -81,6 +81,7 @@ export const pageQuery = graphql`
         title
         slug
         formatted_date: publishDate(formatString: "DD MMMM YYYY")
+        postYear: publishDate(formatString: "YYYY")
         publishDate(formatString: "YYYY-M-DD")
         description {
           description
