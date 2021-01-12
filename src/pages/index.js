@@ -36,6 +36,7 @@ const BlogIndex = ({ data, location }) => {
         {posts.map(post => {
           const title = post.title
           const titleId = title.replace(/\s/g, "-").toLowerCase();
+          const postUrl = `/blog/${post.postYear}/${post.slug}`
           return (
             <article
               className={styles.blogPostItem}
@@ -51,7 +52,7 @@ const BlogIndex = ({ data, location }) => {
                 }}
                 itemProp="description"
               />
-              <Link className="button" aria-label={`Read ${title}`} to={`/blog/${post.postYear}/${post.slug}`} itemProp="url">
+              <Link className="button" aria-label={`Read ${title}`} to={postUrl} itemProp="url">
                 Read more
               </Link>
             </article>
