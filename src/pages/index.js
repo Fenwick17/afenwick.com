@@ -90,7 +90,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       nodes {
         title
         slug
