@@ -1,3 +1,12 @@
+require('dotenv').config({
+  path: `.env`,
+});
+
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+};
+
 module.exports = {
   siteMetadata: {
     title: `Adam Fenwick, frontend developer and accessibility engineer.`,
@@ -7,7 +16,7 @@ module.exports = {
       summary: `a frontend developer and accessibility engineer.`,
     },
     description: `Articles on accessibility and frontend performance.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://www.afenwick.com/`,
     social: {
       twitter: `AdamFenwickFE`,
       github: `Fenwick17`,
@@ -20,13 +29,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/`,
         name: `blog`,
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/static/images/blog`,
-        name: `blogimages`,
       }
     },
     {
@@ -53,7 +55,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -94,6 +95,9 @@ module.exports = {
         domain: `afenwick.com`,
       }
     },
-    `gatsby-plugin-netlify-cms`
+    {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig,
+    },
   ],
 }

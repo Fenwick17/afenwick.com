@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import styles from "./blog-post.module.css";
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
+  const post = data.contentfulBlogPost
   const siteLogo = data.site.siteMetadata?.siteLogo || `Title`
   const social = data.site.siteMetadata.social
   const { previous, next } = data
@@ -16,18 +16,18 @@ const BlogPostTemplate = ({ data, location }) => {
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={post.title}
+        description={post.description.description || post.excerpt}
       />
       <article
         className={`blog-post ${styles.blogPost}`}
         itemScope
         itemType="http://schema.org/Article"
       >
-        <h1 itemProp="headline">{post.frontmatter.title}</h1>
-        <time datetime={post.frontmatter.date}>{post.frontmatter.formatted_date}</time>
+        <h1 itemProp="headline">{post.title}</h1>
+        <time datetime={post.publishDate}>{post.formatted_date}</time>
         <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
           itemProp="articleBody"
         />
         <hr />
@@ -47,12 +47,12 @@ const BlogPostTemplate = ({ data, location }) => {
               <li>
                 <>
                   Previously:
-                  <Link to={previous.fields.slug} rel="prev"
+                  <Link to={`/blog/${previous.slug}`} rel="prev"
                     style={{
                       display: `block`
                     }}
                   >
-                    {previous.frontmatter.title}
+                    {previous.title}
                   </Link>
                 </>
               </li>
@@ -61,12 +61,12 @@ const BlogPostTemplate = ({ data, location }) => {
               <li>
                   <>
                     Next:
-                    <Link to={next.fields.slug} rel="next"
+                    <Link to={`/blog/${next.slug}`} rel="next"
                       style={{
                         display: `block`
                       }}
                     >
-                      {next.frontmatter.title}
+                      {next.title}
                     </Link>
                   </>
               </li>
@@ -82,10 +82,10 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
+      $previousPostId: String
+      $nextPostId: String
+      $slug: String!
+    ) {
     site {
       siteMetadata {
         siteLogo 
@@ -95,32 +95,26 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark(id: { eq: $id }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        formatted_date: date(formatString: "DD MMMM YYYY")
-        date(formatString: "YYYY-M-DD")
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      formatted_date: publishDate(formatString: "DD MMMM YYYY")
+      publishDate(formatString: "YYYY-M-DD")
+      description {
         description
       }
-    }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
+      body {
+        childMarkdownRemark {
+          html
+        }
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
+    previous: contentfulBlogPost(id: { eq: $previousPostId }) {
+      slug
+      title
+    }
+    next: contentfulBlogPost(id: { eq: $nextPostId }) {
+      slug
+      title
     }
   }
 `
