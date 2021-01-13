@@ -82,7 +82,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.afenwick.com`,
+        siteUrl: `https://www.afenwick.com/`,
       },
     },
     {
