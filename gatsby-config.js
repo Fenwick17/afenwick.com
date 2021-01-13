@@ -16,7 +16,7 @@ module.exports = {
       summary: `a frontend developer and accessibility engineer.`,
     },
     description: `Articles on accessibility and frontend performance.`,
-    siteUrl: `https://www.afenwick.com`,
+    siteUrl: `https://www.afenwick.com/`,
     social: {
       twitter: `AdamFenwickFE`,
       github: `Fenwick17`,
@@ -82,7 +82,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.afenwick.com`,
+        siteUrl: `https://www.afenwick.com/`,
       },
     },
     {

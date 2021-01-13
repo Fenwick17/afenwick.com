@@ -36,7 +36,7 @@ const BlogIndex = ({ data, location }) => {
         {posts.map(post => {
           const title = post.title
           const titleId = title.replace(/\s/g, "-").toLowerCase();
-          const postUrl = `/blog/${post.postYear}/${post.slug}`
+          const postUrl = `/blog/${post.postYear}/${post.slug}/`
           return (
             <article
               className={styles.blogPostItem}
