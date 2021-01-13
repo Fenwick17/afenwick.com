@@ -108,6 +108,15 @@ export const pageQuery = graphql`
         }
       }
     }
+    allContentfulAsset {
+      edges {
+        node {
+          fluid(maxWidth: 500) {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+      }
+    }
     previous: contentfulBlogPost(id: { eq: $previousPostId }) {
       slug
       title
