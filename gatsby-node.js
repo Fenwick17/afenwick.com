@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const postYear = new Date(post.node.publishDate).getFullYear()
 
       createPage({
-        path: `/blog/${postYear}/${post.node.slug}`,
+        path: `/blog/${postYear}/${post.node.slug}/`,
         component: blogPost,
         context: {
           id: post.id,
