@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="Articles on accessibility and frontend performance." />
       <Bio />
       <div className={styles.blogPosts}>
-        <h1 class="u-no-margin-top u-no-margin-bottom" style={{
+        <h1 className="u-no-margin-top u-no-margin-bottom" style={{
           padding: `0.5em`
         }}>Latest Posts</h1>
         {posts.map(post => {
@@ -44,7 +44,11 @@ const BlogIndex = ({ data, location }) => {
               itemType="http://schema.org/Article"
               aria-labelledby={titleId}
             >
-              <h2 id={titleId} className={styles.blogHeading}>{title}</h2>
+              <h2 id={titleId} className={styles.blogHeading}>
+                <Link to={postUrl} itemProp="url">
+                  {title}
+                </Link>
+              </h2>
               <time datetime={post.publishDate}>{post.formatted_date}</time>
               <p className={styles.blogPostDescription}
                 dangerouslySetInnerHTML={{
@@ -52,9 +56,6 @@ const BlogIndex = ({ data, location }) => {
                 }}
                 itemProp="description"
               />
-              <Link className="button" aria-label={`Read ${title}`} to={postUrl} itemProp="url">
-                Read more
-              </Link>
             </article>
           )
         })}

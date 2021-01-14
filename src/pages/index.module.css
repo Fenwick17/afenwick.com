@@ -26,6 +26,14 @@
   margin-top: var(--spacing-0);
 }
 
+.blogPostItem a {
+  color: var(--color-secondary);
+}
+
+.blogPostItem a:focus {
+  color: var(--color-text);
+}
+
 .blogPostItem header {
   margin-bottom: var(--spacing-4);
 }

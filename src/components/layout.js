@@ -30,22 +30,22 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
 
   return (
     <>
-      <a id="skip-link" href="#main-content" class="skip-link">Skip to main content</a>
-      <div class="container">
+      <a id="skip-link" href="#main-content" className="skip-link">Skip to main content</a>
+      <div className="container">
         <header className="global-header">
-          <div class="navigation">
+          <div className="navigation">
             {header}
             <Nav />
           </div>
         </header>
         <div data-is-root-path={isRootPath}>
-          <main id="main-content" class="main-content" style={{}}>{children}</main>
+          <main id="main-content" className="main-content" style={{}}>{children}</main>
         </div>
         <footer>
-            <h2 class="u-no-margin-top">Socials:</h2>
+            <h2 className="u-no-margin-top">Socials:</h2>
             <ul>
               <li><a href={`https://www.twitter.com/${social.twitter}`}>Twitter</a></li>
-              <li class="u-no-margin-bottom"><a href={`https://www.github.com/${social.github}`}>Github</a></li>
+              <li className="u-no-margin-bottom"><a href={`https://www.github.com/${social.github}`}>Github</a></li>
             </ul>
         </footer>
       </div>
