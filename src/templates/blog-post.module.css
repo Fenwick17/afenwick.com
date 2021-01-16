@@ -11,6 +11,18 @@
   margin: var(--spacing-0);
 }
 
+.blogPostPagination ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.blogPostPagination ul li a {
+  display: block;
+}
+
 time {
   display: block;
   margin-bottom: var(--spacing-4);

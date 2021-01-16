@@ -12,12 +12,14 @@ const BlogPostTemplate = ({ data, location }) => {
   const social = data.site.siteMetadata.social
   const { previous, next } = data
   const showNav = previous || next;
+  const previousBlogUrl = `/blog/${previous?.postYear}/${previous?.slug}`;
+  const nextBlogUrl = `/blog/${next?.postYear}/${next?.slug}`;
 
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO
         title={post.title}
-        description={post.description.description || post.excerpt}
+        description={post.description.description}
       />
       <article
         className={`blog-post ${styles.blogPost}`}
@@ -33,25 +35,13 @@ const BlogPostTemplate = ({ data, location }) => {
         <hr />
       </article>
       {showNav && (
-        <nav className="blog-post-nav" aria-label="Blog post pagination navigation">
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
+        <nav className={styles.blogPostPagination} aria-label="Blog post pagination navigation">
+          <ul>
             {previous && (
               <li>
                 <>
                   Previously:
-                  <Link to={`/blog/${previous.slug}`} rel="prev"
-                    style={{
-                      display: `block`
-                    }}
-                  >
+                  <Link to={previousBlogUrl} rel="prev">
                     {previous.title}
                   </Link>
                 </>
@@ -61,11 +51,7 @@ const BlogPostTemplate = ({ data, location }) => {
               <li>
                   <>
                     Next:
-                    <Link to={`/blog/${next.slug}`} rel="next"
-                      style={{
-                        display: `block`
-                      }}
-                    >
+                    <Link to={nextBlogUrl} rel="next" >
                       {next.title}
                     </Link>
                   </>
@@ -119,9 +105,11 @@ export const pageQuery = graphql`
     }
     previous: contentfulBlogPost(id: { eq: $previousPostId }) {
       slug
+      postYear: publishDate(formatString: "YYYY")
       title
     }
     next: contentfulBlogPost(id: { eq: $nextPostId }) {
+      postYear: publishDate(formatString: "YYYY")
       slug
       title
     }

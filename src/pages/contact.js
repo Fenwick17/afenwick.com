@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const NotFoundPage = ({ data, location }) => {
+const ContactPage = ({ data, location }) => {
   const siteLogo = data.site.siteMetadata.siteLogo
   const social = data.site.siteMetadata.social
 
@@ -12,12 +12,12 @@ const NotFoundPage = ({ data, location }) => {
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO title="Contact" />
       <h1 className="u-no-margin-top">Contact me</h1>
-      <p>You can <a href={`mailto:${social.email}`}>email me</a> or <a href={`https://twitter.com/${social.twitter}`}>contact me on Twitter</a>, my DMs are always open.</p>
+      <p>You can <a href={`mailto:${social.email}`}>email me</a> or <a href={social.twitterURL}>contact me on Twitter</a>, my DMs are always open.</p>
     </Layout>
   )
 }
 
-export default NotFoundPage
+export default ContactPage; 
 
 export const pageQuery = graphql`
   query {
@@ -26,8 +26,9 @@ export const pageQuery = graphql`
         siteLogo 
         social {
           twitter
-          github
+          twitterURL
           email
+          githubURL
         }
       }
     }

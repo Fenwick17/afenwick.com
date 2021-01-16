@@ -44,11 +44,11 @@
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
   --fontSize-2: 1.2rem;
-  --fontSize-3: 1.44rem;
-  --fontSize-4: 1.728rem;
-  --fontSize-5: 2.074rem;
-  --fontSize-6: 2.488rem;
-  --fontSize-7: 2.986rem;
+  --fontSize-3: 1.5rem;
+  --fontSize-4: 1.75rem;
+  --fontSize-5: 2rem;
+  --fontSize-6: 2.25rem;
+  --fontSize-7: 2.5rem;
   --color-primary: #1d70b8;
   --color-text: black;
   --color-text-white: #FFF;
@@ -264,5 +264,11 @@ footer a {
     display: flex;
     justify-content: space-between;
     margin-bottom: var(--spacing-16);
+  }
+}
+
+@media (max-width: 768px) {
+  .global-header {
+    margin-bottom: var(--spacing-4);
   }
 }

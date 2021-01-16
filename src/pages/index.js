@@ -52,7 +52,7 @@ const BlogIndex = ({ data, location }) => {
               <time datetime={post.publishDate}>{post.formatted_date}</time>
               <p className={styles.blogPostDescription}
                 dangerouslySetInnerHTML={{
-                  __html: post.description.description || post.excerpt,
+                  __html: post.description.description
                 }}
                 itemProp="description"
               />
@@ -74,7 +74,9 @@ export const pageQuery = graphql`
         siteLogo,
         social {
           twitter,
-          github
+          twitterURL,
+          github,
+          githubURL
         }
       }
     }

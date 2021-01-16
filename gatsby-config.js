@@ -19,7 +19,9 @@ module.exports = {
     siteUrl: `https://www.afenwick.com/`,
     social: {
       twitter: `AdamFenwickFE`,
+      twitterURL: `https://www.twitter.com/AdamFenwickFE`,
       github: `Fenwick17`,
+      githubURL: `https://www.github.com/Fenwick17`,
       email: `hello@afenwick.com`
     },
   },
@@ -43,6 +45,7 @@ module.exports = {
             options: {
               linkImagesToOriginal: false,
               maxWidth: 590,
+              showCaptions: true,
               withWebp: true,
             },
           },
