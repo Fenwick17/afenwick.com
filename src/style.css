@@ -205,10 +205,12 @@ a:focus {
 
 .button {
   background-color: var(--color-secondary);
-  padding: 0.5em;
+  border: 0;
   color: var(--color-text-white);
-  text-decoration: none;
+  cursor: pointer;
   display: inline-block;
+  padding: 0.5em;
+  text-decoration: none;
 }
 
 .button:visited {
@@ -226,12 +228,20 @@ a:focus {
   color: var(--color-text-white);
 }
 
+.gatsby-highlight {
+  position: relative;
+}
+
 .gatsby-highlight pre code {
   white-space: pre-wrap;       /* css-3 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;  
+}
+
+.gatsby-highlight pre {
+  padding: var(--spacing-10) var(--spacing-4);
 }
 
 .skip-link {
@@ -271,4 +281,15 @@ footer a {
   .global-header {
     margin-bottom: var(--spacing-4);
   }
+}
+
+.copy-clipboard-container {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.copy-clipboard-button {
+  min-width: 200px;
 }

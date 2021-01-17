@@ -43,6 +43,7 @@ const BlogIndex = ({ data, location }) => {
               itemScope
               itemType="http://schema.org/Article"
               aria-labelledby={titleId}
+              key={post.id}
             >
               <h2 id={titleId} className={styles.blogHeading}>
                 <Link to={postUrl} itemProp="url">
@@ -82,6 +83,7 @@ export const pageQuery = graphql`
     }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       nodes {
+        id
         title
         slug
         formatted_date: publishDate(formatString: "DD MMMM YYYY")

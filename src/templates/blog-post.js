@@ -29,6 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <h1 itemProp="headline">{post.title}</h1>
         <time dateTime={post.publishDate}>{post.formatted_date}</time>
         <section
+          id="blog-body"
           dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
           itemProp="articleBody"
         />
