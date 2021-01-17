@@ -27,7 +27,7 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <h1 itemProp="headline">{post.title}</h1>
-        <time datetime={post.publishDate}>{post.formatted_date}</time>
+        <time dateTime={post.publishDate}>{post.formatted_date}</time>
         <section
           dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
           itemProp="articleBody"

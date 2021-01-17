@@ -49,7 +49,7 @@ const BlogIndex = ({ data, location }) => {
                   {title}
                 </Link>
               </h2>
-              <time datetime={post.publishDate}>{post.formatted_date}</time>
+              <time dateTime={post.publishDate}>{post.formatted_date}</time>
               <p className={styles.blogPostDescription}
                 dangerouslySetInnerHTML={{
                   __html: post.description.description
