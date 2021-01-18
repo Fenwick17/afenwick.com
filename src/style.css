@@ -295,3 +295,12 @@ footer a {
 .bio p {
   font-size: 1.5em;
 }
+
+.bio p span {
+  font-weight: var(--fontWeight-bold);
+}
+
+.bio .bio-role {
+  margin: 0 0 var(--spacing-5) 0; 
+  font-weight: var(--fontWeight-bold);
+}

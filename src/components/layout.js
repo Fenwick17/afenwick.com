@@ -1,13 +1,13 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Nav from "./nav";
-import SkipLink from './../js/utilities'
+import Nav from './nav';
+import SkipLink from '../js/utilities';
 
-const Layout = ({ data, location, children, siteLogo, social }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  let header
+const Layout = ({ location, children, siteLogo, social }) => {
+  const rootPath = `${__PATH_PREFIX__}/`;
+  const isRootPath = location.pathname === rootPath;
+  let header;
 
   if (isRootPath) {
     header = (
@@ -16,7 +16,7 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
           {siteLogo}
         </span>
       </div>
-    )
+    );
   } else {
     header = (
       <div>
@@ -24,7 +24,7 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
           {siteLogo}
         </Link>
       </div>
-    )
+    );
   }
 
   return (
@@ -51,7 +51,7 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
         </footer>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
