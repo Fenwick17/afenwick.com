@@ -283,13 +283,15 @@ footer a {
   }
 }
 
-.copy-clipboard-container {
+.copy-clipboard-button {
   display: block;
+  font-family: var(--fontFamily);
+  min-width: 200px;
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
 }
 
-.copy-clipboard-button {
-  min-width: 200px;
+.bio p {
+  font-size: 1.5em;
 }

@@ -26,20 +26,15 @@ const Bio = () => {
   const author = data.site.siteMetadata?.author
 
   return (
-    <div className="bio" style={{
-      display: `table-header-group`,
-    }}>
+    <div class="bio">
       {author?.name && (
-        <p className="u-no-margin-bottom" style={{
-          fontSize: `1.5em`
-        }}>
+        <p className="u-no-margin-bottom">
           I'm <span style={{fontWeight: `700`}}>{author.name}</span>.
         </p>
       )}
         <p style={{
           marginTop: `0`,
           marginBottom: `var(--spacing-5)`,
-          fontSize: `1.5em`,
           fontWeight: `700`
         }}>Frontend developer and accessibility engineer.</p>
     </div>

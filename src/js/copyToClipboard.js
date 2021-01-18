@@ -1,21 +1,22 @@
 const copyToClipboard = () => {
-  const codeBlocks = document.getElementById("blog-body")?.getElementsByClassName('gatsby-highlight');
+  const codeBlocks = document.getElementById('blog-body')?.getElementsByTagName('pre');
   if(codeBlocks) {
     Array.from(codeBlocks).forEach(ele => {
-      const codeBlock = ele.querySelector('code')
-      const copyToClipboardContainer = document.createElement('div');
-      copyToClipboardContainer.className = "copy-clipboard-container";
-      copyToClipboardContainer.innerHTML = `<button class="button copy-clipboard-button" aria-live="assertive">Copy to clipboard</button>`;
-      const copyToClipboardButton = copyToClipboardContainer.querySelector('.copy-clipboard-button') 
+      const codeBlock = ele.querySelector('code');
+      const copyToClipboardButton = document.createElement('button')
+      copyToClipboardButton.className = 'button copy-clipboard-button';
+      copyToClipboardButton.textContent = 'Copy to clipboard';
+      ele.insertBefore(copyToClipboardButton, ele.firstChild);
       copyToClipboardButton.onclick = () => {
         const code = codeBlock.innerText;
-        navigator.clipboard.writeText(code)
-        copyToClipboardButton.innerText = "Copied to clipboard"
+        navigator.clipboard.writeText(code);
+        copyToClipboardButton.setAttribute('aria-live', 'assertive');
+        copyToClipboardButton.textContent = 'Copied to clipboard';
         setTimeout(() => {
-          copyToClipboardButton.innerText = "Copy to clipboard" 
-        }, 3000)
+          copyToClipboardButton.textContent = 'Copy to clipboard';
+          copyToClipboardButton.removeAttribute('aria-live', 'assertive');
+        }, 5000);
       }
-      ele.insertBefore(copyToClipboardContainer, ele.firstChild)
     });
   }
 };
