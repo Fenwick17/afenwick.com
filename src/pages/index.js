@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -9,7 +10,7 @@ import styles from './index.module.css';
 
 const BlogIndex = ({ data, location }) => {
   const { siteLogo, social } = data.site.siteMetadata;
-  const posts = data.allContentfulBlogPost.nodes
+  const posts = data.allContentfulBlogPost.nodes;
 
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
@@ -88,3 +89,8 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+BlogIndex.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+};

@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Nav from './nav';
 import SkipLink from '../js/utilities';
 
-const Layout = ({ location, children, siteLogo, social }) => {
+const Layout = ({
+  location,
+  children,
+  siteLogo,
+  social,
+}) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
   let header;
@@ -55,3 +61,10 @@ const Layout = ({ location, children, siteLogo, social }) => {
 };
 
 export default Layout;
+
+Layout.propTypes = {
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+  siteLogo: PropTypes.string.isRequired,
+  social: PropTypes.objectOf(PropTypes.string).isRequired,
+  children: PropTypes.node.isRequired,
+};

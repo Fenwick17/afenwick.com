@@ -1,10 +1,3 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -29,7 +22,7 @@ const Bio = () => {
     <div className="bio">
       {author?.name && (
         <p className="u-no-margin-bottom">
-          I'm <span>{author.name}</span>
+          I am <span>{author.name}</span>
         </p>
       )}
       <p className="bio-role">Frontend developer and accessibility engineer.</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -35,3 +36,10 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+ContactPage.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+  siteLogo: PropTypes.string.isRequired,
+  social: PropTypes.objectOf(PropTypes.string).isRequired,
+};

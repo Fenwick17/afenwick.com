@@ -29,6 +29,7 @@
     "gatsby-transformer-sharp": "^2.10.1",
     "gatsby-transformer-sqip": "^2.9.1",
     "prismjs": "^1.23.0",
+    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1"

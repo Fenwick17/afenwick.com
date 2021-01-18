@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import styles from './blog-post.module.css';
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.contentfulBlogPost
+  const post = data.contentfulBlogPost;
   const { siteLogo, social } = data.site.siteMetadata;
   const { previous, next } = data;
   const showNav = previous || next;
@@ -28,7 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <section
           id="blog-body"
           dangerouslySetInnerHTML={{
-            __html: post.body.childMarkdownRemark.html
+            __html: post.body.childMarkdownRemark.html,
           }}
           itemProp="articleBody"
         />
@@ -115,3 +116,8 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+BlogPostTemplate.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+};
