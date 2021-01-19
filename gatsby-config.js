@@ -15,7 +15,7 @@ module.exports = {
       name: `Adam Fenwick`,
       summary: `a frontend developer and accessibility engineer.`,
     },
-    description: `Articles on accessibility and frontend performance.`,
+    description: `Articles on web accessibility and frontend development.`,
     siteUrl: `https://www.afenwick.com/`,
     social: {
       twitter: `AdamFenwickFE`,
