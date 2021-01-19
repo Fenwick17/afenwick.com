@@ -29,9 +29,8 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily:  Inter, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fontFamily: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -40,7 +39,6 @@
   --fontWeight-black: 900;
   --fontSize-root: 19px;
   --lineHeight-normal: 1.33;
-  /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
   --fontSize-2: 1.2rem;
@@ -51,12 +49,12 @@
   --fontSize-7: 2.5rem;
   --color-primary: #1d70b8;
   --color-text: black;
-  --color-text-white: #FFF;
-  --color-heading: #000000;
+  --color-text-white: #fff;
+  --color-heading: #000;
   --color-focus: #ffbc00;
   --color-language-green: #00703c;
   --color-language-red: #d13118;
-  --color-primary: #BBDEFB;
+  --color-primary: #bbdefb;
   --color-primary-dark: #1266c0;
   --color-secondary: #0d47a1;
   --color-secondary-light: #5472d3;
@@ -66,8 +64,8 @@
 /* HTML elements */
 
 *,
-:after,
-:before {
+::after,
+::before {
   box-sizing: border-box;
 }
 
@@ -168,11 +166,11 @@ a:hover {
 }
 
 a:visited {
-  color: inherit; 
+  color: inherit;
 }
 
 a:focus {
-  color: var(--color-text); 
+  color: var(--color-text);
   background-color: var(--color-focus);
   text-decoration: none;
   outline: none;
@@ -197,10 +195,6 @@ a:focus {
 
 .header-logo:visited {
   color: inherit;
-}
-
-.gatsby-highlight {
-  margin-bottom: var(--spacing-8);
 }
 
 .button {
@@ -229,6 +223,7 @@ a:focus {
 }
 
 .gatsby-highlight {
+  margin-bottom: var(--spacing-8);
   position: relative;
 }
 
@@ -237,7 +232,7 @@ a:focus {
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;  
+  word-wrap: break-word;
 }
 
 .gatsby-highlight pre {
@@ -258,10 +253,6 @@ a:focus {
 /* footer styling */
 footer ul {
   list-style: none;
-}
-
-footer a {
-  color: var(--color-text);
 }
 
 /* Header styling */
@@ -301,6 +292,6 @@ footer a {
 }
 
 .bio .bio-role {
-  margin: 0 0 var(--spacing-5) 0; 
+  margin: 0 0 var(--spacing-5) 0;
   font-weight: var(--fontWeight-bold);
 }
