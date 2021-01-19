@@ -27,7 +27,6 @@ export const pageQuery = graphql`
       siteMetadata {
         siteLogo 
         social {
-          twitter
           twitterURL
           email
           githubURL

@@ -18,7 +18,7 @@ module.exports = {
     description: `Articles on web accessibility and frontend development.`,
     siteUrl: `https://www.afenwick.com/`,
     social: {
-      twitter: `AdamFenwickFE`,
+      twitter: `@AdamFenwickFE`,
       twitterURL: `https://www.twitter.com/AdamFenwickFE`,
       github: `Fenwick17`,
       githubURL: `https://www.github.com/Fenwick17`,
