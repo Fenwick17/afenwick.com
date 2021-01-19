@@ -1,13 +1,19 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import Nav from "./nav";
-import SkipLink from './../js/utilities'
+import Nav from './nav';
+import SkipLink from '../js/utilities';
 
-const Layout = ({ data, location, children, siteLogo, social }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
-  let header
+const Layout = ({
+  location,
+  children,
+  siteLogo,
+  social,
+}) => {
+  const rootPath = `${__PATH_PREFIX__}/`;
+  const isRootPath = location.pathname === rootPath;
+  let header;
 
   if (isRootPath) {
     header = (
@@ -16,7 +22,7 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
           {siteLogo}
         </span>
       </div>
-    )
+    );
   } else {
     header = (
       <div>
@@ -24,7 +30,7 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
           {siteLogo}
         </Link>
       </div>
-    )
+    );
   }
 
   return (
@@ -51,7 +57,14 @@ const Layout = ({ data, location, children, siteLogo, social }) => {
         </footer>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
+
+Layout.propTypes = {
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+  siteLogo: PropTypes.string.isRequired,
+  social: PropTypes.objectOf(PropTypes.string).isRequired,
+  children: PropTypes.node.isRequired,
+};

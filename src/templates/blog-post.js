@@ -1,20 +1,18 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-import styles from "./blog-post.module.css";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import styles from './blog-post.module.css';
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.contentfulBlogPost
-  const siteLogo = data.site.siteMetadata?.siteLogo || `Title`
-  const social = data.site.siteMetadata.social
-  const { previous, next } = data
+  const post = data.contentfulBlogPost;
+  const { siteLogo, social } = data.site.siteMetadata;
+  const { previous, next } = data;
   const showNav = previous || next;
   const previousBlogUrl = `/blog/${previous?.postYear}/${previous?.slug}`;
   const nextBlogUrl = `/blog/${next?.postYear}/${next?.slug}`;
-
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO
@@ -30,7 +28,9 @@ const BlogPostTemplate = ({ data, location }) => {
         <time dateTime={post.publishDate}>{post.formatted_date}</time>
         <section
           id="blog-body"
-          dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
+          dangerouslySetInnerHTML={{
+            __html: post.body.childMarkdownRemark.html,
+          }}
           itemProp="articleBody"
         />
         <hr />
@@ -50,22 +50,22 @@ const BlogPostTemplate = ({ data, location }) => {
             )}
             {next && (
               <li>
-                  <>
-                    Next:
-                    <Link to={nextBlogUrl} rel="next" >
-                      {next.title}
-                    </Link>
-                  </>
+                <>
+                  Next:
+                  <Link to={nextBlogUrl} rel="next">
+                    {next.title}
+                  </Link>
+                </>
               </li>
             )}
           </ul>
         </nav>
       )}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -115,4 +115,9 @@ export const pageQuery = graphql`
       title
     }
   }
-`
+`;
+
+BlogPostTemplate.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+};

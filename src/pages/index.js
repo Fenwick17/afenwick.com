@@ -1,42 +1,34 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Bio from "../components/bio"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Bio from '../components/bio';
 
-import styles from "./index.module.css"
+import styles from './index.module.css';
 
 const BlogIndex = ({ data, location }) => {
-  const siteLogo = data.site.siteMetadata?.siteLogo || `Title`
-  const social = data.site.siteMetadata.social
-  const posts = data.allContentfulBlogPost.nodes
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} social={social}>
-        <SEO title="Articles on accessibility and frontend performance." />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
+  const { siteLogo, social } = data.site.siteMetadata;
+  const posts = data.allContentfulBlogPost.nodes;
 
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
       <SEO title="Articles on accessibility and frontend performance." />
       <Bio />
       <div className={styles.blogPosts}>
-        <h1 className="u-no-margin-top u-no-margin-bottom" style={{
-          padding: `0.5em`
-        }}>Latest Posts</h1>
-        {posts.map(post => {
-          const title = post.title
-          const titleId = title.replace(/\s/g, "-").toLowerCase();
-          const postUrl = `/blog/${post.postYear}/${post.slug}/`
+        <h1
+          className="u-no-margin-top u-no-margin-bottom"
+          style={{
+            padding: '0.5em',
+          }}
+        >
+          Latest Posts
+        </h1>
+        {posts.map((post) => {
+          const { title } = post;
+          const titleId = title.replace(/\s/g, '-').toLowerCase();
+          const postUrl = `/blog/${post.postYear}/${post.slug}/`;
           return (
             <article
               className={styles.blogPostItem}
@@ -51,21 +43,22 @@ const BlogIndex = ({ data, location }) => {
                 </Link>
               </h2>
               <time dateTime={post.publishDate}>{post.formatted_date}</time>
-              <p className={styles.blogPostDescription}
+              <p
+                className={styles.blogPostDescription}
                 dangerouslySetInnerHTML={{
-                  __html: post.description.description
+                  __html: post.description.description,
                 }}
                 itemProp="description"
               />
             </article>
-          )
+          );
         })}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -95,4 +88,9 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
+
+BlogIndex.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+};
