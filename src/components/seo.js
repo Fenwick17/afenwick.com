@@ -19,6 +19,7 @@ const SEO = ({
             author {
               name
             }
+            siteUrl
             social {
               twitter
             }
@@ -74,6 +75,14 @@ const SEO = ({
         {
           name: 'twitter:description',
           content: metaDescription,
+        },
+        {
+          name: 'twitter:domain',
+          content: site.siteMetadata?.siteUrl,
+        },
+        {
+          name: 'twitter:site',
+          content: site.siteMetadata?.social?.twitter || '',
         },
       ].concat(meta)}
     />
