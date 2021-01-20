@@ -1,23 +1,22 @@
 .mainNav ul li {
   display: inline-block;
-  margin: 0;
-  padding: .5em;
+  margin: 0.5em;
 }
 
 .mainNav ul li:first-child {
-  padding-left: 0;
+  margin-left: 0;
 }
 
 .mainNav ul li a:first-child {
   margin-left: 0;
 }
 
-.mainNav ul li a{
+.mainNav ul li a {
   margin-left: 0.5em;
 }
 
 @media(min-width: 768px) {
   .mainNav ul li:last-child {
-    padding-right: 0;
+    margin-right: 0;
   }
 }

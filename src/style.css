@@ -288,10 +288,10 @@ footer ul {
 }
 
 .bio p span {
-  font-weight: var(--fontWeight-bold);
+  font-weight: var(--fontWeight-semibold);
 }
 
 .bio .bio-role {
   margin: 0 0 var(--spacing-5) 0;
-  font-weight: var(--fontWeight-bold);
+  font-weight: var(--fontWeight-semibold);
 }
