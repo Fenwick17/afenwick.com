@@ -9,12 +9,12 @@ import Bio from '../components/bio';
 import styles from './index.module.css';
 
 const BlogIndex = ({ data, location }) => {
-  const { siteLogo, social } = data.site.siteMetadata;
+  const { siteLogo, social, description } = data.site.siteMetadata;
   const posts = data.allContentfulBlogPost.nodes;
 
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
-      <SEO title="Articles on accessibility and frontend performance." />
+      <SEO title={description} />
       <Bio />
       <div className={styles.blogPosts}>
         <h1
@@ -66,6 +66,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title,
         siteLogo,
+        description
         social {
           twitter,
           twitterURL,
