@@ -29,7 +29,7 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily: system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --fontWeight-normal: 400;
   --fontWeight-semibold: 600;
