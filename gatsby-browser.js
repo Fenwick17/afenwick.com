@@ -1,5 +1,5 @@
 // custom typefaces
-import "@fontsource/inter"
+import "@fontsource/inter/400.css"
 import "@fontsource/inter/600.css"
 // normalize CSS across browsers
 import "./src/normalize.css"
