@@ -226,6 +226,10 @@ footer ul {
   list-style: none;
 }
 
+footer ul li {
+  margin-bottom: var(--spacing-2);
+}
+
 /* Header styling */
 .global-header ul {
   margin-bottom: 0;
