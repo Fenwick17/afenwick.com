@@ -6,11 +6,10 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const ContactPage = ({ data, location }) => {
-  const { siteLogo, social } = data.site.siteMetadata;
-
+  const { siteLogo, social, title } = data.site.siteMetadata;
   return (
     <Layout location={location} siteLogo={siteLogo} social={social}>
-      <SEO title="Contact" />
+      <SEO title="Contact" description={`Contact ${title}`} />
       <h1 className="u-no-margin-top">Contact me</h1>
       <p>
         You can <a href={`mailto:${social.email}`}>email me</a> or <a href={social.twitterURL}>contact me on Twitter</a>, my DMs are always open.
@@ -25,6 +24,7 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
+        title
         siteLogo 
         social {
           twitterURL
