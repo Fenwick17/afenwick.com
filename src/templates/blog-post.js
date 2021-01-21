@@ -19,6 +19,7 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.title}
         description={post.description.description}
         embedImage={post.embedImage.fluid.src}
+        embedImageAlt={post.embedImage.description}
         blogUrl={location.pathname}
       />
       <article
@@ -89,6 +90,7 @@ export const pageQuery = graphql`
       formatted_date: publishDate(formatString: "DD MMMM YYYY")
       publishDate(formatString: "YYYY-M-DD")
       embedImage {
+        description
         fluid {
           src
         }

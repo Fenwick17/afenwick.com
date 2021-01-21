@@ -9,6 +9,7 @@ const SEO = ({
   meta,
   title,
   embedImage,
+  embedImageAlt,
   blogUrl
 }) => {
   const { site } = useStaticQuery(
@@ -68,6 +69,10 @@ const SEO = ({
           content: `https:${embedImage}` || '',
         },
         {
+          property: 'og:image:alt',
+          content: embedImageAlt || '',
+        },
+        {
           property: 'og:url',
           content: pageUrl,
         },
@@ -98,6 +103,10 @@ const SEO = ({
         {
           name: 'twitter:image',
           content: `https:${embedImage}` || '',
+        },
+        {
+          name: 'twitter:image:alt',
+          content: embedImageAlt || '',
         },
       ].concat(meta)}
     />
