@@ -95,6 +95,10 @@ const SEO = ({
           name: 'twitter:site',
           content: site.siteMetadata?.social?.twitter || '',
         },
+        {
+          name: 'twitter:image',
+          content: `https:${embedImage}`,
+        },
       ].concat(meta)}
     />
   );
