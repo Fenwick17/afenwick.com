@@ -65,7 +65,7 @@ const SEO = ({
         },
         {
           property: 'og:image',
-          content: `https:${embedImage}`,
+          content: `https:${embedImage}` || '',
         },
         {
           property: 'og:url',
@@ -94,6 +94,10 @@ const SEO = ({
         {
           name: 'twitter:site',
           content: site.siteMetadata?.social?.twitter || '',
+        },
+        {
+          name: 'twitter:image',
+          content: `https:${embedImage}` || '',
         },
       ].concat(meta)}
     />
