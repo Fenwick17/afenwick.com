@@ -43,6 +43,12 @@ const SEO = ({
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      link={[
+        {
+          rel: 'preconnect',
+          href: 'https://images.ctfassets.net',
+        },
+      ]}
       meta={[
         {
           name: 'title',
