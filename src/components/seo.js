@@ -65,6 +65,10 @@ const SEO = ({
           content: 'website',
         },
         {
+          property: 'og:image',
+          content: embedImage ? `https:${embedImage}` : '',
+        },
+        {
           property: 'og:image:secure_url',
           content: embedImage ? `https:${embedImage}` : '',
         },
