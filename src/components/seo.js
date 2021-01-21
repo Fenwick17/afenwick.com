@@ -66,7 +66,7 @@ const SEO = ({
         },
         {
           property: 'og:image',
-          content: `https:${embedImage}` || '',
+          content: embedImage ? `https:${embedImage}` : '',
         },
         {
           property: 'og:image:alt',
@@ -102,7 +102,7 @@ const SEO = ({
         },
         {
           name: 'twitter:image',
-          content: `https:${embedImage}` || '',
+          content: embedImage ? `https:${embedImage}` : '',
         },
         {
           name: 'twitter:image:alt',
