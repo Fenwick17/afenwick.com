@@ -93,5 +93,4 @@ export const pageQuery = graphql`
 
 BlogIndex.propTypes = {
   data: PropTypes.objectOf(PropTypes.object).isRequired,
-  location: PropTypes.objectOf(PropTypes.string).isRequired,
 };

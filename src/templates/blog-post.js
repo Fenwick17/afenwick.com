@@ -18,6 +18,8 @@ const BlogPostTemplate = ({ data, location }) => {
       <SEO
         title={post.title}
         description={post.description.description}
+        embedImage={post.embedImage.fluid.src}
+        blogUrl={location.pathname}
       />
       <article
         className={`blog-post ${styles.blogPost}`}
@@ -86,6 +88,11 @@ export const pageQuery = graphql`
       title
       formatted_date: publishDate(formatString: "DD MMMM YYYY")
       publishDate(formatString: "YYYY-M-DD")
+      embedImage {
+        fluid {
+          src
+        }
+      }
       description {
         description
       }
@@ -119,5 +126,4 @@ export const pageQuery = graphql`
 
 BlogPostTemplate.propTypes = {
   data: PropTypes.objectOf(PropTypes.object).isRequired,
-  location: PropTypes.objectOf(PropTypes.string).isRequired,
 };

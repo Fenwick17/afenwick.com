@@ -8,6 +8,8 @@ const SEO = ({
   lang,
   meta,
   title,
+  embedImage,
+  blogUrl
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -31,6 +33,7 @@ const SEO = ({
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
+  const pageUrl = blogUrl ? site.siteMetadata?.siteUrl + blogUrl : site.siteMetadata?.siteUrl;
 
   return (
     <Helmet
@@ -59,6 +62,14 @@ const SEO = ({
         {
           property: 'og:type',
           content: 'website',
+        },
+        {
+          property: 'og:image',
+          content: `https:${embedImage}`,
+        },
+        {
+          property: 'og:url',
+          content: pageUrl,
         },
         {
           name: 'twitter:card',
