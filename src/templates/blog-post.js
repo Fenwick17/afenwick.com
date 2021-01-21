@@ -18,7 +18,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <SEO
         title={post.title}
         description={post.description.description}
-        embedImage={post.embedImage.fluid.src}
+        embedImage={post.embedImage.file.url}
         embedImageAlt={post.embedImage.description}
         blogUrl={location.pathname}
       />
@@ -91,8 +91,8 @@ export const pageQuery = graphql`
       publishDate(formatString: "YYYY-M-DD")
       embedImage {
         description
-        fluid {
-          src
+        file {
+          url
         }
       }
       description {
