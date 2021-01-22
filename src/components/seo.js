@@ -46,18 +46,19 @@ const SEO = ({
       {isBlogPost ? <meta property="og:type" content="article" /> : null}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
-      {isBlogPost ? <meta name="og:image" content={`https:${embedImage}`} /> : null}
-      {isBlogPost ? <meta name="og:image:secure_url" content={`https:${embedImage}`} /> : null}
-      {isBlogPost ? <meta name="og:image:alt" content={embedImageAlt} /> : null}
+      <meta name="og:image" content={`${site.siteMetadata?.siteUrl}/logo-shareable.png`} />
+      <meta name="og:image:alt" content="Adam Fenwick" />
+      <meta name="og:image:height" content="200" />
+      <meta name="og:image:width" content="200" />
       <meta property="og:url" content={pageUrl} />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content={site.siteMetadata?.social?.twitter} />
       <meta name="twitter:site" content={site.siteMetadata?.social?.twitter} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:domain" content={site.siteMetadata?.siteUrl} />
       <meta name="twitter:description" content={metaDescription} />
-      {isBlogPost ? <meta name="twitter:image" content={`https:${embedImage}`} /> : null}
-      {isBlogPost ? <meta name="twitter:image:alt" content={embedImageAlt} /> : null}
+      <meta name="twitter:image" content={`${site.siteMetadata?.siteUrl}/logo-shareable.png`} />
+      <meta name="twitter:image:alt" content="Adam Fenwick" />
     </Helmet>
   );
 };
