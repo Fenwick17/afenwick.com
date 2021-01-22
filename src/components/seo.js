@@ -10,7 +10,8 @@ const SEO = ({
   title,
   embedImage,
   embedImageAlt,
-  blogUrl
+  blogUrl,
+  isBlogPost
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -33,93 +34,31 @@ const SEO = ({
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
   const pageUrl = blogUrl ? site.siteMetadata?.siteUrl + blogUrl : site.siteMetadata?.siteUrl;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      link={[
-        {
-          rel: 'preconnect',
-          href: 'https://images.ctfassets.net',
-        },
-      ]}
-      meta={[
-        {
-          name: 'title',
-          content: title,
-        },
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          property: 'og:image',
-          content: embedImage ? `https:${embedImage}` : '',
-        },
-        {
-          property: 'og:image:secure_url',
-          content: embedImage ? `https:${embedImage}` : '',
-        },
-        {
-          property: 'og:image:alt',
-          content: embedImageAlt || '',
-        },
-        {
-          property: 'og:url',
-          content: pageUrl,
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata?.social?.twitter || '',
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-        {
-          name: 'twitter:domain',
-          content: site.siteMetadata?.siteUrl,
-        },
-        {
-          name: 'twitter:site',
-          content: site.siteMetadata?.social?.twitter || '',
-        },
-        {
-          name: 'twitter:image',
-          content: embedImage ? `https:${embedImage}` : '',
-        },
-        {
-          name: 'twitter:image:alt',
-          content: embedImageAlt || '',
-        },
-      ].concat(meta)}
-    />
+    <Helmet>
+      <html lang="en" />
+      <title>{title}</title>
+      <link rel="preconnect" href="https://images.ctfassets.net" />
+      <meta name="description" content={metaDescription} />
+      <meta property="og:url" content={pageUrl} />
+      {isBlogPost ? <meta property="og:type" content="article" /> : null}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={metaDescription} />
+      {isBlogPost ? <meta name="og:image" content={`https:${embedImage}`} /> : null}
+      {isBlogPost ? <meta name="og:image:secure_url" content={`https:${embedImage}`} /> : null}
+      {isBlogPost ? <meta name="og:image:alt" content={embedImageAlt} /> : null}
+      <meta property="og:url" content={pageUrl} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={site.siteMetadata?.social?.twitter} />
+      <meta name="twitter:site" content={site.siteMetadata?.social?.twitter} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:domain" content={site.siteMetadata?.siteUrl} />
+      <meta name="twitter:description" content={metaDescription} />
+      {isBlogPost ? <meta name="twitter:image" content={`https:${embedImage}`} /> : null}
+      {isBlogPost ? <meta name="twitter:image:alt" content={embedImageAlt} /> : null}
+    </Helmet>
   );
 };
 

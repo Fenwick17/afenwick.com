@@ -21,6 +21,7 @@ const BlogPostTemplate = ({ data, location }) => {
         embedImage={post.embedImage.file.url}
         embedImageAlt={post.embedImage.description}
         blogUrl={location.pathname}
+        isBlogPost
       />
       <article
         className={`blog-post ${styles.blogPost}`}
