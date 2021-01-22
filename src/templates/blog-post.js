@@ -18,8 +18,6 @@ const BlogPostTemplate = ({ data, location }) => {
       <SEO
         title={post.title}
         description={post.description.description}
-        embedImage={post.embedImage.file.url}
-        embedImageAlt={post.embedImage.description}
         blogUrl={location.pathname}
         isBlogPost
       />

@@ -8,8 +8,6 @@ const SEO = ({
   lang,
   meta,
   title,
-  embedImage,
-  embedImageAlt,
   blogUrl,
   isBlogPost
 }) => {
