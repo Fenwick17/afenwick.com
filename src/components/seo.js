@@ -38,7 +38,7 @@ const SEO = ({
 
   return (
     <Helmet>
-      <html lang="en" />
+      <html lang={lang} />
       <title>{title}</title>
       <link rel="preconnect" href="https://images.ctfassets.net" />
       <meta name="description" content={metaDescription} />
@@ -64,8 +64,6 @@ const SEO = ({
 
 SEO.defaultProps = {
   lang: 'en',
-  meta: [],
-  description: '',
 };
 
 SEO.propTypes = {
