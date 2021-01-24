@@ -37,7 +37,7 @@ const SEO = ({
   return (
     <Helmet>
       <html lang={lang} />
-      <title>{title}</title>
+      <title>{title} — {site.siteMetadata?.author.name}</title>
       <link rel="preconnect" href="https://images.ctfassets.net" />
       <meta name="description" content={metaDescription} />
       <meta property="og:url" content={pageUrl} />
@@ -45,7 +45,7 @@ const SEO = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta name="og:image" content={`${site.siteMetadata?.siteUrl}/logo-shareable.png`} />
-      <meta name="og:image:alt" content="Adam Fenwick" />
+      <meta name="og:image:alt" content={site.siteMetadata?.author.name} />
       <meta name="og:image:height" content="200" />
       <meta name="og:image:width" content="200" />
       <meta property="og:url" content={pageUrl} />
@@ -56,7 +56,7 @@ const SEO = ({
       <meta name="twitter:domain" content={site.siteMetadata?.siteUrl} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={`${site.siteMetadata?.siteUrl}/logo-shareable.png`} />
-      <meta name="twitter:image:alt" content="Adam Fenwick" />
+      <meta name="twitter:image:alt" content={site.siteMetadata?.author.name} />
     </Helmet>
   );
 };
