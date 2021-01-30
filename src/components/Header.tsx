@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 type HeaderProps = {
   isRootPath: boolean
-}
+};
 
 const Header: React.FC<HeaderProps> = ({ isRootPath }) => {
   const { siteLogo } = useSiteMetadata();
@@ -34,6 +33,6 @@ const Header: React.FC<HeaderProps> = ({ isRootPath }) => {
       {header}
     </>
   );
-}
+};
 
 export default Header;

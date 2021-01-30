@@ -1,13 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 const ContactPage = ({ location }) => {
-  const { social: { twitterURL, email}, title } = useSiteMetadata();
+  const { social: { twitterURL, email }, title } = useSiteMetadata();
   return (
     <Layout location={location}>
       <SEO title="Contact" description={`Contact ${title}`} />
@@ -20,7 +18,3 @@ const ContactPage = ({ location }) => {
 };
 
 export default ContactPage;
-
-ContactPage.propTypes = {
-  location: PropTypes.objectOf(PropTypes.string).isRequired,
-};

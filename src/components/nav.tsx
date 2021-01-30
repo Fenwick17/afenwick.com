@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import styles from './nav.module.css';
 
-const Nav = () => (
+const Nav: React.FC = () => (
   <nav className={styles.mainNav} aria-label="Primary navigation">
     <ul>
       <li><Link to="/" activeClassName="active-page">Home</Link></li>

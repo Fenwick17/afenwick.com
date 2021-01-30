@@ -1,18 +1,22 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 
 interface SEOProps {
   description?: string;
-  lang?: string; 
-  meta?: string;
+  lang?: string;
   title: string
   blogUrl?: string
   isBlogPost?: boolean
 }
 
-const SEO: React.FC<SEOProps> = ({ description, lang, meta, title, blogUrl, isBlogPost }) => {
+const SEO: React.FC<SEOProps> = ({
+  description,
+  lang,
+  title,
+  blogUrl,
+  isBlogPost,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -34,7 +38,9 @@ const SEO: React.FC<SEOProps> = ({ description, lang, meta, title, blogUrl, isBl
   );
 
   const metaDescription: string = description || site.siteMetadata.description;
-  const pageUrl: string = blogUrl ? site.siteMetadata?.siteUrl + blogUrl : site.siteMetadata?.siteUrl;
+  const pageUrl: string = blogUrl
+    ? site.siteMetadata?.siteUrl + blogUrl
+    : site.siteMetadata?.siteUrl;
 
   return (
     <Helmet>
@@ -61,17 +67,6 @@ const SEO: React.FC<SEOProps> = ({ description, lang, meta, title, blogUrl, isBl
       <meta name="twitter:image:alt" content={site.siteMetadata?.author.name} />
     </Helmet>
   );
-};
-
-SEO.defaultProps = {
-  lang: 'en',
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 };
 
 export default SEO;

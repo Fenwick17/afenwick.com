@@ -1,9 +1,9 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
-const Bio = () => {
-  const { author: { name, summary }} = useSiteMetadata();
+const Bio: React.FC = () => {
+  const { author: { name, summary } } = useSiteMetadata();
   return (
     <div className="bio">
       {name && (

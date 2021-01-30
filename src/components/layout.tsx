@@ -1,15 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import Nav from './nav';
 import Header from './Header';
 import Footer from './Footer';
 import SkipLink from '../js/utilities';
 
-const Layout = ({ location, children }) => {
+const Layout: React.FC = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
-  const isRootPath = location.pathname === rootPath;
+  const isRootPath: boolean = location.pathname === rootPath;
 
   return (
     <>
@@ -17,7 +15,7 @@ const Layout = ({ location, children }) => {
       <div className="container">
         <header className="global-header">
           <div className="navigation">
-            <Header isRootPath={isRootPath} /> 
+            <Header isRootPath={isRootPath} />
             <Nav />
           </div>
         </header>
@@ -33,8 +31,3 @@ const Layout = ({ location, children }) => {
 };
 
 export default Layout;
-
-Layout.propTypes = {
-  location: PropTypes.objectOf(PropTypes.string).isRequired,
-  children: PropTypes.node.isRequired,
-};

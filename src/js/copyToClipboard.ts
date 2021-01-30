@@ -1,5 +1,5 @@
-export const copyToClipboard = () => {
-  const codeBlocks: HTMLCollectionOf<HTMLPreElement> = document.getElementById('blog-body')?.getElementsByTagName('pre');
+export const copyToClipboard = (): void => {
+  const codeBlocks: HTMLCollectionOf<HTMLPreElement> | undefined = document.getElementById('blog-body')?.getElementsByTagName('pre');
   if (codeBlocks) {
     Array.from(codeBlocks).forEach((ele: HTMLPreElement) => {
       const codeBlock = ele.querySelector('code');

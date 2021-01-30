@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -9,9 +8,9 @@ import styles from './blog-post.module.css';
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.contentfulBlogPost;
   const { previous, next } = data;
-  const showNav: object = previous || next;
-  const previousBlogUrl: string = `/blog/${previous?.postYear}/${previous?.slug}`;
-  const nextBlogUrl: string = `/blog/${next?.postYear}/${next?.slug}`;
+  const showNav = previous || next;
+  const previousBlogUrl = `/blog/${previous?.postYear}/${previous?.slug}`;
+  const nextBlogUrl = `/blog/${next?.postYear}/${next?.slug}`;
   return (
     <Layout location={location}>
       <SEO
@@ -114,7 +113,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-BlogPostTemplate.propTypes = {
-  data: PropTypes.objectOf(PropTypes.object).isRequired,
-};

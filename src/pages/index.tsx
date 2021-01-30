@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -9,9 +8,19 @@ import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 import styles from './index.module.css';
 
+interface BlogInfo {
+  id: string,
+  postYear: string,
+  publishDate: string,
+  slug: string,
+  title: string,
+}
+
+type BlogKeys = 'id' | 'postYear' | 'publishDate' | 'slug' | 'title';
+
 const BlogIndex = ({ data, location }) => {
   const { description }: { description: string } = useSiteMetadata();
-  const posts: object = data.allContentfulBlogPost.nodes;
+  const posts = data.allContentfulBlogPost.nodes;
   return (
     <Layout location={location}>
       <SEO title={description} />
@@ -25,10 +34,10 @@ const BlogIndex = ({ data, location }) => {
         >
           Latest Posts
         </h1>
-        {posts.map((post) => {
-          const { title }: { title: string } = post;
-          const titleId: string = title.replace(/\s/g, '-').toLowerCase();
-          const postUrl:string = `/blog/${post.postYear}/${post.slug}/`;
+        {posts.map((post: Record<string, string>) => {
+          const { title } = post;
+          const titleId = title.replace(/\s/g, '-').toLowerCase();
+          const postUrl = `/blog/${post.postYear}/${post.slug}/`;
           return (
             <article
               className={styles.blogPostItem}
@@ -77,7 +86,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-BlogIndex.propTypes = {
-  data: PropTypes.objectOf(PropTypes.object).isRequired,
-};
