@@ -7,7 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SkipLink from '../js/utilities';
 
-const Layout = ({ location, children, siteLogo }) => {
+const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 const Footer = () => {
-  const { social: { twitterURL }, social: { githubURL }} = useSiteMetadata();
+  const { social: { twitterURL, githubURL }} = useSiteMetadata();
   return (
     <footer>
       <h2 className="u-no-margin-top">Socials:</h2>

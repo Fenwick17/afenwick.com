@@ -3,17 +3,17 @@ import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo.tsx';
-import Bio from '../components/bio.tsx';
+import SEO from '../components/seo';
+import Bio from '../components/bio';
+import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 import styles from './index.module.css';
 
 const BlogIndex = ({ data, location }) => {
-  const { siteLogo, social, description } = data.site.siteMetadata;
-  const posts = data.allContentfulBlogPost.nodes;
-
+  const { description }: { description: string } = useSiteMetadata();
+  const posts: object = data.allContentfulBlogPost.nodes;
   return (
-    <Layout location={location} siteLogo={siteLogo} social={social}>
+    <Layout location={location}>
       <SEO title={description} />
       <Bio />
       <div className={styles.blogPosts}>
@@ -26,9 +26,9 @@ const BlogIndex = ({ data, location }) => {
           Latest Posts
         </h1>
         {posts.map((post) => {
-          const { title } = post;
-          const titleId = title.replace(/\s/g, '-').toLowerCase();
-          const postUrl = `/blog/${post.postYear}/${post.slug}/`;
+          const { title }: { title: string } = post;
+          const titleId: string = title.replace(/\s/g, '-').toLowerCase();
+          const postUrl:string = `/blog/${post.postYear}/${post.slug}/`;
           return (
             <article
               className={styles.blogPostItem}
@@ -62,19 +62,6 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title,
-        siteLogo,
-        description
-        social {
-          twitter,
-          twitterURL,
-          github,
-          githubURL
-        }
-      }
-    }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       nodes {
         id

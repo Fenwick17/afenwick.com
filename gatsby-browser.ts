@@ -5,7 +5,7 @@ import "./src/normalize.css"
 // Highlighting for code blocks
 import "./src/style.css"
 
-import copyToClipboard from "./src/js/copyToClipboard";
+import { copyToClipboard } from './src/js/copyToClipboard';
 
 export const onRouteUpdate = ({ location }) => {
   if(location.pathname.includes("blog")) {

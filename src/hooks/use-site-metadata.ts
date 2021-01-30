@@ -12,6 +12,7 @@ export const useSiteMetadata = () => {
               name,
               summary
             }
+            description
             siteUrl
             social {
               twitter,

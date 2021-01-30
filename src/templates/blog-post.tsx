@@ -8,13 +8,12 @@ import styles from './blog-post.module.css';
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.contentfulBlogPost;
-  const { siteLogo, social } = data.site.siteMetadata;
   const { previous, next } = data;
-  const showNav = previous || next;
-  const previousBlogUrl = `/blog/${previous?.postYear}/${previous?.slug}`;
-  const nextBlogUrl = `/blog/${next?.postYear}/${next?.slug}`;
+  const showNav: object = previous || next;
+  const previousBlogUrl: string = `/blog/${previous?.postYear}/${previous?.slug}`;
+  const nextBlogUrl: string = `/blog/${next?.postYear}/${next?.slug}`;
   return (
-    <Layout location={location} siteLogo={siteLogo} social={social}>
+    <Layout location={location}>
       <SEO
         title={post.title}
         description={post.description.description}
@@ -75,15 +74,6 @@ export const pageQuery = graphql`
       $nextPostId: String
       $slug: String!
     ) {
-    site {
-      siteMetadata {
-        siteLogo 
-        social {
-          twitter,
-          github
-        }
-      }
-    }
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       formatted_date: publishDate(formatString: "DD MMMM YYYY")

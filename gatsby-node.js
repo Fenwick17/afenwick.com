@@ -1,9 +1,8 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require('path');
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const { createPage } = actions;
+  const blogPost = path.resolve('./src/templates/blog-post.tsx');
   const result = await graphql(
     `
       {
@@ -23,24 +22,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
   if (result.errors) {
     reporter.panicOnBuild(
       `There was an error loading your blog posts`,
-      result.errors
+      result.errors,
     )
-    return
+    return;
   }
 
-  const posts = result.data.allContentfulBlogPost.edges
+  const posts = result.data.allContentfulBlogPost.edges;
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      const previousPostId = post.previous?.id 
-      const nextPostId = post.next?.id 
-      const postYear = new Date(post.node.publishDate).getFullYear()
+      const previousPostId = post.previous?.id;
+      const nextPostId = post.next?.id;
+      const postYear = new Date(post.node.publishDate).getFullYear();
 
       createPage({
         path: `/blog/${postYear}/${post.node.slug}/`,
@@ -49,15 +48,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id: post.id,
           previousPostId,
           nextPostId,
-          slug: post.node.slug
+          slug: post.node.slug,
         },
-      })
-    })
+      });
+    });
   }
-}
+};
 
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
+  const { createTypes } = actions;
 
   // Explicitly define the siteMetadata {} object
   // This way those will always be defined even if removed from gatsby-config.js
@@ -97,5 +96,5 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Fields {
       slug: String
     }
-  `)
-}
+  `);
+};
