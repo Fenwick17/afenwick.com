@@ -3,14 +3,16 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-const SEO = ({
-  description,
-  lang,
-  meta,
-  title,
-  blogUrl,
-  isBlogPost
-}) => {
+interface SEOProps {
+  description?: string;
+  lang?: string; 
+  meta?: string;
+  title: string
+  blogUrl?: string
+  isBlogPost?: boolean
+}
+
+const SEO: React.FC<SEOProps> = ({ description, lang, meta, title, blogUrl, isBlogPost }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -31,8 +33,8 @@ const SEO = ({
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-  const pageUrl = blogUrl ? site.siteMetadata?.siteUrl + blogUrl : site.siteMetadata?.siteUrl;
+  const metaDescription: string = description || site.siteMetadata.description;
+  const pageUrl: string = blogUrl ? site.siteMetadata?.siteUrl + blogUrl : site.siteMetadata?.siteUrl;
 
   return (
     <Helmet>

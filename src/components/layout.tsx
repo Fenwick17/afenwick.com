@@ -3,35 +3,13 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Nav from './nav';
+import Header from './Header';
+import Footer from './Footer';
 import SkipLink from '../js/utilities';
 
-const Layout = ({
-  location,
-  children,
-  siteLogo,
-  social,
-}) => {
+const Layout = ({ location, children, siteLogo }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
-  let header;
-
-  if (isRootPath) {
-    header = (
-      <div>
-        <span className="header-logo">
-          {siteLogo}
-        </span>
-      </div>
-    );
-  } else {
-    header = (
-      <div>
-        <Link className="header-link-home header-logo" to="/" aria-label="Adam Fenwick homepage">
-          {siteLogo}
-        </Link>
-      </div>
-    );
-  }
 
   return (
     <>
@@ -39,7 +17,7 @@ const Layout = ({
       <div className="container">
         <header className="global-header">
           <div className="navigation">
-            {header}
+            <Header isRootPath={isRootPath} /> 
             <Nav />
           </div>
         </header>
@@ -48,13 +26,7 @@ const Layout = ({
             {children}
           </main>
         </div>
-        <footer>
-          <h2 className="u-no-margin-top">Socials:</h2>
-          <ul>
-            <li><a href={social.twitterURL}>Twitter</a></li>
-            <li className="u-no-margin-bottom"><a href={social.githubURL}>Github</a></li>
-          </ul>
-        </footer>
+        <Footer />
       </div>
     </>
   );
@@ -64,7 +36,5 @@ export default Layout;
 
 Layout.propTypes = {
   location: PropTypes.objectOf(PropTypes.string).isRequired,
-  siteLogo: PropTypes.string.isRequired,
-  social: PropTypes.objectOf(PropTypes.string).isRequired,
   children: PropTypes.node.isRequired,
 };

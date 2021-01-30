@@ -3,8 +3,8 @@ import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
-import Bio from '../components/bio';
+import SEO from '../components/seo.tsx';
+import Bio from '../components/bio.tsx';
 
 import styles from './index.module.css';
 
