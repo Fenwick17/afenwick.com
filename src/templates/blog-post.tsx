@@ -1,18 +1,46 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, PageProps } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import styles from './blog-post.module.css';
 
-const BlogPostTemplate = ({ data, location }) => {
+interface BlogPostProps extends PageProps {
+  data: {
+    contentfulBlogPost: {
+      title: string,
+      formatted_date: string,
+      publishDate: string,
+      description: {
+        description: string,
+      }
+      body: {
+        childMarkdownRemark: {
+          html: string,
+        }
+      }
+    }
+    previous: {
+      postYear: string,
+      slug: string,
+      title: string,
+    }
+    next: {
+      postYear: string,
+      slug: string,
+      title: string,
+    }
+  }
+}
+
+const BlogPostTemplate: React.FC<BlogPostProps> = ({ location, data }) => {
   const post = data.contentfulBlogPost;
   const { previous, next } = data;
   const showNav = previous || next;
   const previousBlogUrl = `/blog/${previous?.postYear}/${previous?.slug}`;
   const nextBlogUrl = `/blog/${next?.postYear}/${next?.slug}`;
   return (
-    <Layout location={location}>
+    <Layout locationPath={location.pathname}>
       <SEO
         title={post.title}
         description={post.description.description}
@@ -77,12 +105,6 @@ export const pageQuery = graphql`
       title
       formatted_date: publishDate(formatString: "DD MMMM YYYY")
       publishDate(formatString: "YYYY-M-DD")
-      embedImage {
-        description
-        file {
-          url
-        }
-      }
       description {
         description
       }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, PageProps } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -8,21 +8,29 @@ import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 import styles from './index.module.css';
 
-interface BlogInfo {
-  id: string,
-  postYear: string,
-  publishDate: string,
-  slug: string,
-  title: string,
+interface IndexProps extends PageProps {
+  data: {
+    allContentfulBlogPost: {
+      nodes: {
+        id: string,
+        title: string,
+        slug: string,
+        formatted_date: string,
+        postYear: string,
+        publishDate: string,
+        description: {
+          description: string,
+        }
+      }
+    }
+  }
 }
 
-type BlogKeys = 'id' | 'postYear' | 'publishDate' | 'slug' | 'title';
-
-const BlogIndex = ({ data, location }) => {
+const BlogIndex: React.FC<IndexProps> = ({ data, location }) => {
   const { description }: { description: string } = useSiteMetadata();
   const posts = data.allContentfulBlogPost.nodes;
   return (
-    <Layout location={location}>
+    <Layout locationPath={location.pathname}>
       <SEO title={description} />
       <Bio />
       <div className={styles.blogPosts}>
@@ -34,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
         >
           Latest Posts
         </h1>
-        {posts.map((post: Record<string, string>) => {
+        {posts.map((post) => {
           const { title } = post;
           const titleId = title.replace(/\s/g, '-').toLowerCase();
           const postUrl = `/blog/${post.postYear}/${post.slug}/`;

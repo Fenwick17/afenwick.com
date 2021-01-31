@@ -5,9 +5,13 @@ import Header from './Header';
 import Footer from './Footer';
 import SkipLink from '../js/utilities';
 
-const Layout: React.FC = ({ location, children }) => {
+type LayoutProps = {
+  locationPath: string
+};
+
+const Layout: React.FC<LayoutProps> = ({ locationPath, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
-  const isRootPath: boolean = location.pathname === rootPath;
+  const isRootPath: boolean = locationPath === rootPath;
 
   return (
     <>

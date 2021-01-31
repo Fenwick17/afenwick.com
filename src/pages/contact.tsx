@@ -1,13 +1,14 @@
 import React from 'react';
+import { PageProps } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
-const ContactPage = ({ location }) => {
+const ContactPage: React.FC<PageProps> = ({ location }) => {
   const { social: { twitterURL, email }, title } = useSiteMetadata();
   return (
-    <Layout location={location}>
+    <Layout locationPath={location.pathname}>
       <SEO title="Contact" description={`Contact ${title}`} />
       <h1 className="u-no-margin-top">Contact me</h1>
       <p>
