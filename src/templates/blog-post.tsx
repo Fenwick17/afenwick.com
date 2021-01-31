@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import styles from './blog-post.module.css';
 
-interface BlogPostProps extends PageProps {
+export interface BlogPost extends PageProps {
   data: {
     contentfulBlogPost: {
       title: string,
@@ -33,7 +33,7 @@ interface BlogPostProps extends PageProps {
   }
 }
 
-const BlogPostTemplate: React.FC<BlogPostProps> = ({ location, data }) => {
+const BlogPostTemplate: React.FC<BlogPost> = ({ location, data }) => {
   const post = data.contentfulBlogPost;
   const { previous, next } = data;
   const showNav = previous || next;

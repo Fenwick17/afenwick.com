@@ -11,19 +11,21 @@ import styles from './index.module.css';
 interface IndexProps extends PageProps {
   data: {
     allContentfulBlogPost: {
-      nodes: {
-        id: string,
-        title: string,
-        slug: string,
-        formatted_date: string,
-        postYear: string,
-        publishDate: string,
-        description: {
-          description: string,
-        }
-      }
+      nodes: Post[],
     }
   }
+}
+
+interface Post {
+  id: string,
+  title: string,
+  slug: string,
+  formatted_date: string,
+  postYear: string,
+  publishDate: string,
+  description: {
+    description: string,
+  },
 }
 
 const BlogIndex: React.FC<IndexProps> = ({ data, location }) => {
