@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
-const Bio: React.FC = () => {
+const Bio = ():JSX.Element => {
   const { author: { name, summary } } = useSiteMetadata();
   return (
     <div className="bio">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
-const Footer: React.FC = () => {
+const Footer = ():JSX.Element => {
   const { social: { twitterURL, githubURL } } = useSiteMetadata();
   return (
     <footer>

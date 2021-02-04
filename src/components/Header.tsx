@@ -7,7 +7,7 @@ type HeaderProps = {
   isRootPath: boolean
 };
 
-const Header: React.FC<HeaderProps> = ({ isRootPath }) => {
+const Header = ({ isRootPath }: HeaderProps): JSX.Element => {
   const { siteLogo } = useSiteMetadata();
   let header;
   if (isRootPath) {

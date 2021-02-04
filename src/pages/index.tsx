@@ -28,7 +28,7 @@ interface Post {
   },
 }
 
-const BlogIndex: React.FC<IndexProps> = ({ data, location }) => {
+const BlogIndex = ({ data, location }: IndexProps): JSX.Element => {
   const { description }: { description: string } = useSiteMetadata();
   const posts = data.allContentfulBlogPost.nodes;
   return (

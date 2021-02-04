@@ -1,18 +1,18 @@
 import React from 'react';
+import { PageProps } from 'gatsby';
 
 import Nav from './nav';
 import Header from './Header';
 import Footer from './Footer';
 import SkipLink from '../js/utilities';
 
-type LayoutProps = {
+interface LayoutProps extends PageProps {
   locationPath: string
-};
+}
 
-const Layout: React.FC<LayoutProps> = ({ locationPath, children }) => {
+const Layout = ({ locationPath, children }: LayoutProps): JSX.Element => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath: boolean = locationPath === rootPath;
-
   return (
     <>
       <a id="skip-link" href="#main-content" className="skip-link" onClick={SkipLink}>Skip to main content</a>

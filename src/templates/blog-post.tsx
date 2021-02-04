@@ -33,7 +33,7 @@ export interface BlogPost extends PageProps {
   }
 }
 
-const BlogPostTemplate: React.FC<BlogPost> = ({ location, data }) => {
+const BlogPostTemplate = ({ location, data }: BlogPost): JSX.Element => {
   const post = data.contentfulBlogPost;
   const { previous, next } = data;
   const showNav = previous || next;

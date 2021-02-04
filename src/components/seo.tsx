@@ -1,22 +1,20 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, PageProps } from 'gatsby';
 
-interface SEOProps {
-  description?: string;
-  lang?: string;
-  title: string
-  blogUrl?: string
-  isBlogPost?: boolean
+interface SEOProps extends PageProps {
+  description: string;
+  title: string;
+  blogUrl?: string;
+  isBlogPost?: boolean;
 }
 
-const SEO: React.FC<SEOProps> = ({
+const SEO = ({
   description,
-  lang,
   title,
   blogUrl,
   isBlogPost,
-}) => {
+}: SEOProps): JSX.Element => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -44,7 +42,7 @@ const SEO: React.FC<SEOProps> = ({
 
   return (
     <Helmet>
-      <html lang={lang} />
+      <html lang="en" />
       <title>{title} — {site.siteMetadata?.author.name}</title>
       <link rel="preconnect" href="https://images.ctfassets.net" />
       <meta name="description" content={metaDescription} />
