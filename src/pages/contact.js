@@ -12,7 +12,7 @@ const ContactPage = ({ data, location }) => {
       <SEO title="Contact" description={`Contact ${title}`} />
       <h1 className="u-no-margin-top">Contact me</h1>
       <p>
-        You can <a href={`mailto:${social.email}`}>email me</a> or <a href={social.twitterURL}>contact me on Twitter</a>, my DMs are always open.
+        You can <a href={`mailto:${social.email}`}>email me</a> at {social.email} or <a href={social.twitterURL}>contact me on Twitter</a>, my DMs are always open.
       </p>
     </Layout>
   );
