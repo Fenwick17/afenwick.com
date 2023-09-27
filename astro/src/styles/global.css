@@ -1,1 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .link {
+    @apply underline focus:bg-yellow-400 focus:text-black hover:no-underline;
+  }
+}

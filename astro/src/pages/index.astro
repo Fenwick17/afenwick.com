@@ -18,10 +18,10 @@ const blogs: BlogPost[] = await getBlogs();
 <Layout title="Welcome to Astro.">
   <main>
     <div class="bg-white border-solid rounded-md border-black p-5">
-      <h1 class="text-5xl">Latest posts</h1>
+      <h1 class="text-5xl mb-10">Latest posts</h1>
       {
         blogs.map((blog) => (
-          <article class="">
+          <article class="border-b-2 border-gray-400 pb-5 mb-5">
             <h2>
               <a href={`/blogs/${blog.slug.current}`}>{blog.title}</a>
             </h2>

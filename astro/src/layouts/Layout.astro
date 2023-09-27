@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import '../styles/global.css'
 interface Props {
   title: string;
 }
@@ -18,9 +20,8 @@ const { title } = Astro.props as Props;
   </head>
   <body class="bg-indigo-950">
     <div class="container">
-      <div class="columns-1">
-        <slot />
-      </div>
+      <Header />
+      <slot />
     </div>
   </body>
 </html>
