@@ -1,0 +1,40 @@
+---
+import { InferGetStaticParamsType } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import { getBlogs, getBlogPost } from '../../../sanity/api';
+
+interface BlogPost {
+  title: string;
+  slug: {
+    current: string;
+  };
+  body: string;
+}
+
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+
+export async function getStaticPaths() {
+  const allPosts: BlogPost[] = await getBlogs();
+  const uniqueSlugs = [
+    ...new Set(allPosts.map((post) => post.slug.current).flat()),
+  ];
+
+  return uniqueSlugs.map((slug) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.slug.current.includes(slug)
+    );
+    return {
+      params: { slug },
+    };
+  });
+}
+
+const { slug } = Astro.params as Params;
+const blogPost = await getBlogPost(slug);
+---
+
+<Layout title={blogPost.title}>
+  <main>
+    <h1>{blogPost.title}</h1>
+  </main>
+</Layout>
