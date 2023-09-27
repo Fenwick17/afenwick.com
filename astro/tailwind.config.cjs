@@ -11,6 +11,9 @@ module.exports = {
         xl: '15rem',
       },
     },
+    fontFamily: {
+      poppins: ['Lato', 'sans-serif'],
+    },
     extend: {},
   },
   plugins: [],

@@ -1,0 +1,16 @@
+---
+import { Prism } from '@astrojs/prism';
+
+interface Props {
+  node: {
+    code: string;
+    language: string;
+  };
+}
+
+const {
+  node: { code, language },
+} = Astro.props;
+---
+
+<Prism lang={language} code={code} />
