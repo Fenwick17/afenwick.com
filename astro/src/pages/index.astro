@@ -22,8 +22,8 @@ const blogs: BlogPost[] = await getBlogs();
       {
         blogs.map((blog) => (
           <article class="border-b-2 border-gray-400 pb-5 mb-5">
-            <h2>
-              <a href={`/blogs/${blog.slug.current}`}>{blog.title}</a>
+            <h2 class="text-4xl">
+              <a class="link text-blue-800" href={`/blogs/${blog.slug.current}`}>{blog.title}</a>
             </h2>
             <time datetime={blog.publishedAt}>{blog.publishedAt}</time>
           </article>

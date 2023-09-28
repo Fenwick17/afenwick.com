@@ -1,9 +1,18 @@
+@import './codeStyling.css';
+
+:root {
+  --color-language-green: #00703c;
+  --color-language-red: #d13118;
+  --color-language-blue: #0d47a1;
+  --color-language-dark-blue: #002171;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .link {
+@layer base {
+  a {
     @apply underline focus:bg-yellow-400 focus:text-black hover:no-underline;
   }
 }

@@ -1,0 +1,95 @@
+/* Code styling */
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #000;
+  background: none;
+  text-shadow: 0 1px #fff;
+  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media print {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  margin: 0.5em 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #f5f2f0;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  border-radius: 0.3em;
+  padding: 0.1em;
+  white-space: normal;
+}
+
+.language-html .token.tag {
+  color: var(--color-language-dark-blue);
+}
+
+.language-html .token.attr-name {
+  color: var(--color-language-green);
+}
+
+.language-html .token.attr-value {
+  color: var(--color-language-red);
+}
+
+.language-css .token.selector {
+  color: var(--color-language-green);
+}
+
+.language-css .token.property {
+  color: var(--color-language-red);
+}
+
+.language-css .token.rule {
+  color: var(--color-language-dark-blue);
+}
+
+.language-css .token.atrule {
+  color: var(--color-language-green);
+}
+
+.language-css .toke.function {
+  color: var(--color-languag-blue);
+}
