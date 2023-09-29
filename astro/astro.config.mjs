@@ -6,7 +6,9 @@ import sanity from 'astro-sanity';
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     sanity({
       projectId: process.env.SANITY_PROJECT_ID,
       dataset: 'production',

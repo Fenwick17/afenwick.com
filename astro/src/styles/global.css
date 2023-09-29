@@ -12,6 +12,10 @@
 @tailwind utilities;
 
 @layer base {
+  h1 {
+    @apply text-5xl mb-10 font-semibold;
+  }
+
   a {
     @apply underline focus:bg-yellow-400 focus:text-black hover:no-underline;
   }
