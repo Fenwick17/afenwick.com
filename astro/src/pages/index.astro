@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import { formatDate } from '../../utils/formatDate';
 import { getBlogs } from '../../sanity/api';
 
 interface BlogPost {
@@ -15,7 +16,7 @@ interface BlogPost {
 const blogs: BlogPost[] = await getBlogs();
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Articles on web accessibility and frontend development. — Adam Fenwick">
   <main>
     <div class="bg-white border-solid rounded-md border-black p-5">
       <h1 class="text-5xl mb-10">Latest posts</h1>
@@ -25,7 +26,7 @@ const blogs: BlogPost[] = await getBlogs();
             <h2 class="text-4xl">
               <a class="link text-blue-800" href={`/blogs/${blog.slug.current}`}>{blog.title}</a>
             </h2>
-            <time datetime={blog.publishedAt}>{blog.publishedAt}</time>
+            <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
           </article>
         ))
       }

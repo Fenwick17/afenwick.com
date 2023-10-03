@@ -8,4 +8,13 @@ interface BlogPost {
   body: PortableTextBlock;
 }
 
-export type { BlogPost };
+interface Image {
+  _type: string;
+  alt: string;
+  asset: {
+    _ref: string;
+    _type: string;
+  };
+}
+
+export type { BlogPost, Image };

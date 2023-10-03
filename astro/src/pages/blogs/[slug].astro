@@ -2,13 +2,15 @@
 import { PortableText } from 'astro-portabletext';
 
 import Layout from '../../layouts/Layout.astro';
-import { getBlogs, getBlogPost } from '../../../sanity/api';
+import { getBlogs } from '../../../sanity/api';
 import Code from '../../components/PortableText/Code.astro';
+import Image from '../../components/PortableText/Image.astro'
 import type { BlogPost } from '@types';
 
 const components = {
   type: {
     code: Code,
+    image: Image
   },
 };
 
@@ -21,14 +23,16 @@ export async function getStaticPaths() {
 }
 
 const {
-  blog: { title, body },
+  blog: { title, body, teaser, publishedAt },
 } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={`${title} — Adam Fenwick`}>
   <main>
     <div class="bg-white border-solid rounded-md border-black p-5">
-      <h1>{title}</h1>
+      <h1 class="mb-0">{title}</h1>
+      <p class="mb-5">{publishedAt}</p>
+      <p class="mb-5">{teaser}</p>
       <PortableText value={body} components={components} />
     </div>
   </main>

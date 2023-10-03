@@ -62,6 +62,10 @@ code[class*='language-'] ::selection {
   white-space: normal;
 }
 
+code {
+  color: var(--color-language-dark-blue);
+}
+
 .language-html .token.tag {
   color: var(--color-language-dark-blue);
 }

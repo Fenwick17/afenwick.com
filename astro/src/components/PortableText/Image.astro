@@ -1,0 +1,21 @@
+---
+import urlFor from '../../../utils/urlFor';
+import type { Image } from '@types';
+
+interface Props {
+  node: {
+    image: Image;
+  };
+}
+
+const { node } = Astro.props;
+---
+
+<img src={urlFor(node).url()} alt={node.alt} />
+
+<style>
+  img {
+    margin: auto;
+    padding: 1em;
+  }
+</style>
