@@ -3,19 +3,22 @@ import Header from '../components/Header.astro';
 import '../styles/global.css'
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props as Props;
+const { title, description } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
+    <meta name="og:description" content={description} />
+    <meta name="og:title" content={title} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href="http://example.com/" />
     <title>{title}</title>
   </head>
   <body class="bg-indigo-950">

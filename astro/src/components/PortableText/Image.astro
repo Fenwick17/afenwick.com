@@ -11,7 +11,11 @@ interface Props {
 const { node } = Astro.props;
 ---
 
-<img src={urlFor(node).url()} alt={node.alt} />
+<img
+  src={urlFor(node).url()} 
+  alt={node.alt}
+  loading="lazy"
+/>
 
 <style>
   img {
