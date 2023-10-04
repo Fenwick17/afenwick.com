@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sanity from 'astro-sanity';
 
-import netlify from "@astrojs/netlify/functions";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,5 +15,5 @@ export default defineConfig({
     useCdn: true
   })],
   output: "server",
-  adapter: netlify()
+  adapter: vercel()
 });
