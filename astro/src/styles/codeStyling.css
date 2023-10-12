@@ -1,23 +1,26 @@
 /* Code styling */
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #000;
+  -moz-tab-size: 4;
+  -ms-hyphens: none;
+  -o-tab-size: 4;
+  -webkit-hyphens: none;
   background: none;
-  text-shadow: 0 1px #fff;
+  color: #000;
   font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   font-size: 1em;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
+  line-height: 1.5;
+  tab-size: 4;
+  text-align: left;
+  text-shadow: 0 1px #fff;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: pre-wrap;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: break-word;
 }
 
 @media print {

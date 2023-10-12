@@ -17,11 +17,11 @@ html {
 
 @layer base {
   h1 {
-    @apply text-5xl mb-10 font-semibold;
+    @apply text-3xl mb-10 font-semibold;
   }
 
   h2 {
-    @apply text-3xl mb-5 font-semibold;
+    @apply text-2xl mb-5 font-semibold;
   }
 
   h3 {
@@ -37,4 +37,17 @@ html {
     outline: 3px solid transparent;
     text-decoration: none;
   }
+}
+
+.header-link {
+  text-decoration: none;
+}
+
+.skip-link {
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
 }

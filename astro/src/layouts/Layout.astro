@@ -21,7 +21,8 @@ const { title, description } = Astro.props as Props;
     <link rel="canonical" href="http://example.com/" />
     <title>{title}</title>
   </head>
-  <body class="bg-indigo-950">
+  <body class="font-inter text-base antialiased font-feature-default bg-indigo-950">
+    <a id="skip-link" href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container">
       <Header />
       <slot />

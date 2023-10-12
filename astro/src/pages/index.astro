@@ -10,6 +10,12 @@ interface BlogPost {
     current: string;
   };
   body: string;
+  categories: [
+    {
+      key: string;
+      title: string;
+    }
+  ]
   publishedAt: string;
 }
 
@@ -20,16 +26,23 @@ const blogs: BlogPost[] = await getBlogs();
   title="Articles on web accessibility and frontend development. — Adam Fenwick"
   description="Articles on web accessibility and frontend development."
 >
-  <main>
+  <main id="main-content">
     <div class="bg-white border-solid rounded-md border-black p-5">
-      <h1 class="text-5xl mb-10">Latest posts</h1>
+      <h1 class="text-4xl mb-5">Blog</h1>
       {
         blogs.map((blog) => (
           <article class="border-b-2 border-gray-400 pb-5 mb-5">
-            <h2 class="text-4xl">
+            <h2 class="md:text-3xl mb-2">
               <a class="link text-blue-800" href={`/blogs/${blog.slug.current}`}>{blog.title}</a>
             </h2>
             <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
+            {blog.categories &&
+              <span> -
+                {Object.keys(blog.categories).map((key) => (
+                  <span>{blog.categories[key].title}</span>
+                ))}
+              </span>
+            }
           </article>
         ))
       }
