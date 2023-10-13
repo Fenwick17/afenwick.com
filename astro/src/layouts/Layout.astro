@@ -4,22 +4,35 @@ import '../styles/global.css'
 interface Props {
   title: string;
   description: string;
+  shareableImage: string;
 }
 
-const { title, description } = Astro.props as Props;
+const { title, description, shareableImage } = Astro.props as Props;
+const currentPath = Astro.url.pathname;
+const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="og:description" content={description} />
-    <meta name="og:title" content={title} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
-    <link rel="canonical" href="http://example.com/" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta charset="UTF-8" />
+    <meta name="Author" content="Adam Fenwick">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={`https://afenwick.com${currentPath}`} />
+    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    <!-- Open graph -->
+    <meta property="og:description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content={pageType}>
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content={`https://afenwick.com${currentPath}`} />
+    <meta property="og:site_name" content="AFenwick.com" />
+    <meta property="og:image" content={shareableImage} />
   </head>
   <body class="font-inter text-base antialiased font-feature-default bg-indigo-950">
     <a id="skip-link" href="#main-content" class="skip-link">Skip to main content</a>

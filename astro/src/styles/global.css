@@ -17,7 +17,7 @@ html {
 
 @layer base {
   h1 {
-    @apply text-3xl mb-10 font-semibold;
+    @apply text-3xl mb-10 font-bold;
   }
 
   h2 {
