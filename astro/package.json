@@ -11,11 +11,13 @@
   },
   "dependencies": {
     "@astrojs/prism": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.1",
     "@astrojs/tailwind": "^5.0.0",
     "@portabletext/toolkit": "2.0.1",
     "@portabletext/types": "^2.0.6",
     "astro": "^3.1.4",
     "astro-portabletext": "^0.9.4",
+    "astro-robots-txt": "^1.0.0",
     "astro-sanity": "^1.1.7",
     "react-syntax-highlighter": "^15.5.0",
     "tailwindcss": "^3.0.24",
