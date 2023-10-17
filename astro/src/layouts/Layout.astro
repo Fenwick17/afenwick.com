@@ -33,6 +33,14 @@ const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
     <meta property="og:url" content={`https://afenwick.com${currentPath}`} />
     <meta property="og:site_name" content="AFenwick.com" />
     <meta property="og:image" content={shareableImage} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content={shareableImage} />
+    <meta name="twitter:site" content="https://afenwick.conm" />
+    <meta name="twitter:creator" content="Adam Fenwick" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={shareableImage} />
+    <meta name="twitter:image:alt" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body class="font-inter text-base antialiased font-feature-default bg-indigo-950">

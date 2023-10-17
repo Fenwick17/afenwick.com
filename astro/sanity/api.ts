@@ -7,7 +7,9 @@ export async function getBlogs(): Promise<[]> {
     title,
     slug,
     body,
+    teaser,
     publishedAt,
+    mainImage,
     categories[]->{title}
   }`;
   const posts = await useSanityClient().fetch(query);

@@ -6,6 +6,7 @@ import { getBlogs } from '../../../sanity/api';
 import Code from '../../components/PortableText/Code.astro';
 import Image from '../../components/PortableText/Image.astro'
 import type { BlogPost } from '@types';
+import urlFor from '../../../utils/urlFor';
 
 const components = {
   type: {
@@ -23,13 +24,15 @@ export async function getStaticPaths() {
 }
 
 const {
-  blog: { title, body, teaser, publishedAt },
+  blog: { title, body, teaser, publishedAt, mainImage },
 } = Astro.props;
+const shareableImage = urlFor(mainImage).url();
 ---
 
 <Layout 
   title={`${title} — Adam Fenwick`}
   description={teaser}
+  shareableImage={shareableImage}
 >
   <main id="main-content">
     <div class="bg-white border-solid rounded-md border-black p-5">
