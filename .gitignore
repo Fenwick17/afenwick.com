@@ -6,6 +6,10 @@ dist/
 # generated types
 .astro/
 
+# Tests
+*/coverage/
+./astro/coverage/
+
 # dependencies
 node_modules/
 */node_modules/
