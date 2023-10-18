@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest run"
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@astrojs/prism": "^3.0.0",
@@ -24,5 +25,8 @@
     "tailwindcss": "^3.0.24",
     "tailwindcss-font-inter": "^3.0.1",
     "vitest": "^0.34.6"
+  },
+  "devDependencies": {
+    "@vitest/coverage-istanbul": "^0.34.6"
   }
 }

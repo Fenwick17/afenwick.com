@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "paths": {
-      "@types": ["src/types"]
+      "@types": ["./src/types"]
     }
   }
 }
