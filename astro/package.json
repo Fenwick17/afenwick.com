@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "cy:run": "cypress run"
   },
   "dependencies": {
     "@astrojs/prism": "^3.0.0",
@@ -27,6 +28,7 @@
     "vitest": "^0.34.6"
   },
   "devDependencies": {
-    "@vitest/coverage-istanbul": "^0.34.6"
+    "@vitest/coverage-istanbul": "^0.34.6",
+    "cypress": "^13.3.1"
   }
 }
