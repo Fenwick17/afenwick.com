@@ -9,6 +9,7 @@ interface BlogPost {
   slug: {
     current: string;
   };
+  teaser: string;
   body: string;
   categories: [
     {
@@ -30,23 +31,28 @@ const blogs: BlogPost[] = await getBlogs();
   <main id="main-content">
     <div class="bg-white border-solid rounded-md border-black p-5">
       <h1 class="text-4xl mb-5">Blog</h1>
-      {
-        blogs.map((blog) => (
-          <article class="border-b-2 border-gray-400 pb-5 mb-5">
-            <h2 class="md:text-3xl mb-2">
-              <a class="link text-blue-800" href={`/blogs/${blog.slug.current}`}>{blog.title}</a>
-            </h2>
-            <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
-            {blog.categories &&
-              <span> -
-                {Object.keys(blog.categories).map((key) => (
-                  <span>{blog.categories[key].title}</span>
-                ))}
-              </span>
-            }
-          </article>
-        ))
-      }
+      <div id="blogs">
+        {
+          blogs.map((blog) => (
+            <article id={blog.slug.current} class="border-b-2 border-gray-400 pb-5 mb-5">
+              <h2 class="md:text-3xl mb-0">
+                <a class="link text-blue-800" href={`/blogs/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
+              </h2>
+              <div class="mb-2">
+              <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
+                {blog.categories &&
+                  <span> -
+                    {Object.keys(blog.categories).map((key) => (
+                      <span>{blog.categories[key].title}</span>
+                    ))}
+                  </span>
+                }
+              </div>
+              <p>{blog.teaser}</p>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </main>
 </Layout>
