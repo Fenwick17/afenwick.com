@@ -1,4 +1,5 @@
 ---
+import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import '../styles/global.css'
 interface Props {
@@ -48,6 +49,7 @@ const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
     <div class="container">
       <Header />
       <slot />
+      <Footer />
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@ import { codeInput } from '@sanity/code-input';
 export default defineConfig({
   name: 'default',
   title: 'afenwick-blog',
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+  projectId: '3mk20h23',
   dataset: 'production',
   plugins: [deskTool(), codeInput()],
   schema: {

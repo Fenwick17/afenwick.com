@@ -42,8 +42,8 @@ const blogs: BlogPost[] = await getBlogs();
               <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
                 {blog.categories &&
                   <span> -
-                    {Object.keys(blog.categories).map((key) => (
-                      <span>{blog.categories[key].title}</span>
+                    {Object.keys(blog.categories).map((key, index) => (
+                      <span>{blog.categories[key].title}{index === Object.keys(blog.categories).length - 1 ? '' : ', '}</span>
                     ))}
                   </span>
                 }
