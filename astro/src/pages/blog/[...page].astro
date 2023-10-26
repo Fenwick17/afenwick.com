@@ -22,7 +22,7 @@ interface BlogPost {
 }
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const blogs = await getBlogs() 
+  const blogs: BlogPost[] = await getBlogs() 
 
   return paginate(blogs, {
     pageSize: 2,

@@ -1,11 +1,10 @@
 ---
-import type { CollectionEntry } from "astro:content";
-
+import type { BlogPost } from '@types';
 import BlogPreview from "./BlogPreview.astro";
 import Pagination from "./Pagination.astro";
 
 interface Props {
-  posts: CollectionEntry<"blog">[];
+  posts: BlogPost[]; 
   length?: number;
   currentUrl?: string;
   currentPage?: number;
