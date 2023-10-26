@@ -25,7 +25,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const blogs: BlogPost[] = await getBlogs() 
 
   return paginate(blogs, {
-    pageSize: 2,
+    pageSize: 15,
   })
 }
 
@@ -51,6 +51,7 @@ const firstPath = "blog";
           prevUrl={page.url.prev}
           nextUrl={page.url.next}
           lastUrl={`/${firstPath}/${page.lastPage}`}
+          hidePagination={page.data.length < 15}
         />
       </div>
     </div>
