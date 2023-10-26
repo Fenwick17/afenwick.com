@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import BlogPreview from "./BlogPreview.astro";
+import Pagination from "./Pagination.astro";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+  length?: number;
+  currentUrl?: string;
+  currentPage?: number;
+  firstUrl?: string;
+  prevUrl?: string;
+  nextUrl?: string;
+  lastUrl?: string;
+  hidePagination?: boolean;
+}
+
+const { posts, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, hidePagination } = Astro.props;
+---
+
+<ul class="mb-5">
+  {
+    posts.map((blog) => (
+      <li>
+        <BlogPreview blog={blog} />
+      </li>
+    ))
+  }
+</ul>
+
+{ !hidePagination &&
+  <Pagination
+    length={length}
+    currentUrl={currentUrl}
+    currentPage={currentPage}
+    firstUrl={firstUrl}
+    prevUrl={prevUrl}
+    nextUrl={nextUrl}
+    lastUrl={lastUrl}
+  />
+}

@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 
 import { formatDate } from '../../utils/formatDate';
-import { getBlogs } from '../../sanity/api';
+import { getBlogs, getLatestBlogs } from '../../sanity/api';
+import Pagination from '../components/Pagination.astro';
 
 interface BlogPost {
   title: string;
@@ -20,7 +21,8 @@ interface BlogPost {
   publishedAt: string;
 }
 
-const blogs: BlogPost[] = await getBlogs();
+// const blogs: BlogPost[] = await getBlogs();
+const blogs: BlogPost[] = await getLatestBlogs();
 ---
 
 <Layout 
@@ -36,7 +38,7 @@ const blogs: BlogPost[] = await getBlogs();
           blogs.map((blog) => (
             <article id={blog.slug.current} class="border-b-2 border-gray-400 pb-5 mb-5">
               <h2 class="md:text-3xl mb-0">
-                <a class="link text-blue-800" href={`/blogs/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
+                <a class="link text-blue-800" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
               </h2>
               <div class="mb-2">
               <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
