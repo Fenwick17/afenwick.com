@@ -14,30 +14,6 @@ const paginationList = Array.from({ length: `${length}` }, (_, i) => i + 1);
       </a>
   }
 
-  <!-- {
-    prevUrl ? (
-      <a href={prevUrl} class="pagination__link">
-        &lt;
-      </a>
-    ) : (
-      <span class="pagination__link disabled">
-        &lt;
-      </span>
-    )
-  }
-
-  {
-    !nextUrl ? (
-      <span class="pagination__link disabled">
-        &gt;
-      </span>
-    ) : (
-      <a href={nextUrl} class="pagination__link">
-        &gt;
-      </a>
-    )
-  } -->
-
   {
     lastUrl !== currentUrl &&
       <a href={nextUrl} class="flex items-center">
