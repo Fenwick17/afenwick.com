@@ -5,7 +5,7 @@ import '../styles/global.css'
 interface Props {
   title: string;
   description: string;
-  shareableImage: string;
+  shareableImage?: string;
 }
 
 const { title, description, shareableImage } = Astro.props as Props;

@@ -1,0 +1,27 @@
+---
+import type { BlogPost } from '@types';
+import { formatDate } from '../../utils/formatDate';
+
+interface Props {
+  blog: BlogPost; 
+}
+
+const { blog } = Astro.props;
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+---
+
+
+<h2 class="md:text-3xl mb-0">
+  <a class="link text-blue-800" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
+</h2>
+<div class="mb-2">
+<time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
+  {blog.categories &&
+    <span> -
+      {Object.keys(blog.categories).map((key, index) => (
+        <span>{blog.categories[key].title}{index === Object.keys(blog.categories).length - 1 ? '' : ', '}</span>
+      ))}
+    </span>
+  }
+</div>
+<p>{blog.teaser}</p>

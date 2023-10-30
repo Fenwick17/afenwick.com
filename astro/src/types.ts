@@ -6,6 +6,8 @@ interface BlogPost {
   author: string;
   publishedAt: string;
   body: PortableTextBlock;
+  categories: string[];
+  teaser: string;
 }
 
 interface Image {
