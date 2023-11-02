@@ -1,11 +1,11 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
 import tailwind from '@astrojs/tailwind';
 import sanity from 'astro-sanity';
 import sitemap from '@astrojs/sitemap';
 import 'dotenv/config';
 
 import robotsTxt from 'astro-robots-txt';
+import vercelStatic from '@astrojs/vercel/static';
 
 export default defineConfig({
   site: 'https://afenwick.com',
