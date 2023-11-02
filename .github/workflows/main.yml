@@ -17,4 +17,10 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6.6.0
         with:
-          start: npm start
+          browser: chrome
+          working-directory: ./astro
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: screenshots-headed-chrome
+          path: astro/cypress/screenshots
