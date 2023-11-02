@@ -30,5 +30,6 @@ module.exports = {
     },
     extend: {},
   },
+  darkMode: 'class',
   plugins: [require('tailwindcss-font-inter')],
 };

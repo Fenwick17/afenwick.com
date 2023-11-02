@@ -31,29 +31,31 @@ const blogs: BlogPost[] = await getLatestBlogs();
   shareableImage="/logo-shareable.png"
 >
   <main id="main-content">
-    <div class="bg-white border-solid rounded-md border-black p-5">
+    <div>
       <h1 class="text-4xl mb-5">Latest blog posts</h1>
       <div id="blogs">
-        {
-          blogs.map((blog) => (
-            <article id={blog.slug.current} class="border-b-2 border-gray-400 pb-5 mb-5">
-              <h2 class="md:text-3xl mb-0">
-                <a class="link text-blue-800" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
-              </h2>
-              <div class="mb-2">
-              <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
-                {blog.categories &&
-                  <span> -
-                    {Object.keys(blog.categories).map((key, index) => (
-                      <span>{blog.categories[key].title}{index === Object.keys(blog.categories).length - 1 ? '' : ', '}</span>
-                    ))}
-                  </span>
-                }
-              </div>
-              <p>{blog.teaser}</p>
-            </article>
-          ))
-        }
+        <ul>
+          {
+            blogs.map((blog) => (
+              <li id={blog.slug.current} class="mb-5">
+                <h2 class="md:text-3xl mb-0">
+                  <a class="link" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
+                </h2>
+                <div class="mb-2">
+                <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
+                  {blog.categories &&
+                    <span> -
+                      {Object.keys(blog.categories).map((key, index) => (
+                        <span>{blog.categories[key].title}{index === Object.keys(blog.categories).length - 1 ? '' : ', '}</span>
+                      ))}
+                    </span>
+                  }
+                </div>
+                <p>{blog.teaser}</p>
+              </li >
+            ))
+          }
+        </ul>
       </div>
     </div>
   </main>

@@ -13,7 +13,7 @@ pre[class*='language-'] {
   line-height: 1.5;
   tab-size: 4;
   text-align: left;
-  text-shadow: 0 1px #fff;
+  text-shadow: none;
   white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
   white-space: -pre-wrap;
@@ -23,15 +23,9 @@ pre[class*='language-'] {
   word-wrap: break-word;
 }
 
-@media print {
-  code[class*='language-'],
-  pre[class*='language-'] {
-    text-shadow: none;
-  }
-}
-
 /* Code blocks */
 pre[class*='language-'] {
+  border: 2px solid black;
   margin: 0.5em 0;
   overflow: auto;
   padding: 1em;
@@ -69,6 +63,10 @@ code {
   color: var(--color-language-dark-blue);
 }
 
+.dark code {
+  @apply text-green-200;
+}
+
 .language-html .token.tag {
   color: var(--color-language-dark-blue);
 }
@@ -97,6 +95,27 @@ code {
   color: var(--color-language-green);
 }
 
-.language-css .toke.function {
-  color: var(--color-languag-blue);
+.language-css .token.function {
+  color: var(--color-language-blue);
+}
+
+.dark code[class*='language-'],
+.dark pre[class*='language-'] {
+  border-color: white;
+  color: #fff;
+  @apply bg-slate-900;
+}
+
+.dark .language-html .token.tag {
+  @apply text-yellow-200;
+}
+
+.dark .language-css .token.property,
+.dark .language-html .token.attr-name {
+  @apply text-red-200;
+}
+
+.dark .language-html .token.attr-value,
+.dark .language-css .token.selector {
+  @apply text-green-400;
 }

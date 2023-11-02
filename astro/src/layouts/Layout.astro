@@ -43,8 +43,19 @@ const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
     <meta name="twitter:image" content={shareableImage} />
     <meta name="twitter:image:alt" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <script>
+      if (
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
-  <body class="font-inter text-base antialiased font-feature-default bg-indigo-950">
+  <body class="font-inter text-base antialiased font-feature-default bg-slate-100 dark:bg-slate-900 dark:text-white">
     <a id="skip-link" href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container">
       <Header />
