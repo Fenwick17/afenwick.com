@@ -19,6 +19,7 @@ jobs:
         with:
           browser: chrome
           working-directory: ./astro
+          start: npm run dev
 
       - uses: actions/upload-artifact@v3
         with:
