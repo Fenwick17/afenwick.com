@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel/serverless';
 import tailwind from '@astrojs/tailwind';
 import sanity from 'astro-sanity';
 import sitemap from '@astrojs/sitemap';
@@ -22,4 +23,6 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
   ],
+  output: 'server',
+  adapter: vercel(),
 });
