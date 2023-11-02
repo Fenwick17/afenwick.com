@@ -8,6 +8,7 @@ interface BlogPost {
   body: PortableTextBlock;
   categories: string[];
   teaser: string;
+  mainImage: Image;
 }
 
 interface Image {
