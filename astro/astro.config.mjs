@@ -23,6 +23,6 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
   ],
-  output: 'server',
-  adapter: vercel(),
+  output: 'static',
+  adapter: vercelStatic(),
 });
