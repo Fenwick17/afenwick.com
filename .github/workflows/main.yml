@@ -20,6 +20,8 @@ jobs:
           browser: chrome
           working-directory: ./astro
           start: npm run dev
+        env:
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
 
       - uses: actions/upload-artifact@v3
         with:
