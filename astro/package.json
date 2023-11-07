@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "@vitest/coverage-istanbul": "^0.34.6",
-    "cypress": "^13.3.1"
+    "cypress": "^13.4.0"
   }
 }
