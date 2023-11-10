@@ -4,10 +4,10 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
 
-<header class="mt-10 mb-10 md:flex justify-between items-center">
-  <span class="md:text-5xl">
+<header class="mt-10 md:mb-10 mb-5 md:flex justify-between items-center">
+  <div class="md:text-5xl text-2xl mb-5 md:mb-0">
     <a href="/" class="header-link">Adam Fenwick</a>
-  </span>
+  </div>
   <div class="md:flex justify-between items-center">
     <nav>
       <ul class="md:flex justify-between">
