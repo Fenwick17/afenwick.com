@@ -120,6 +120,7 @@ code {
 }
 
 .dark .language-html .token.attr-value,
-.dark .language-css .token.selector {
+.dark .language-css .token.selector,
+.dark .language-css.token.atrule {
   @apply text-green-400;
 }
