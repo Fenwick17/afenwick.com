@@ -114,6 +114,10 @@ code {
   @apply text-yellow-200;
 }
 
+.dark .language-css .token.function {
+  @apply text-yellow-200;
+}
+
 .dark .language-css .token.property,
 .dark .language-html .token.attr-name {
   @apply text-red-200;
