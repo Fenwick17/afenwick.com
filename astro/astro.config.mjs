@@ -23,5 +23,12 @@ export default defineConfig({
     robotsTxt(),
   ],
   output: 'static',
-  adapter: vercelStatic(),
+  adapter: vercelStatic({
+    webAnalytics: {
+      enabled: true,
+    },
+    speedInsights: {
+      enabled: true,
+    },
+  }),
 });
