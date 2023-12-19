@@ -4,6 +4,9 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
+    fontFamily: {
+      sans: 'Inter',
+    },
     fontFeatureSettings: {
       numeric: ['tnum', 'salt', 'ss02'],
     },
@@ -31,5 +34,4 @@ module.exports = {
     extend: {},
   },
   darkMode: 'class',
-  plugins: [require('tailwindcss-font-inter')],
 };

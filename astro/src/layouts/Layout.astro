@@ -1,4 +1,6 @@
 ---
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import '../styles/global.css'
@@ -62,5 +64,7 @@ const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
       <slot />
       <Footer />
     </div>
+    <Analytics />
+    <SpeedInsights />
   </body>
 </html>
