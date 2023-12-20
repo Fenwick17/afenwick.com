@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/2021/responsive-accessible-table/",
+      "destination": "/blog/build-a-responsive-accessible-table"
+    }
+  ]
+}
