@@ -13,6 +13,7 @@ injectSpeedInsights();
 
 const { title, description, shareableImage } = Astro.props as Props;
 const currentPath = Astro.url.pathname;
+console.log(currentPath)
 const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
 ---
 
