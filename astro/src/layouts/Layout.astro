@@ -61,7 +61,7 @@ const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
   </head>
   <body class="font-inter text-base antialiased font-feature-default bg-slate-100 dark:bg-slate-900 dark:text-white">
     <a id="skip-link" href="#main-content" class="skip-link">Skip to main content</a>
-    <div class="container">
+    <div class="max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto">
       <Header />
       <slot />
       <Footer />

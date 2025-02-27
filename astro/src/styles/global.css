@@ -6,15 +6,12 @@
   --color-language-red: #d13118;
   --color-language-blue: #0d47a1;
   --color-language-dark-blue: #002171;
+  --colour-focus-bg: #ffdd00;
 }
 
 html {
   font-size: 19px;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   h1 {
@@ -30,11 +27,18 @@ html {
   }
 
   a {
-    @apply underline focus:bg-yellow-400 focus:text-black hover:no-underline;
+    color: white;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   a:focus {
-    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    box-shadow: 0 -2px --colour-focus-bg, 0 4px #0b0c0c;
+    background-color: var(--colour-focus-bg);
+    color: #000;
     outline: 3px solid transparent;
     text-decoration: none;
   }

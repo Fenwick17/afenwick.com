@@ -13,26 +13,25 @@
     "cy:run": "cypress run"
   },
   "dependencies": {
-    "@astrojs/prism": "^3.0.0",
-    "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/tailwind": "^5.0.0",
-    "@astrojs/vercel": "^5.1.0",
-    "@portabletext/toolkit": "2.0.1",
-    "@portabletext/types": "^2.0.6",
-    "@vercel/analytics": "^1.1.1",
-    "@vercel/speed-insights": "^1.0.2",
-    "astro": "^3.1.4",
-    "astro-portabletext": "^0.9.4",
+    "@astrojs/prism": "^3.2.0",
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/vercel": "^8.0.8",
+    "@portabletext/toolkit": "2.0.17",
+    "@portabletext/types": "^2.0.13",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "astro": "^5.3.1",
+    "astro-portabletext": "^0.11.1",
     "astro-robots-txt": "^1.0.0",
     "astro-sanity": "^1.1.7",
-    "dotenv": "^16.3.1",
-    "react-syntax-highlighter": "^15.5.0",
-    "tailwindcss": "^3.0.24",
-    "tailwindcss-font-inter": "^3.0.1",
-    "vitest": "^0.34.6"
+    "dotenv": "^16.4.7",
+    "react-syntax-highlighter": "^15.6.1",
+    "vitest": "^3.0.7"
   },
   "devDependencies": {
-    "@vitest/coverage-istanbul": "^0.34.6",
-    "cypress": "^13.4.0"
+    "@unocss/preset-wind": "^66.1.0-beta.3",
+    "@vitest/coverage-istanbul": "^3.0.7",
+    "cypress": "^14.1.0",
+    "unocss": "^66.1.0-beta.3"
   }
 }
