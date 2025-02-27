@@ -30,6 +30,9 @@ module.exports = {
         lg: '4rem',
         xl: '8rem',
       },
+      screens: {
+        xl: '1280px',
+      },
     },
     extend: {},
   },
