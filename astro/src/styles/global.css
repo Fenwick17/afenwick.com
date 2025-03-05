@@ -1,42 +1,104 @@
 @import './codeStyling.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('@fontsource/Inter');
 
 :root {
-  --color-language-green: #00703c;
-  --color-language-red: #d13118;
-  --color-language-blue: #0d47a1;
-  --color-language-dark-blue: #002171;
+  --colour-language-green: #00703c;
+  --colour-language-light-green: #bbf7d0;
+  --colour-language-red: #d13118;
+  --colour-language-blue: #0d47a1;
+  --colour-language-dark-blue: #002171;
+  --colour-language-yellow: #fef08a;
+  --colour-language-pink: #fecaca;
+  --colour-background: #0f172a;
+  --colour-focus: #fd0;
+  --colour-link: #1d70b8;
+  --colour-link-visited: #4c2c92;
 }
 
 html {
   font-size: 19px;
+  font-family: 'Inter', Arial;
+  line-height: 1.4;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 
-@layer base {
-  h1 {
-    @apply text-3xl mb-10 font-bold;
+  @media (min-width: 768px) {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
+}
 
-  h2 {
-    @apply text-2xl mb-5 font-semibold;
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  /* TODO: Add class */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* typography */
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
   }
+}
 
-  h3 {
-    @apply text-xl mb-2 font-semibold;
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
   }
+}
 
-  a {
-    @apply underline focus:bg-yellow-400 focus:text-black hover:no-underline;
-  }
+a {
+  text-decoration: underline;
 
-  a:focus {
+  &:focus {
+    background-color: var(--colour-focus);
     box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
     outline: 3px solid transparent;
+    color: black;
     text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  p {
+    max-width: 70ch;
   }
 }
 
@@ -51,4 +113,37 @@ html {
   position: absolute;
   top: auto;
   width: 1px;
+}
+
+/* Light Mode */
+body {
+  color: #000;
+
+  a {
+    color: var(--colour-link);
+
+    &:visited {
+      color: var(--colour-link);
+    }
+  }
+}
+
+/* Dark Mode */
+.dark {
+  body {
+    background-color: var(--colour-background);
+    color: #fff;
+
+    a {
+      color: inherit;
+
+      &:visited {
+        color: inherit;
+      }
+
+      &:focus {
+        color: #000;
+      }
+    }
+  }
 }
