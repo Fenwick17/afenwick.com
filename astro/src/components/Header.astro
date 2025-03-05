@@ -67,17 +67,17 @@ const currentPath = pathname.slice(1);
       <ul class="nav-list">
         <li>
           <a 
-          aria-current={currentPath === "" ? "page" : ""}
+          aria-current={currentPath === "" ? "page" : "false"}
           class={currentPath === "" ? "font-bold" : ""} href="/">Home</a>
         </li>
         <li>
           <a 
-          aria-current={currentPath === "blog" ? "page" : ""}
+          aria-current={currentPath === "blog" ? "page" : "false"}
           class={currentPath === "blog" ? "font-bold" : ""} href="/blog">Blog</a>
         </li>
         <li>
           <a 
-          aria-current={currentPath === "contact" ? "page" : ""}
+          aria-current={currentPath === "contact" ? "page" : "false"}
           class={currentPath === "contact" ? "font-bold" : ""} href="/contact">Contact</a>
         </li>
       </ul>
