@@ -1,5 +1,5 @@
 @import './codeStyling.css';
-@import url('@fontsource/Inter');
+@import url('@fontsource/inter');
 
 :root {
   --colour-language-green: #00703c;
