@@ -152,6 +152,10 @@ body {
   }
 }
 
+body {
+  background-color: #f1f5f9;
+}
+
 /* Dark Mode */
 .dark {
   body {
