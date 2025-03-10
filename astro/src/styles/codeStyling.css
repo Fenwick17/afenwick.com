@@ -60,7 +60,7 @@ code[class*='language-'] ::selection {
 }
 
 code {
-  color: var(--color-language-dark-blue);
+  color: var(--colour-language-dark-blue);
 }
 
 .dark code {
@@ -68,35 +68,35 @@ code {
 }
 
 .language-html .token.tag {
-  color: var(--color-language-dark-blue);
+  color: var(--colour-language-dark-blue);
 }
 
 .language-html .token.attr-name {
-  color: var(--color-language-green);
+  color: var(--colour-language-green);
 }
 
 .language-html .token.attr-value {
-  color: var(--color-language-red);
+  color: var(--colour-language-red);
 }
 
 .language-css .token.selector {
-  color: var(--color-language-green);
+  color: var(--colour-language-green);
 }
 
 .language-css .token.property {
-  color: var(--color-language-red);
+  color: var(--colour-language-red);
 }
 
 .language-css .token.rule {
-  color: var(--color-language-dark-blue);
+  color: var(--colour-language-dark-blue);
 }
 
 .language-css .token.atrule {
-  color: var(--color-language-green);
+  color: var(--colour-language-green);
 }
 
 .language-css .token.function {
-  color: var(--color-language-blue);
+  color: var(--colour-language-blue);
 }
 
 .dark code[class*='language-'],
