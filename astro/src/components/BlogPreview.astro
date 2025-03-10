@@ -10,8 +10,13 @@ const { blog } = Astro.props;
 const options = { year: 'numeric', month: 'long', day: 'numeric' };
 ---
 
+<style>
+  .blog-preview-title {
+    margin-bottom: 0;
+  }
+</style>
 
-<h2 class="md:text-3xl mb-0">
+<h2 class="blog-preview-title">
   <a class="link" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
 </h2>
 <div class="mb-2">

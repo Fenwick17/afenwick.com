@@ -11,10 +11,19 @@ interface Props {
 const { node } = Astro.props;
 ---
 
+<style>
+  .blog-post-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }  
+</style>
+
 <img
   src={urlFor(node).url()} 
   alt={node.alt}
   loading="lazy"
+  class="blog-post-img"
 />
 
 <style>

@@ -64,7 +64,7 @@ code {
 }
 
 .dark code {
-  @apply text-green-200;
+  color: var(--colour-language-light-green);
 }
 
 .language-html .token.tag {
@@ -103,28 +103,28 @@ code {
 .dark pre[class*='language-'] {
   border-color: white;
   color: #fff;
-  @apply bg-slate-900;
+  background-color: var(--colour-background);
 }
 
 .dark .language-html .token.tag {
-  @apply text-yellow-200;
+  color: var(--colour-language-yellow);
 }
 
 .dark .language-css .token.rule {
-  @apply text-yellow-200;
+  color: var(--colour-language-yellow);
 }
 
 .dark .language-css .token.function {
-  @apply text-yellow-200;
+  color: var(--colour-language-yellow);
 }
 
 .dark .language-css .token.property,
 .dark .language-html .token.attr-name {
-  @apply text-red-200;
+  color: var(--colour-language-pink);
 }
 
 .dark .language-html .token.attr-value,
 .dark .language-css .token.selector,
 .dark .language-css .token.atrule {
-  @apply text-green-400;
+  color: var(--colour-language-light-green);
 }

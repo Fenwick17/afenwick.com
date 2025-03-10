@@ -25,6 +25,25 @@ interface BlogPost {
 const blogs: BlogPost[] = await getLatestBlogs();
 ---
 
+<style>
+  .blog-list {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+    }
+
+    .blog-preview-title {
+      margin-bottom: 0;
+    }
+
+    .blog-preview-date {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
 <Layout 
   title="Articles on web accessibility and frontend development. — Adam Fenwick"
   description="Articles on web accessibility and frontend development."
@@ -34,23 +53,22 @@ const blogs: BlogPost[] = await getLatestBlogs();
     <div>
       <h1 class="text-4xl mb-5">Latest blog posts</h1>
       <div id="blogs">
-        <ul>
+        <ul class="blog-list">
           {
             blogs.map((blog) => (
               <li id={blog.slug.current} class="mb-5">
-                <h2 class="md:text-3xl mb-0">
+                <h2 class="blog-preview-title">
                   <a class="link" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
                 </h2>
-                <div class="mb-2">
-                <time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
-                  {blog.categories &&
+                <time class="blog-preview-date" datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
+                  {/* Remove categories for now */}
+                  {/* {blog.categories &&
                     <span> -
                       {Object.keys(blog.categories).map((key, index) => (
                         <span>{blog.categories[key].title}{index === Object.keys(blog.categories).length - 1 ? '' : ', '}</span>
                       ))}
                     </span>
-                  }
-                </div>
+                  } */}
                 <p>{blog.teaser}</p>
               </li >
             ))

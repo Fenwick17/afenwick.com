@@ -2,6 +2,7 @@
 import { injectSpeedInsights } from "@vercel/speed-insights"
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import 'modern-normalize/modern-normalize.css';
 import '../styles/global.css'
 interface Props {
   title: string;
@@ -59,7 +60,7 @@ const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
       }
     </script>
   </head>
-  <body class="font-inter text-base antialiased font-feature-default bg-slate-100 dark:bg-slate-900 dark:text-white">
+  <body>
     <a id="skip-link" href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container">
       <Header />

@@ -4,26 +4,80 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
 
-<header class="mt-10 md:mb-10 mb-5 md:flex justify-between items-center">
-  <div class="md:text-5xl text-2xl mb-5 md:mb-0">
+<style>
+  .header {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.25rem 0;
+
+    @media (min-width: 768px) {
+      display: flex;
+      margin: 2.5rem 0;
+    }
+  }
+
+  .header-link-container {
+    .header-link {
+      font-size: 1.5rem;
+
+      @media (min-width: 768px){
+        font-size: 2.25rem; 
+      }
+    }
+  }
+
+  .nav-container {
+    display block;
+    list-style: none;
+    
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .nav-list {
+    display block;
+    list-style: none;
+    padding-left: 0;
+    
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    li {
+      margin-right: 1.25rem;
+    }
+  }
+
+  .dark .header-link {
+    color: #fff;
+  }
+</style>
+
+<header class="header">
+  <div class="header-link-container">
     <a href="/" class="header-link">Adam Fenwick</a>
   </div>
-  <div class="md:flex justify-between items-center">
+  <div class="nav-container">
     <nav>
-      <ul class="md:flex justify-between">
-        <li class="mr-5">
+      <ul class="nav-list">
+        <li>
           <a 
-          aria-current={currentPath === "" ? "page" : ""}
+          aria-current={currentPath === "" ? "page" : "false"}
           class={currentPath === "" ? "font-bold" : ""} href="/">Home</a>
         </li>
-        <li class="mr-5">
+        <li>
           <a 
-          aria-current={currentPath === "blog" ? "page" : ""}
+          aria-current={currentPath === "blog" ? "page" : "false"}
           class={currentPath === "blog" ? "font-bold" : ""} href="/blog">Blog</a>
         </li>
         <li>
           <a 
-          aria-current={currentPath === "contact" ? "page" : ""}
+          aria-current={currentPath === "contact" ? "page" : "false"}
           class={currentPath === "contact" ? "font-bold" : ""} href="/contact">Contact</a>
         </li>
       </ul>
