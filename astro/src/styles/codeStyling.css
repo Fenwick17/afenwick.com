@@ -26,6 +26,7 @@ pre[class*='language-'] {
 /* Code blocks */
 pre[class*='language-'] {
   border: 2px solid black;
+  border-radius: 10px;
   margin: 0.5em 0;
   overflow: auto;
   padding: 1em;
@@ -103,7 +104,7 @@ code {
 .dark pre[class*='language-'] {
   border-color: white;
   color: #fff;
-  background-color: var(--colour-background);
+  background-color: var(--colour-grey);
 }
 
 .dark .language-html .token.tag {
