@@ -1,0 +1,59 @@
+---
+import type { Project } from '@types';
+import Pagination from "./Pagination.astro";
+
+interface Props {
+  work: Project[]; 
+  length?: number;
+  currentUrl?: string;
+  currentPage?: number;
+  firstUrl?: string;
+  prevUrl?: string;
+  nextUrl?: string;
+  lastUrl?: string;
+  hidePagination?: boolean;
+}
+
+const { work, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, hidePagination } = Astro.props;
+---
+
+<style>
+  .blog-list {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+    }
+
+    .blog-preview-title {
+      margin-bottom: 0;
+    }
+
+    .blog-preview-date {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
+<ul class="blog-list">
+  {
+    work.map((work) => (
+      <li class="mb-5">
+        <a class="link" href={`/work/${work.slug.current}`}>{work.title}</a>
+      </li>
+    ))
+  }
+</ul>
+
+{ !hidePagination &&
+  <Pagination
+    length={length}
+    currentUrl={currentUrl}
+    currentPage={currentPage}
+    firstUrl={firstUrl}
+    prevUrl={prevUrl}
+    nextUrl={nextUrl}
+    lastUrl={lastUrl}
+  />
+}
