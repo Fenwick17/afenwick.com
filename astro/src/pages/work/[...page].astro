@@ -1,0 +1,58 @@
+---
+import type { GetStaticPathsOptions } from 'astro';
+import { getPortfolio } from '../../../sanity/api';
+import WorkList from '../../components/WorkList.astro';
+import Layout from '../../layouts/Layout.astro';
+
+interface Project {
+  title: string;
+  slug: {
+    current: string;
+  };
+  body: string;
+  publishedAt: string;
+}
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const projects: Project[] = await getPortfolio();
+
+  return paginate(projects, {
+    pageSize: 15,
+  })
+}
+
+const { page } = Astro.props;
+
+---
+
+<style>
+  .blog-list {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+    }
+
+    .blog-preview-title {
+      margin-bottom: 0;
+    }
+
+    .blog-preview-date {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
+<Layout 
+  title="Work — Adam Fenwick"
+  description="A little area to talk about some of the work I have done"  
+>
+  <main id="main-content" class="main">
+    <div>
+      <h1>Work</h1>
+      <WorkList work={page.data} />
+    </div>
+  </main>
+</Layout>
+

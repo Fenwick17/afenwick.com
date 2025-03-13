@@ -1,10 +1,9 @@
 ---
-import type { BlogPost } from '@types';
-import BlogPreview from "./BlogPreview.astro";
+import type { Project } from '@types';
 import Pagination from "./Pagination.astro";
 
 interface Props {
-  posts: BlogPost[]; 
+  work: Project[]; 
   length?: number;
   currentUrl?: string;
   currentPage?: number;
@@ -15,7 +14,7 @@ interface Props {
   hidePagination?: boolean;
 }
 
-const { posts, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, hidePagination } = Astro.props;
+const { work, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, hidePagination } = Astro.props;
 ---
 
 <style>
@@ -34,14 +33,20 @@ const { posts, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, last
       display: block;
       margin-bottom: 1rem;
     }
+
+    .work-list-heading {
+      margin-bottom: 1rem;
+    }
   }
 </style>
 
 <ul class="blog-list">
   {
-    posts.map((blog) => (
+    work.map((work) => (
       <li>
-        <BlogPreview blog={blog} />
+        <h2 class="work-list-heading">
+          <a class="link" href={`/work/${work.slug.current}`}>{work.title}</a>
+        </h2>
       </li>
     ))
   }

@@ -2,10 +2,10 @@
 import { PortableText } from 'astro-portabletext';
 
 import Layout from '../../layouts/Layout.astro';
-import { getBlogs } from '../../../sanity/api';
+import { getPortfolio } from '../../../sanity/api';
 import Code from '../../components/PortableText/Code.astro';
 import Image from '../../components/PortableText/Image.astro'
-import type { BlogPost } from '@types';
+import type { Project } from '@types';
 import urlFor from '../../../utils/urlFor';
 
 const components = {
@@ -16,41 +16,37 @@ const components = {
 };
 
 export async function getStaticPaths() {
-  const allBlogs: BlogPost[] = await getBlogs();
-  return allBlogs.map((blog: BlogPost) => ({
-    params: { slug: blog.slug.current },
-    props: { blog },
+  const allProjects: Project[] = await getPortfolio();
+  return allProjects.map((project: Project) => ({
+    params: { slug: project.slug.current },
+    props: { project },
   }));
 }
 
 const {
-  blog: { title, body, teaser, publishedAt, mainImage },
+  project: { title, body, publishedAt },
 } = Astro.props;
-const shareableImage = urlFor(mainImage).url();
 ---
 
 <style>
   .blog-title {
     margin-bottom: 0;
   }
-  
+
   .blog-heading {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 </style>
 
 <Layout 
   title={`${title} — Adam Fenwick`}
-  description={teaser}
-  shareableImage={shareableImage}
 >
   <main id="main-content" class="main">
     <div>
       <div class="blog-heading">
         <h1 class="blog-title">{title}</h1>
-        <p>{publishedAt}</p>
+        <!-- <p>{publishedAt}</p> -->
       </div>
-      <p>{teaser}</p>
       <PortableText value={body} components={components} />
     </div>
   </main>

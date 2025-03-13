@@ -22,6 +22,10 @@ html {
   line-height: 1.4;
 }
 
+.main {
+  margin-bottom: 5rem;
+}
+
 .container {
   max-width: 1280px;
   margin-left: auto;
