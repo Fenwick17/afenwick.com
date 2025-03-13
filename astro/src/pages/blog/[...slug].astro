@@ -33,6 +33,10 @@ const shareableImage = urlFor(mainImage).url();
   .blog-title {
     margin-bottom: 0;
   }
+  
+  .blog-heading {
+    margin-bottom: 2rem;
+  }
 </style>
 
 <Layout 
@@ -42,8 +46,10 @@ const shareableImage = urlFor(mainImage).url();
 >
   <main id="main-content" class="main">
     <div>
-      <h1 class="blog-title">{title}</h1>
-      <p>{publishedAt}</p>
+      <div class="blog-heading">
+        <h1 class="blog-title">{title}</h1>
+        <p>{publishedAt}</p>
+      </div>
       <p>{teaser}</p>
       <PortableText value={body} components={components} />
     </div>

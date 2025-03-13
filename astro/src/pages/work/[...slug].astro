@@ -32,6 +32,10 @@ const {
   .blog-title {
     margin-bottom: 0;
   }
+
+  .blog-heading {
+    margin-bottom: 1.5rem;
+  }
 </style>
 
 <Layout 
@@ -39,8 +43,10 @@ const {
 >
   <main id="main-content" class="main">
     <div>
-      <h1 class="blog-title">{title}</h1>
-      <!-- <p>{publishedAt}</p> -->
+      <div class="blog-heading">
+        <h1 class="blog-title">{title}</h1>
+        <!-- <p>{publishedAt}</p> -->
+      </div>
       <PortableText value={body} components={components} />
     </div>
   </main>
