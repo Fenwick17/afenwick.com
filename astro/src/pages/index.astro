@@ -56,7 +56,7 @@ const blogs: BlogPost[] = await getLatestBlogs();
         <ul class="blog-list">
           {
             blogs.map((blog) => (
-              <li id={blog.slug.current} class="mb-5">
+              <li id={blog.slug.current}>
                 <h2 class="blog-preview-title">
                   <a class="link" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
                 </h2>

@@ -77,6 +77,11 @@ const currentPath = pathname.slice(1);
         </li>
         <li>
           <a 
+          aria-current={currentPath === "portfolio" ? "page" : "false"}
+          class={currentPath === "portfolio" ? "font-bold" : ""} href="/portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a 
           aria-current={currentPath === "contact" ? "page" : "false"}
           class={currentPath === "contact" ? "font-bold" : ""} href="/contact">Contact</a>
         </li>

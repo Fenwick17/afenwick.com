@@ -18,7 +18,26 @@ interface Props {
 const { posts, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, hidePagination } = Astro.props;
 ---
 
-<ul class="mb-5">
+<style>
+  .blog-list {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+    }
+
+    .blog-preview-title {
+      margin-bottom: 0;
+    }
+
+    .blog-preview-date {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
+<ul class="blog-list">
   {
     posts.map((blog) => (
       <li class="mb-5">
