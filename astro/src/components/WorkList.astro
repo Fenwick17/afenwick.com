@@ -33,14 +33,20 @@ const { work, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastU
       display: block;
       margin-bottom: 1rem;
     }
+
+    .work-list-heading {
+      margin-bottom: 1rem;
+    }
   }
 </style>
 
 <ul class="blog-list">
   {
     work.map((work) => (
-      <li class="mb-5">
-        <a class="link" href={`/work/${work.slug.current}`}>{work.title}</a>
+      <li>
+        <h2 class="work-list-heading">
+          <a class="link" href={`/work/${work.slug.current}`}>{work.title}</a>
+        </h2>
       </li>
     ))
   }
