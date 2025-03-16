@@ -1,9 +1,9 @@
-import { useSanityClient, groq } from 'astro-sanity';
+import { sanityClient } from 'sanity:client';
 import { formatDate } from '../utils/formatDate';
 import type { BlogPost, Project } from '@types';
 
 export async function getBlogs(): Promise<[]> {
-  const query = groq`*[_type == "blog"] | order(publishedAt desc) {
+  const query = `*[_type == "blog"] | order(publishedAt desc) {
     title,
     slug,
     body,
@@ -12,7 +12,7 @@ export async function getBlogs(): Promise<[]> {
     mainImage,
     categories[]->{title}
   }`;
-  const posts = await useSanityClient().fetch(query);
+  const posts = await sanityClient.fetch(query);
   posts.forEach((post: BlogPost) => {
     post.publishedAt = formatDate(post.publishedAt);
   });
@@ -20,7 +20,7 @@ export async function getBlogs(): Promise<[]> {
 }
 
 export async function getLatestBlogs(): Promise<[]> {
-  const query = groq`*[_type == "blog"] | order(publishedAt desc) {
+  const query = `*[_type == "blog"] | order(publishedAt desc) {
     title,
     slug,
     body,
@@ -29,7 +29,7 @@ export async function getLatestBlogs(): Promise<[]> {
     mainImage,
     categories[]->{title}
   }[0...2]`;
-  const posts = await useSanityClient().fetch(query);
+  const posts = await sanityClient.fetch(query);
   posts.forEach((post: BlogPost) => {
     post.publishedAt = formatDate(post.publishedAt);
   });
@@ -37,19 +37,19 @@ export async function getLatestBlogs(): Promise<[]> {
 }
 
 export async function getBlogPost(slug: string): Promise<[]> {
-  const query = groq`*[_type == "blog" && slug.current == "${slug}"]`;
-  const blogPost = await useSanityClient().fetch(query);
+  const query = `*[_type == "blog" && slug.current == "${slug}"]`;
+  const blogPost = await sanityClient.fetch(query);
   return blogPost[0];
 }
 
 export async function getPortfolio(): Promise<[]> {
-  const query = groq`*[_type == "portfolio"] | order(publishedAt desc) {
+  const query = `*[_type == "portfolio"] | order(publishedAt desc) {
     title,
     slug,
     body,
     publishedAt,
   }[0...2]`;
-  const projects = await useSanityClient().fetch(query);
+  const projects = await sanityClient.fetch(query);
   projects.forEach((project: Project) => {
     project.publishedAt = formatDate(project.publishedAt);
   });
