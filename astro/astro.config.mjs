@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
-import sanity from 'astro-sanity';
+import sanity from '@sanity/astro';
 import sitemap from '@astrojs/sitemap';
 import 'dotenv/config';
 
 import robotsTxt from 'astro-robots-txt';
 import vercelStatic from '@astrojs/vercel/static';
+
+import react from '@astrojs/react';
 
 export default defineConfig({
   site: 'https://afenwick.com',
@@ -17,6 +19,7 @@ export default defineConfig({
     }),
     sitemap(),
     robotsTxt(),
+    react(),
   ],
   output: 'static',
   adapter: vercelStatic({
