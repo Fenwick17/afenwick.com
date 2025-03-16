@@ -2,6 +2,7 @@
 import type { Project } from '@types';
 import Pagination from "./Pagination.astro";
 import urlFor from '../../utils/urlFor';
+import getImageUrl from '../../utils/getImageUrl';
 
 interface Props {
   work: Project[]; 
@@ -32,7 +33,7 @@ const { work } = Astro.props;
     flex: 1 1 50%;
   }
 
-  .work-list-item--image {
+  .work-list-item--image source, img {
     border-radius: 10px;
     display: block;
     height: auto;
@@ -44,7 +45,11 @@ const { work } = Astro.props;
   {
     work.map((work) => (
       <li class="work-list-item">
-        <img class="work-list-item--image" src={urlFor(work.mainImage).url()} alt={work.mainImage.alt}>
+        <picture class="work-list-item--image">
+          <source srcset={getImageUrl(work.mainImage, "webp")} type="image/webp" />
+          <source srcset={getImageUrl(work.mainImage, "avif")} type="image/avif" />
+          <img src={getImageUrl(work.mainImage, "jpg")} alt={work.mainImage.alt} />
+        </picture>
         <h2 class="work-list-heading">
           <a class="link" href={`/work/${work.slug.current}`}>{work.title}</a>
         </h2>
