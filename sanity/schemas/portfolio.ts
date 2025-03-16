@@ -20,6 +20,22 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          type: 'string',
+          validation: (Rule) => Rule.required(), // Optional: Make it required
+        },
+      ],
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
@@ -51,6 +67,7 @@ export default defineType({
     select: {
       title: 'title',
       author: 'author.name',
+      media: 'mainImage',
     },
     prepare(selection) {
       const { author } = selection;

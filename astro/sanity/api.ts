@@ -47,6 +47,7 @@ export async function getPortfolio(): Promise<[]> {
     title,
     slug,
     body,
+    mainImage,
     publishedAt,
   }[0...2]`;
   const projects = await sanityClient.fetch(query);

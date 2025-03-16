@@ -26,6 +26,7 @@ interface Project {
   author: string;
   publishedAt: string;
   body: PortableTextBlock;
+  mainImage: Image;
 }
 
 export type { BlogPost, Image, Project };

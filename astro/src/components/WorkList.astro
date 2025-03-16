@@ -1,49 +1,49 @@
 ---
 import type { Project } from '@types';
 import Pagination from "./Pagination.astro";
+import urlFor from '../../utils/urlFor';
 
 interface Props {
   work: Project[]; 
-  length?: number;
-  currentUrl?: string;
-  currentPage?: number;
-  firstUrl?: string;
-  prevUrl?: string;
-  nextUrl?: string;
-  lastUrl?: string;
-  hidePagination?: boolean;
 }
 
-const { work, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, hidePagination } = Astro.props;
+const { work } = Astro.props;
 ---
 
 <style>
-  .blog-list {
-    padding-left: 0;
+  .work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamic columns */
+    gap: 20px; /* Space between items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
 
-    li {
-      list-style: none;
-    }
-
-    .blog-preview-title {
+    .work-preview-title {
       margin-bottom: 0;
-    }
-
-    .blog-preview-date {
-      display: block;
-      margin-bottom: 1rem;
     }
 
     .work-list-heading {
       margin-bottom: 1rem;
     }
   }
+
+  .work-list-item {
+    flex: 1 1 50%;
+  }
+
+  .work-list-item--image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 </style>
 
-<ul class="blog-list">
+<ul class="work-list">
   {
     work.map((work) => (
-      <li>
+      <li class="work-list-item">
+        <img class="work-list-item--image" src={urlFor(work.mainImage).url()} alt={work.mainImage.alt}>
         <h2 class="work-list-heading">
           <a class="link" href={`/work/${work.slug.current}`}>{work.title}</a>
         </h2>
@@ -51,15 +51,3 @@ const { work, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastU
     ))
   }
 </ul>
-
-{ !hidePagination &&
-  <Pagination
-    length={length}
-    currentUrl={currentUrl}
-    currentPage={currentPage}
-    firstUrl={firstUrl}
-    prevUrl={prevUrl}
-    nextUrl={nextUrl}
-    lastUrl={lastUrl}
-  />
-}
