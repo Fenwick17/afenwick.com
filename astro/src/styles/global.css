@@ -24,6 +24,7 @@ html {
 
 .main {
   margin-bottom: 5rem;
+  max-width: 70%;
 }
 
 .container {
@@ -125,11 +126,11 @@ ul li {
   margin-bottom: 5px;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   p {
     max-width: 70ch;
   }
-}
+} */
 
 .header-link {
   text-decoration: none;

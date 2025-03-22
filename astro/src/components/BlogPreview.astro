@@ -14,19 +14,15 @@ const options = { year: 'numeric', month: 'long', day: 'numeric' };
   .blog-preview-title {
     margin-bottom: 0;
   }
+
+  .blog-preview-date {
+    display: block;
+    margin-bottom: 1rem;
+  }
 </style>
 
 <h2 class="blog-preview-title">
   <a class="link" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
 </h2>
-<div class="mb-2">
-<time datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
-  {blog.categories &&
-    <span> -
-      {Object.keys(blog.categories).map((key, index) => (
-        <span>{blog.categories[key].title}{index === Object.keys(blog.categories).length - 1 ? '' : ', '}</span>
-      ))}
-    </span>
-  }
-</div>
+<time class="blog-preview-date" datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
 <p>{blog.teaser}</p>

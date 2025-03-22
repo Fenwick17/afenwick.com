@@ -43,14 +43,42 @@ export default defineType({
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: 'URL',
             name: 'link',
             type: 'object',
+            title: 'Link',
             fields: [
               {
-                title: 'URL',
+                name: 'type',
+                type: 'string',
+                title: 'Link Type',
+                options: {
+                  list: [
+                    { title: 'Internal', value: 'internal' },
+                    { title: 'External', value: 'external' },
+                  ],
+                  layout: 'radio', // Optional: makes selection easier
+                  direction: 'horizontal', // Optional: places options side by side
+                },
+              },
+              {
+                name: 'internalLink',
+                type: 'reference',
+                title: 'Internal Page',
+                to: [{ type: 'blog' }],
+                hidden: ({ parent }) => parent?.type !== 'internal', // Hide unless internal is selected
+              },
+              {
                 name: 'href',
                 type: 'url',
+                title: 'External URL',
+                hidden: ({ parent }) => parent?.type !== 'external', // Hide unless external is selected
+              },
+              {
+                name: 'blank',
+                type: 'boolean',
+                title: 'Open in new tab',
+                description: 'Only applies to external links',
+                hidden: ({ parent }) => parent?.type !== 'external', // Hide unless external is selected
               },
             ],
           },
