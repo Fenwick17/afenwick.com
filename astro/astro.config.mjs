@@ -4,7 +4,6 @@ import sitemap from '@astrojs/sitemap';
 import 'dotenv/config';
 
 import robotsTxt from 'astro-robots-txt';
-import vercelStatic from '@astrojs/vercel/static';
 
 import react from '@astrojs/react';
 
@@ -22,12 +21,4 @@ export default defineConfig({
     react(),
   ],
   output: 'static',
-  adapter: vercelStatic({
-    webAnalytics: {
-      enabled: true,
-    },
-    speedInsights: {
-      enabled: true,
-    },
-  }),
 });
