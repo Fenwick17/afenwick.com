@@ -9,7 +9,7 @@ describe('Renders the index page', () => {
         'Articles on web accessibility and frontend development. — Adam Fenwick'
       );
     page.get('h1').should('have.text', 'Latest blog posts');
-    page.get('nav li').should('have.length', 4);
+    page.get('nav li').should('have.length', 3);
     page
       .get('nav li')
       .eq(0)
@@ -27,13 +27,6 @@ describe('Renders the index page', () => {
     page
       .get('nav li')
       .eq(2)
-      .invoke('text')
-      .then((text) => {
-        expect(text.trim()).to.equal('Work');
-      });
-    page
-      .get('nav li')
-      .eq(3)
       .invoke('text')
       .then((text) => {
         expect(text.trim()).to.equal('Contact');

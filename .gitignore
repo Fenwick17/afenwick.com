@@ -1,6 +1,5 @@
 # build output
 dist/
-*/.vercel
 */.netlify
 
 # generated types

@@ -5,8 +5,6 @@ import 'dotenv/config';
 
 import robotsTxt from 'astro-robots-txt';
 
-import react from '@astrojs/react';
-
 export default defineConfig({
   site: 'https://afenwick.com',
   integrations: [
@@ -18,7 +16,6 @@ export default defineConfig({
     }),
     sitemap(),
     robotsTxt(),
-    react(),
   ],
   output: 'static',
 });
