@@ -9,13 +9,21 @@
   --colour-language-dark-blue: #002171;
   --colour-language-yellow: #fef08a;
   --colour-language-pink: #fecaca;
-  --colour-background: #121212;
-  --colour-background-light: #f1f5f9;
+  --colour-background: #fff;
   --colour-grey: #333333;
   --colour-focus: #fd0;
   --colour-link: #000000;
   --colour-link-visited: #4c2c92;
   --colour-white: #ffffff;
+  --colour-text: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colour-link: #fff;
+    --colour-background: #121212;
+    --colour-text: #fff;
+  }
 }
 
 html {
@@ -26,9 +34,6 @@ html {
 
 .main {
   margin-bottom: 5rem;
-  /* @media (min-width: 768px) {
-    max-width: 70%;
-  } */
 }
 
 .container {
@@ -153,10 +158,9 @@ ul li {
   }
 }
 
-/* Light Mode */
 body {
-  background-color: var(--colour-background-light);
-  color: #000;
+  background-color: var(--colour-background);
+  color: var(--colour-text);
 
   a {
     color: var(--colour-link);
@@ -171,7 +175,7 @@ body {
 .dark {
   body {
     background-color: var(--colour-background);
-    color: #fff;
+    color: var(--color-text);
 
     .skip-link {
       background-color: var(--colour-background);
@@ -181,7 +185,7 @@ body {
       color: inherit;
 
       &:focus {
-        outline-color: var(--colour-background-light);
+        outline-color: var(--colour-white);
       }
 
       &:visited {
