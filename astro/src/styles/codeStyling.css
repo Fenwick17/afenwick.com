@@ -64,6 +64,12 @@ code {
   color: var(--colour-language-dark-blue);
 }
 
+@media (prefers-color-scheme: dark) {
+  code {
+    color: var(--colour-language-yellow);
+  }
+}
+
 .dark code {
   color: var(--colour-language-light-green);
 }

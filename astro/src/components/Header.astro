@@ -1,5 +1,4 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 ---
@@ -82,6 +81,5 @@ const currentPath = pathname.slice(1);
         </li>
       </ul>
     </nav>
-    <ThemeToggle />
   </div>
 </header>
