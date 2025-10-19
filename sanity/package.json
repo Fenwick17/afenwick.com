@@ -17,18 +17,12 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/code-input": "^4.1.1",
-    "prop-types": "^15.6",
-    "react": "^18.2",
-    "react-dom": "^18.2",
-    "sanity": "^3.16.7",
-    "styled-components": "^5.3.11"
+    "@sanity/code-input": "^6.0.3",
+    "sanity": "^4.10.3"
   },
   "devDependencies": {
-    "@types/react": "^18.2.23",
-    "@types/styled-components": "^5.1.28",
-    "eslint": "^8.50.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "eslint": "^9.38.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
   }
 }

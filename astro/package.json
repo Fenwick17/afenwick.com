@@ -13,24 +13,24 @@
     "cy:run": "cypress run"
   },
   "dependencies": {
-    "@astrojs/prism": "^3.2.0",
-    "@astrojs/sitemap": "^3.2.1",
-    "@fontsource/inter": "^5.2.5",
-    "@portabletext/toolkit": "2.0.17",
-    "@portabletext/types": "^2.0.13",
-    "@sanity/astro": "^3.2.6",
-    "@sanity/client": "^6.28.3",
-    "astro": "^5.4.2",
-    "astro-portabletext": "^0.11.1",
+    "@astrojs/prism": "^3.3.0",
+    "@astrojs/sitemap": "^3.6.0",
+    "@fontsource/inter": "^5.2.8",
+    "@portabletext/toolkit": "3.0.1",
+    "@portabletext/types": "^2.0.15",
+    "@sanity/astro": "^3.2.10",
+    "@sanity/client": "^7.6.0",
+    "astro": "^5.14.6",
+    "astro-portabletext": "^0.11.3",
     "astro-robots-txt": "^1.0.0",
-    "dotenv": "^16.4.7",
+    "dotenv": "^17.2.3",
     "modern-normalize": "^3.0.1",
-    "sanity": "^3.79.0",
-    "vitest": "^3.0.8"
+    "sanity": "^4.10.3",
+    "vitest": "^3.2.4"
   },
   "devDependencies": {
-    "@vitest/coverage-istanbul": "^3.0.8",
-    "cypress": "^14.1.0",
+    "@vitest/coverage-istanbul": "^3.2.4",
+    "cypress": "^15.5.0",
     "cypress-commands": "^3.0.0"
   }
 }
