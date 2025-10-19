@@ -17,16 +17,17 @@
     cursor: pointer;
     font-size: 19px;
     padding: .5rem;
+  }
 
-    &:hover, &:focus {
-      background-color: var(--colour-focus);
+  .theme-toggle-btn:hover,
+  .theme-toggle-btn:focus {
+    background-color: var(--colour-background);
+  }
 
-      .theme-toggle-icon {
-        path {
-          color: #000;
-        }
-      }
-    }
+  /* Use color on the SVG (SVGs use fill="currentColor") */
+  .theme-toggle-btn:hover .theme-toggle-icon,
+  .theme-toggle-btn:focus .theme-toggle-icon {
+    color: var(--colour-white);
   }
 
   .theme-toggle-icon {
@@ -35,22 +36,22 @@
     width: 1.25rem;
   }
 
-  html.dark {
-    .theme-toggle-icon {
-      path {
-        color: #fff;
-
-        &:hover {
-          color: #000;
-        }
-
-        &:focus {
-          color: #000;
-        }
-      }
-    }
+  /* dark-mode defaults: icon white */
+  :global(.dark) .theme-toggle-btn .theme-toggle-icon {
+    color: var(--colour-white);
   }
-</style>
+
+  /* dark-mode hover/focus: invert to light bg + dark icon */
+  :global(.dark) .theme-toggle-btn:focus,
+  :global(.dark) .theme-toggle-btn:hover {
+    background-color: var(--colour-white);
+  }
+
+  :global(.dark) .theme-toggle-btn:hover .theme-toggle-icon,
+  :global(.dark) .theme-toggle-btn:focus .theme-toggle-icon {
+    color: var(--colour-background);
+  }
+ </style>
 
 <button
   id="theme-toggle"

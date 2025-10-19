@@ -10,10 +10,12 @@
   --colour-language-yellow: #fef08a;
   --colour-language-pink: #fecaca;
   --colour-background: #121212;
+  --colour-background-light: #f1f5f9;
   --colour-grey: #333333;
   --colour-focus: #fd0;
   --colour-link: #000000;
   --colour-link-visited: #4c2c92;
+  --colour-white: #ffffff;
 }
 
 html {
@@ -113,11 +115,8 @@ a {
   text-decoration: underline;
 
   &:focus {
-    background-color: var(--colour-focus);
-    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
-    outline: 3px solid transparent;
-    color: black;
-    text-decoration: none;
+    outline: 3px solid var(--colour-link);
+    outline-offset: 2px;
   }
 
   &:hover {
@@ -129,27 +128,34 @@ ul li {
   margin-bottom: 5px;
 }
 
-/* @media (min-width: 768px) {
-  p {
-    max-width: 70ch;
-  }
-} */
-
 .header-link {
   text-decoration: none;
 }
 
 .skip-link {
+  background-color: var(--colour-background-light);
+  border: 0;
+  clip: rect(0 0 0 0);
+  display: block;;
   height: 1px;
-  left: -10000px;
+  margin: -1px;
   overflow: hidden;
+  padding: 0;
   position: absolute;
-  top: auto;
   width: 1px;
+
+  &:focus {
+    clip: auto;
+    height: auto;
+    left: 1em;
+    top: 1em;
+    width: auto;
+  }
 }
 
 /* Light Mode */
 body {
+  background-color: var(--colour-background-light);
   color: #000;
 
   a {
@@ -161,25 +167,25 @@ body {
   }
 }
 
-body {
-  background-color: #f1f5f9;
-}
-
 /* Dark Mode */
 .dark {
   body {
     background-color: var(--colour-background);
     color: #fff;
 
+    .skip-link {
+      background-color: var(--colour-background);
+    }
+
     a {
       color: inherit;
 
-      &:visited {
-        color: inherit;
+      &:focus {
+        outline-color: var(--colour-background-light);
       }
 
-      &:focus {
-        color: #000;
+      &:visited {
+        color: inherit;
       }
     }
   }
