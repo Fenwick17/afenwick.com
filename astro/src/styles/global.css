@@ -175,7 +175,7 @@ body {
 .dark {
   body {
     background-color: var(--colour-background);
-    color: var(--color-text);
+    color: var(--colour-text);
 
     .skip-link {
       background-color: var(--colour-background);
