@@ -20,7 +20,7 @@
     "@portabletext/types": "^2.0.15",
     "@sanity/astro": "^3.2.10",
     "@sanity/client": "^7.6.0",
-    "astro": "^5.14.6",
+    "astro": "^5.15.6",
     "astro-portabletext": "^0.11.3",
     "astro-robots-txt": "^1.0.0",
     "dotenv": "^17.2.3",
