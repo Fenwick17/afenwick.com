@@ -18,9 +18,9 @@
     "@fontsource/inter": "^5.2.8",
     "@portabletext/toolkit": "3.0.1",
     "@portabletext/types": "^2.0.15",
-    "@sanity/astro": "^3.2.10",
+    "@sanity/astro": "^3.4.0",
     "@sanity/client": "^7.6.0",
-    "astro": "^5.15.6",
+    "astro": "^6.3.5",
     "astro-portabletext": "^0.11.3",
     "astro-robots-txt": "^1.0.0",
     "dotenv": "^17.2.3",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@vitest/coverage-istanbul": "^3.2.4",
-    "cypress": "^15.5.0",
+    "cypress": "^15.15.0",
     "cypress-commands": "^3.0.0"
   }
 }
