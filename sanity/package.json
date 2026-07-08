@@ -17,8 +17,8 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/code-input": "^6.0.3",
-    "sanity": "^4.10.3"
+    "@sanity/code-input": "^6.0.4",
+    "sanity": "^6.4.0"
   },
   "devDependencies": {
     "eslint": "^9.38.0",
