@@ -13,14 +13,14 @@
     "cy:run": "cypress run"
   },
   "dependencies": {
-    "@astrojs/prism": "^3.3.0",
-    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/prism": "^4.0.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/inter": "^5.2.8",
     "@portabletext/toolkit": "3.0.1",
     "@portabletext/types": "^2.0.15",
     "@sanity/astro": "^3.2.10",
     "@sanity/client": "^7.6.0",
-    "astro": "^5.15.6",
+    "astro": "^7.0.6",
     "astro-portabletext": "^0.11.3",
     "astro-robots-txt": "^1.0.0",
     "dotenv": "^17.2.3",
