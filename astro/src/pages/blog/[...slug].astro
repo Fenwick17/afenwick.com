@@ -5,6 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getBlogs } from '../../../sanity/api';
 import Code from '../../components/PortableText/Code.astro';
 import Image from '../../components/PortableText/Image.astro'
+import Link from '../../components/PortableText/Link.astro'
 import type { BlogPost } from '@types';
 import urlFor from '../../../utils/urlFor';
 
@@ -13,6 +14,9 @@ const components = {
     code: Code,
     image: Image
   },
+  mark: {
+    link: Link
+  }
 };
 
 export async function getStaticPaths() {
