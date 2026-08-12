@@ -25,11 +25,11 @@
     "astro-robots-txt": "^1.0.0",
     "dotenv": "^17.2.3",
     "modern-normalize": "^3.0.1",
-    "sanity": "^4.10.3",
-    "vitest": "^3.2.4"
+    "sanity": "^6.4.0",
+    "vitest": "^4.1.10"
   },
   "devDependencies": {
-    "@vitest/coverage-istanbul": "^3.2.4",
+    "@vitest/coverage-istanbul": "^4.1.10",
     "cypress": "^15.5.0",
     "cypress-commands": "^3.0.0"
   }
