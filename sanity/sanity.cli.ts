@@ -1,7 +1,4 @@
 import { defineCliConfig } from 'sanity/cli';
-import 'dotenv/config';
-
-console.log(process.env);
 
 export default defineCliConfig({
   api: {

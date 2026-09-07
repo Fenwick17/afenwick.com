@@ -9,26 +9,23 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",
-    "coverage": "vitest run --coverage",
-    "cy:run": "cypress run"
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@astrojs/prism": "^4.0.2",
     "@astrojs/sitemap": "^3.7.4",
-    "@portabletext/toolkit": "3.0.1",
-    "@portabletext/types": "^2.0.15",
-    "@sanity/astro": "^3.2.10",
-    "@sanity/client": "^7.6.0",
+    "@portabletext/toolkit": "^6.0.0",
+    "@portabletext/types": "^4.0.2",
+    "@sanity/astro": "^3.5.1",
+    "@sanity/client": "^8.5.0",
     "astro": "^7.3.1",
-    "astro-portabletext": "^0.11.3",
+    "astro-portabletext": "^1.0.0",
     "astro-robots-txt": "^1.0.0",
-    "dotenv": "^17.2.3",
-    "sanity": "^6.4.0",
-    "vitest": "^4.1.10"
+    "dotenv": "^17.4.2",
+    "sanity": "^6.12.0",
+    "vitest": "^5.0.0"
   },
   "devDependencies": {
-    "@vitest/coverage-istanbul": "^4.1.10",
-    "cypress": "^15.5.0",
-    "cypress-commands": "^3.0.0"
+    "@vitest/coverage-istanbul": "^5.0.0"
   }
 }
