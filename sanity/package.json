@@ -1,10 +1,10 @@
 {
-  "name": "afenwickblog",
+  "name": "afenwick.com",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Adam Fenwick <afenwickdev@gmail.com>",
+  "author": "Fenwick17",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity dev",
@@ -17,12 +17,11 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/code-input": "^6.0.4",
-    "sanity": "^6.4.0"
+    "@sanity/code-input": "^7.3.8",
+    "sanity": "^6.12.0",
+    "styled-components": "^6.5.3"
   },
   "devDependencies": {
-    "eslint": "^9.38.0",
-    "prettier": "^3.6.2",
-    "typescript": "^5.9.3"
+    "eslint": "^10.10.0"
   }
 }
