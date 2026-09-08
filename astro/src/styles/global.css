@@ -27,8 +27,7 @@
   --font-base: var(--font-inter), system-ui, sans-serif;
   --font-mono: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   --font-size-base: 19px;
-  --line-height-base: 1.4;
-  --type-scale: 1.125; /* Major Second */
+  --line-height-base: 1.5;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -157,15 +156,15 @@ p {
 }
 
 .main {
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
 }
 
 .container {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-3);
-  padding-right: var(--space-3);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
   width: 100%;
   box-sizing: border-box;
 
