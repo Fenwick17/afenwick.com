@@ -2,7 +2,7 @@
 import { PortableText } from 'astro-portabletext';
 
 import Layout from '../../layouts/Layout.astro';
-import { getBlogs } from '../../../sanity/api';
+import { getBlogs, getBlogPost } from '../../../sanity/api';
 import Code from '../../components/PortableText/Code.astro';
 import Image from '../../components/PortableText/Image.astro'
 import Link from '../../components/PortableText/Link.astro'
@@ -21,9 +21,12 @@ const components = {
 
 export async function getStaticPaths() {
   const allBlogs: BlogPost[] = await getBlogs();
-  return allBlogs.map((blog: BlogPost) => ({
-    params: { slug: blog.slug.current },
-    props: { blog },
+  return Promise.all(allBlogs.map(async (blog: BlogPost) => {
+    const post = await getBlogPost(blog.slug.current);
+    return {
+      params: { slug: blog.slug.current },
+      props: { blog: post },
+    };
   }));
 }
 
@@ -31,20 +34,20 @@ const {
   blog: { title, body, teaser, publishedAt, mainImage },
 } = Astro.props;
 
-const shareableImage = urlFor(mainImage).url();
+const shareableImage = mainImage ? urlFor(mainImage).url() : undefined;
 ---
 
 <style>
   .blog-title {
     margin-bottom: 0;
   }
-  
+
   .blog-heading {
     margin-bottom: 2rem;
   }
 </style>
 
-<Layout 
+<Layout
   title={`${title} — Adam Fenwick`}
   description={teaser}
   shareableImage={shareableImage}

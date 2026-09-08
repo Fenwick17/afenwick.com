@@ -13,15 +13,15 @@
   --colour-focus: #fd0;
   --colour-link: #000000;
   --colour-link-visited: #4c2c92;
-  --colour-white: #ffffff;
+  --colour-white: #f6f6f6;
   --colour-text: #000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --colour-link: #fff;
+    --colour-link: var(--colour-white);
     --colour-background: #121212;
-    --colour-text: #fff;
+    --colour-text: var(--colour-white);
   }
 }
 

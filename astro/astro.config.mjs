@@ -14,7 +14,7 @@ const sanityOptions = {
   apiVersion: "2026-09-07",
   token: process.env.SANITY_READ_TOKEN,
   useCdn: false,
-  perspective: isDev ? "previewDrafts" : "published",
+  perspective: isDev ? "drafts" : "published",
 };
 
 export default defineConfig({
