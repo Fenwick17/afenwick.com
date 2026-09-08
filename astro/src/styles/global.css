@@ -1,28 +1,53 @@
 @import "./codeStyling.css";
 
+/* ============================================================
+   Design tokens
+   ============================================================ */
 :root {
-  --colour-language-green: #00703c;
-  --colour-language-light-green: #bbf7d0;
-  --colour-language-red: #d13118;
-  --colour-language-blue: #0d47a1;
-  --colour-language-dark-blue: #002171;
-  --colour-language-yellow: #fef08a;
-  --colour-language-pink: #fecaca;
-  --colour-background: #fff;
-  --colour-grey: #333333;
-  --colour-focus: #fd0;
-  --colour-link: #000000;
-  --colour-link-visited: #4c2c92;
-  --colour-white: #f6f6f6;
-  --colour-text: #000;
+  /* Color */
+  --color-background: #ffffff;
+  --color-background-light: #f6f6f6;
+  --color-text: #000000;
+  --color-grey: #333333;
+  --color-focus: #fd0;
+  --color-link: #000000;
+  --color-link-visited: #4c2c92;
+  --color-white: #ffffff;
+
+  /* Syntax highlighting */
+  --color-code-green: #00703c;
+  --color-code-light-green: #bbf7d0;
+  --color-code-red: #d13118;
+  --color-code-blue: #0d47a1;
+  --color-code-dark-blue: #002171;
+  --color-code-yellow: #fef08a;
+  --color-code-pink: #fecaca;
+
+  /* Typography */
+  --font-base: var(--font-inter), system-ui, sans-serif;
+  --font-mono: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+  --font-size-base: 19px;
+  --line-height-base: 1.4;
+  --type-scale: 1.125; /* Major Second */
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 5rem;
+
+  /* Breakpoints */
+  --bp-md: 768px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --colour-link: var(--colour-white);
-    --colour-background: #121212;
-    --colour-text: var(--colour-white);
-  }
+/* Dark mode (toggled via the `.dark` class on <html>) */
+.dark {
+  --color-background: #121212;
+  --color-background-light: #121212;
+  --color-text: var(--color-white);
+  --color-link: var(--color-white);
 }
 
 *,
@@ -32,30 +57,121 @@
 }
 
 html {
-  font-size: 19px;
-  line-height: 1.4;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
 }
 
 body {
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}
+
+ul li {
+  margin-bottom: var(--space-1);
+}
+
+h1 {
+  font-size: 1.802rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-4);
+
+  @media (min-width: 768px) {
+    font-size: 2.027rem;
+    margin-bottom: var(--space-5);
+  }
+}
+
+h2 {
+  font-size: 1.602rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-3);
+
+  @media (min-width: 768px) {
+    font-size: 1.802rem;
+    margin-bottom: var(--space-4);
+  }
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0 0 var(--space-2);
+}
+
+h3 {
+  font-size: 1.424rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.602rem;
+  }
+}
+
+h4 {
+  font-size: 1.266rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.424rem;
+  }
+}
+
+h5 {
+  font-size: 1.125rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.266rem;
+  }
+}
+
+h6 {
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+p {
+  margin: 0 0 var(--space-3);
+
+  @media (min-width: 768px) {
+    margin-bottom: var(--space-4);
+    max-width: 66ch;
+  }
 }
 
 .main {
-  margin-bottom: 5rem;
+  margin-bottom: var(--space-6);
 }
 
 .container {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
   width: 100%;
   box-sizing: border-box;
 
   @media (min-width: 768px) {
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
   }
 }
 
@@ -64,7 +180,6 @@ body {
 }
 
 .visually-hidden {
-  /* TODO: Add class */
   position: absolute;
   width: 1px;
   height: 1px;
@@ -78,75 +193,8 @@ body {
   user-select: none;
 }
 
-/* typography */
-h1 {
-  font-size: 2.25rem;
-  margin-bottom: 20px;
-  margin-top: 0;
-  font-weight: 700;
-
-  @media (min-width: 768px) {
-    font-size: 3rem;
-    margin-bottom: 30px;
-  }
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  margin-top: 0;
-  font-weight: 700;
-
-  @media (min-width: 768px) {
-    font-size: 2.25rem;
-    margin-bottom: 20px;
-  }
-}
-
-h3 {
-  margin-top: 0;
-  margin-bottom: 10;
-  font-weight: 700;
-  font-size: 1.25rem;
-
-  @media (min-width: 768px) {
-    font-size: 1.75rem;
-  }
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 15px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 20px;
-    max-width: 66ch;
-  }
-}
-
-a {
-  text-decoration: underline;
-
-  &:focus {
-    outline: 3px solid var(--colour-link);
-    outline-offset: 2px;
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-ul li {
-  margin-bottom: 5px;
-}
-
-.header-link {
-  text-decoration: none;
-}
-
 .skip-link {
-  background-color: var(--colour-background-light);
+  background-color: var(--color-background-light);
   border: 0;
   clip: rect(0 0 0 0);
   display: block;
@@ -166,39 +214,6 @@ ul li {
   }
 }
 
-body {
-  background-color: var(--colour-background);
-  color: var(--colour-text);
-
-  a {
-    color: var(--colour-link);
-
-    &:visited {
-      color: var(--colour-link);
-    }
-  }
-}
-
-/* Dark Mode */
-.dark {
-  body {
-    background-color: var(--colour-background);
-    color: var(--colour-text);
-
-    .skip-link {
-      background-color: var(--colour-background);
-    }
-
-    a {
-      color: inherit;
-
-      &:focus {
-        outline-color: var(--colour-white);
-      }
-
-      &:visited {
-        color: inherit;
-      }
-    }
-  }
+.header-link {
+  text-decoration: none;
 }

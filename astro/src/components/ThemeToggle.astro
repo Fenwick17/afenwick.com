@@ -21,13 +21,13 @@
 
   .theme-toggle-btn:hover,
   .theme-toggle-btn:focus {
-    background-color: var(--colour-background);
+    background-color: var(--color-background);
   }
 
   /* Use color on the SVG (SVGs use fill="currentColor") */
   .theme-toggle-btn:hover .theme-toggle-icon,
   .theme-toggle-btn:focus .theme-toggle-icon {
-    color: var(--colour-white);
+    color: var(--color-white);
   }
 
   .theme-toggle-icon {
@@ -38,18 +38,18 @@
 
   /* dark-mode defaults: icon white */
   :global(.dark) .theme-toggle-btn .theme-toggle-icon {
-    color: var(--colour-white);
+    color: var(--color-white);
   }
 
   /* dark-mode hover/focus: invert to light bg + dark icon */
   :global(.dark) .theme-toggle-btn:focus,
   :global(.dark) .theme-toggle-btn:hover {
-    background-color: var(--colour-white);
+    background-color: var(--color-white);
   }
 
   :global(.dark) .theme-toggle-btn:hover .theme-toggle-icon,
   :global(.dark) .theme-toggle-btn:focus .theme-toggle-icon {
-    color: var(--colour-background);
+    color: var(--color-background);
   }
  </style>
 
@@ -132,6 +132,6 @@
               localStorage.setItem('color-theme', 'dark');
           }
       }
-      
+
   });
 </script>
