@@ -8,6 +8,7 @@ import Image from '../../components/PortableText/Image.astro'
 import Link from '../../components/PortableText/Link.astro'
 import type { BlogPost } from '@types';
 import urlFor from '../../../utils/urlFor';
+import { formatDate } from '../../../utils/formatDate';
 
 const components = {
   type: {
@@ -56,7 +57,7 @@ const shareableImage = mainImage ? urlFor(mainImage).url() : undefined;
     <article>
       <div class="blog-heading">
         <h1 class="blog-title">{title}</h1>
-        <p>{publishedAt}</p>
+        <time datetime={formatDate(publishedAt)}>{formatDate(publishedAt)}</time>
       </div>
       <p>{teaser}</p>
       <PortableText value={body} components={components} />
