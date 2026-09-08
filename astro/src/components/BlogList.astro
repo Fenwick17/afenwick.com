@@ -1,21 +1,12 @@
 ---
 import type { BlogPost } from '@types';
 import BlogPreview from "./BlogPreview.astro";
-import Pagination from "./Pagination.astro";
 
 interface Props {
-  posts: BlogPost[]; 
-  length?: number;
-  currentUrl?: string;
-  currentPage?: number;
-  firstUrl?: string;
-  prevUrl?: string;
-  nextUrl?: string;
-  lastUrl?: string;
-  hidePagination?: boolean;
+  posts: BlogPost[];
 }
 
-const { posts, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, hidePagination } = Astro.props;
+const { posts } = Astro.props;
 ---
 
 <style>
@@ -46,15 +37,3 @@ const { posts, length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, last
     ))
   }
 </ul>
-
-{ !hidePagination &&
-  <Pagination
-    length={length}
-    currentUrl={currentUrl}
-    currentPage={currentPage}
-    firstUrl={firstUrl}
-    prevUrl={prevUrl}
-    nextUrl={nextUrl}
-    lastUrl={lastUrl}
-  />
-}

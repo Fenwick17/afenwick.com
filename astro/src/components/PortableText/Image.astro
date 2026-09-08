@@ -3,9 +3,7 @@ import urlFor from '../../../utils/urlFor';
 import type { Image } from '@types';
 
 interface Props {
-  node: {
-    image: Image;
-  };
+  node: Image;
 }
 
 const { node } = Astro.props;
@@ -16,11 +14,11 @@ const { node } = Astro.props;
     max-width: 100%;
     height: auto;
     display: block;
-  }  
+  }
 </style>
 
 <img
-  src={urlFor(node).url()} 
+  src={urlFor(node).url()}
   alt={node.alt}
   loading="lazy"
   class="blog-post-img"

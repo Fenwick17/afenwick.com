@@ -22,8 +22,7 @@ interface BlogPost {
 }
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const blogs: BlogPost[] = await getBlogs() 
-
+  const blogs: BlogPost[] = await getBlogs()
   return paginate(blogs, {
     pageSize: 15,
   })
@@ -34,7 +33,7 @@ const firstPath = "blog";
 ---
 
 
-<Layout 
+<Layout
   title="Articles on web accessibility and frontend development. — Adam Fenwick"
   description="Articles on web accessibility and frontend development."
   shareableImage="/logo-shareable.png"
@@ -43,16 +42,8 @@ const firstPath = "blog";
     <div>
       <h1 class="text-4xl mb-5">Latest blog posts</h1>
       <div id="blogs">
-        <BlogList 
+        <BlogList
           posts={page.data}
-          length={page.lastPage}
-          currentUrl={page.url.current}
-          currentPage={page.currentPage}
-          firstUrl={`/${firstPath}`}
-          prevUrl={page.url.prev}
-          nextUrl={page.url.next}
-          lastUrl={`/${firstPath}/${page.lastPage}`}
-          hidePagination={page.data.length < 15}
         />
       </div>
     </div>

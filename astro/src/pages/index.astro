@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 
 import { formatDate } from '../../utils/formatDate';
 import { getBlogs, getLatestBlogs } from '../../sanity/api';
-import Pagination from '../components/Pagination.astro';
 
 interface BlogPost {
   title: string;
@@ -21,7 +20,6 @@ interface BlogPost {
   publishedAt: string;
 }
 
-// const blogs: BlogPost[] = await getBlogs();
 const blogs: BlogPost[] = await getLatestBlogs();
 ---
 
@@ -44,7 +42,7 @@ const blogs: BlogPost[] = await getLatestBlogs();
   }
 </style>
 
-<Layout 
+<Layout
   title="Articles on web accessibility and frontend development. — Adam Fenwick"
   description="Articles on web accessibility and frontend development."
   shareableImage="/logo-shareable.png"

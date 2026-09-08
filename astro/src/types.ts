@@ -2,11 +2,14 @@ import type { PortableTextBlock } from '@portabletext/types';
 
 interface BlogPost {
   title: string;
-  slug: string;
-  author: string;
+  slug: {
+    current: string;
+  };
   publishedAt: string;
   body: PortableTextBlock;
-  categories: string[];
+  categories: {
+    title: string;
+  }[];
   teaser: string;
   mainImage: Image;
 }
@@ -20,13 +23,4 @@ interface Image {
   };
 }
 
-interface Project {
-  title: string;
-  slug: string;
-  author: string;
-  publishedAt: string;
-  body: PortableTextBlock;
-  mainImage: Image;
-}
-
-export type { BlogPost, Image, Project };
+export type { BlogPost, Image };

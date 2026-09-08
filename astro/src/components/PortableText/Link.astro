@@ -1,15 +1,35 @@
 ---
-const { node } = Astro.props;
-console.log(JSON.stringify(node, null, 2));
-const { href, blank } = node.markDef;
+interface LinkMarkDef {
+  _type: string;
+  type?: 'internal' | 'external';
+  href?: string;
+  blank?: boolean;
+  internalLink?: {
+    slug?: {
+      current?: string;
+    };
+  };
+}
 
+const { node } = Astro.props;
+const { type, href, blank, internalLink } = node.markDef as LinkMarkDef;
+
+const url =
+  type === 'internal' && internalLink?.slug?.current
+    ? `/blog/${internalLink.slug.current}`
+    : href;
 ---
-{blank ? (
-  <a href={href} target="_blank" rel="noopener noreferrer">
-    <slot />
-  </a>
+
+{url ? (
+  blank ? (
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <slot />
+    </a>
+  ) : (
+    <a href={url}>
+      <slot />
+    </a>
+  )
 ) : (
-  <a href={href}>
-    <slot />
-  </a>
+  <slot />
 )}
