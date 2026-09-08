@@ -34,7 +34,7 @@ const blogs: BlogPost[] = await getLatestBlogs();
 >
   <main id="main-content" class="main">
     <div>
-      <h1 class="text-4xl mb-5">Latest blog posts</h1>
+      <h1>Blog</h1>
       <div id="blogs">
         <ul class="blog-list">
           {
@@ -44,14 +44,6 @@ const blogs: BlogPost[] = await getLatestBlogs();
                   <a class="link" href={`/blog/${blog.slug.current}`} data-cy="blogUrls">{blog.title}</a>
                 </h2>
                 <time class="blog-preview-date" datetime={formatDate(blog.publishedAt)}>{blog.publishedAt}</time>
-                  {/* Remove categories for now */}
-                  {/* {blog.categories &&
-                    <span> -
-                      {Object.keys(blog.categories).map((key, index) => (
-                        <span>{blog.categories[key].title}{index === Object.keys(blog.categories).length - 1 ? '' : ', '}</span>
-                      ))}
-                    </span>
-                  } */}
                 <p>{blog.teaser}</p>
               </li >
             ))
