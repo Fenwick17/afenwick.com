@@ -3,11 +3,10 @@ import type { BlogPost } from '@types';
 import { formatDate } from '../../utils/formatDate';
 
 interface Props {
-  blog: BlogPost; 
+  blog: BlogPost;
 }
 
 const { blog } = Astro.props;
-const options = { year: 'numeric', month: 'long', day: 'numeric' };
 ---
 
 <style>

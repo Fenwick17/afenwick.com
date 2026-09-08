@@ -4,7 +4,7 @@ import type { BlogPost } from '@types';
 
 // Resolves internal link references inside the portable text body so the
 // Link component can build a `/blog/<slug>` URL for them.
-const blogProjection = `{
+const blogDetailProjection = `{
   title,
   slug,
   body[] {
@@ -22,8 +22,17 @@ const blogProjection = `{
   categories[]->{title}
 }`;
 
+const blogListProjection = `{
+  title,
+  slug,
+  teaser,
+  publishedAt,
+  mainImage,
+  categories[]->{title}
+}`;
+
 export async function getBlogs(): Promise<BlogPost[]> {
-  const query = `*[_type == "blog"] | order(publishedAt desc) ${blogProjection}`;
+  const query = `*[_type == "blog"] | order(publishedAt desc) ${blogListProjection}`;
   const posts = await sanityClient.fetch<BlogPost[]>(query);
   posts.forEach((post) => {
     post.publishedAt = formatDate(post.publishedAt);
@@ -32,7 +41,7 @@ export async function getBlogs(): Promise<BlogPost[]> {
 }
 
 export async function getLatestBlogs(): Promise<BlogPost[]> {
-  const query = `*[_type == "blog"] | order(publishedAt desc) ${blogProjection}[0...3]`;
+  const query = `*[_type == "blog"] | order(publishedAt desc) ${blogListProjection}[0...3]`;
   const posts = await sanityClient.fetch<BlogPost[]>(query);
   posts.forEach((post) => {
     post.publishedAt = formatDate(post.publishedAt);
@@ -41,7 +50,7 @@ export async function getLatestBlogs(): Promise<BlogPost[]> {
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPost> {
-  const query = `*[_type == "blog" && slug.current == $slug][0] ${blogProjection}`;
+  const query = `*[_type == "blog" && slug.current == $slug][0] ${blogDetailProjection}`;
   const blogPost = await sanityClient.fetch<BlogPost>(query, { slug });
   return blogPost;
 }

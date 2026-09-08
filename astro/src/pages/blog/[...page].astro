@@ -4,22 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import BlogList from '../../components/BlogList.astro';
 
 import { getBlogs } from '../../../sanity/api';
-
-interface BlogPost {
-  title: string;
-  slug: {
-    current: string;
-  };
-  teaser: string;
-  body: string;
-  categories: [
-    {
-      key: string;
-      title: string;
-    }
-  ]
-  publishedAt: string;
-}
+import type { BlogPost } from '@types';
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const blogs: BlogPost[] = await getBlogs()

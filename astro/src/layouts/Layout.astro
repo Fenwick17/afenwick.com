@@ -11,7 +11,7 @@ interface Props {
 
 const { title, description, shareableImage } = Astro.props as Props;
 const currentPath = Astro.url.pathname;
-const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
+const pageType = currentPath.includes('/blog/') ? 'article' : 'website';
 ---
 
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ const pageType = currentPath.includes('/blogs/') ? 'article' : 'website';
     <meta property="og:image" content={shareableImage} />
     <!-- Twitter -->
     <meta name="twitter:card" content={shareableImage} />
-    <meta name="twitter:site" content="https://afenwick.conm" />
+    <meta name="twitter:site" content="https://afenwick.com" />
     <meta name="twitter:creator" content="Adam Fenwick" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

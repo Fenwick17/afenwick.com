@@ -2,23 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 
 import { formatDate } from '../../utils/formatDate';
-import { getBlogs, getLatestBlogs } from '../../sanity/api';
-
-interface BlogPost {
-  title: string;
-  slug: {
-    current: string;
-  };
-  teaser: string;
-  body: string;
-  categories: [
-    {
-      key: string;
-      title: string;
-    }
-  ]
-  publishedAt: string;
-}
+import { getLatestBlogs } from '../../sanity/api';
+import type { BlogPost } from '@types';
 
 const blogs: BlogPost[] = await getLatestBlogs();
 ---

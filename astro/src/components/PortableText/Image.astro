@@ -1,12 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 import urlFor from '../../../utils/urlFor';
-import type { Image } from '@types';
+import type { Image as SanityImage } from '@types';
 
 interface Props {
-  node: Image;
+  node: SanityImage;
 }
 
 const { node } = Astro.props;
+const src = urlFor(node).url();
 ---
 
 <style>
@@ -17,12 +19,7 @@ const { node } = Astro.props;
   }
 </style>
 
-<img
-  src={urlFor(node).url()}
-  alt={node.alt}
-  loading="lazy"
-  class="blog-post-img"
-/>
+<Image src={src} alt={node.alt} class="blog-post-img" />
 
 <style>
   img {

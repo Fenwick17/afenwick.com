@@ -3,7 +3,6 @@ import sanity from "@sanity/astro";
 import sitemap from "@astrojs/sitemap";
 import "dotenv/config";
 
-import robotsTxt from "astro-robots-txt";
 
 // In dev, show drafts so you can preview unpublished content.
 // In production builds, only show published documents.
@@ -20,10 +19,12 @@ const sanityOptions = {
 
 export default defineConfig({
   site: "https://afenwick.com",
+  image: {
+    domains: ["cdn.sanity.io"],
+  },
   integrations: [
     sanity(sanityOptions),
     sitemap(),
-    robotsTxt(),
   ],
   output: "static",
   fonts: [
