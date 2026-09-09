@@ -5,14 +5,11 @@
    ============================================================ */
 :root {
   /* Color */
-  --color-background: #ffffff;
-  --color-background-light: #f6f6f6;
+  --color-background: #121212;
   --color-text: #f6f6f6;
   --color-grey: #333333;
-  --color-focus: #fd0;
+  --color-focus: #ddb000;
   --color-link: #f6f6f6;
-  --color-link-visited: #4c2c92;
-  --color-white: #ffffff;
 
   /* Syntax highlighting */
   --color-code-green: #00703c;
@@ -39,12 +36,6 @@
 
   /* Breakpoints */
   --bp-md: 768px;
-}
-
-/* Dark mode (toggled via the `.dark` class on <html>) */
-.dark {
-  --color-background: #121212;
-  --color-background-light: #121212;
 }
 
 *,

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-sitemap: https://afenwick.com/sitemap.xml
+sitemap: https://afenwick.com/sitemap-index.xml
