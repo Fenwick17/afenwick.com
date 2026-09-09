@@ -7,10 +7,10 @@
   /* Color */
   --color-background: #ffffff;
   --color-background-light: #f6f6f6;
-  --color-text: #000000;
+  --color-text: #f6f6f6;
   --color-grey: #333333;
   --color-focus: #fd0;
-  --color-link: #000000;
+  --color-link: #f6f6f6;
   --color-link-visited: #4c2c92;
   --color-white: #ffffff;
 
@@ -24,7 +24,7 @@
   --color-code-pink: #fecaca;
 
   /* Typography */
-  --font-base: var(--font-inter), system-ui, sans-serif;
+  --font-base: var(--font-lexend), system-ui, sans-serif;
   --font-mono: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   --font-size-base: 19px;
   --line-height-base: 1.5;
@@ -45,8 +45,6 @@
 .dark {
   --color-background: #121212;
   --color-background-light: #121212;
-  --color-text: var(--color-white);
-  --color-link: var(--color-white);
 }
 
 *,

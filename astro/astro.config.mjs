@@ -30,8 +30,8 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.npm(),
-      name: "Inter",
-      cssVariable: "--font-inter",
+      name: "Lexend",
+      cssVariable: "--font-lexend",
     },
   ],
 });
