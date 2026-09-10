@@ -6,6 +6,16 @@ import { getLatestBlogs } from '../../sanity/api';
 import type { BlogPost } from '@types';
 
 const blogs: BlogPost[] = await getLatestBlogs();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Adam Fenwick",
+  url: "https://afenwick.com",
+  description:
+    "Digital accessibility and frontend development — Adam Fenwick",
+  inLanguage: "en-GB",
+};
 ---
 
 <style>
@@ -28,11 +38,12 @@ const blogs: BlogPost[] = await getLatestBlogs();
 </style>
 
 <Layout
-  title="Articles on web accessibility and frontend development. — Adam Fenwick"
-  description="Articles on web accessibility and frontend development."
+  title="Digital accessibility and frontend development — Adam Fenwick"
+  description="I am Adam Fenwick, a digital accessibility specialist. My thoughts and musings on digital accessibility and making the web more accessible for everyone."
   shareableImage="/logo-shareable.png"
 >
   <main id="main-content" class="main">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <div>
       <h1>Blog</h1>
       <div id="blogs">

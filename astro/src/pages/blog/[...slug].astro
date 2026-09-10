@@ -36,6 +36,32 @@ const {
 } = Astro.props;
 
 const shareableImage = mainImage ? urlFor(mainImage).url() : undefined;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: teaser,
+  ...(shareableImage ? { image: shareableImage } : {}),
+  datePublished: publishedAt,
+  author: {
+    "@type": "Person",
+    name: "Adam Fenwick",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Adam Fenwick",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://afenwick.com/favicon.svg",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://afenwick.com${Astro.url.pathname}`,
+  },
+  url: `https://afenwick.com${Astro.url.pathname}`,
+};
 ---
 
 <style>
@@ -45,6 +71,12 @@ const shareableImage = mainImage ? urlFor(mainImage).url() : undefined;
 
   .blog-heading {
     margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
   }
 </style>
 
@@ -62,5 +94,24 @@ const shareableImage = mainImage ? urlFor(mainImage).url() : undefined;
       <p>{teaser}</p>
       <PortableText value={body} components={components} />
     </article>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <a href="/" class="back-link">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M10 13 5 8l5-5" />
+      </svg>
+      Go back
+    </a>
   </main>
 </Layout>
