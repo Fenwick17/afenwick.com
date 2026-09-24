@@ -44,17 +44,6 @@ const pageType = currentPath.includes('/blog/') ? 'article' : 'website';
     <meta name="twitter:image" content={shareableImage} />
     <meta name="twitter:image:alt" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <script>
-      if (
-        localStorage.getItem('color-theme') === 'dark' ||
-        (!('color-theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
     <Font cssVariable="--font-lexend" />
     <script defer src="https://cloud.umami.is/script.js" data-website-id="c0d5ebf7-195f-43bb-9c79-7d31319c845d"></script>
   </head>

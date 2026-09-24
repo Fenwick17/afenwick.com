@@ -45,6 +45,7 @@
 }
 
 html {
+  color-scheme: dark;
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
 }
