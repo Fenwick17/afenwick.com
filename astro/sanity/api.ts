@@ -41,7 +41,7 @@ export async function getBlogs(): Promise<BlogPost[]> {
 }
 
 export async function getLatestBlogs(): Promise<BlogPost[]> {
-  const query = `*[_type == "blog"] | order(publishedAt desc) ${blogListProjection}[0...3]`;
+  const query = `*[_type == "blog"] | order(publishedAt desc) ${blogListProjection}`;
   const posts = await sanityClient.fetch<BlogPost[]>(query);
   posts.forEach((post) => {
     post.publishedAt = formatDate(post.publishedAt);
