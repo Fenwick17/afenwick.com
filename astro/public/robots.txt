@@ -1,4 +1,72 @@
+# ==============================================================================
+# DEFAULT RULES FOR STANDARD SEARCH ENGINES
+# ==============================================================================
 User-agent: *
 Allow: /
+
+# Standard Search Crawlers (Explicitly Allowed)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ==============================================================================
+# BLOCK AI SCRAPERS & MODEL TRAINING CRAWLERS
+# ==============================================================================
+
+# OpenAI (ChatGPT / Training)
+User-agent: GPTBot
+User-agent: ChatGPT-User
+Disallow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+Disallow: /
+
+# Google AI Training (Blocks Bard/Gemini model training, preserves Googlebot SEO)
+User-agent: Google-Extended
+Disallow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# Common Crawl (Massive open dataset used by LLM trainers)
+User-agent: CCBot
+Disallow: /
+
+# ByteDance / TikTok AI Scraper
+User-agent: Bytespider
+Disallow: /
+
+# Meta / Facebook AI Crawlers
+User-agent: Meta-ExternalAgent
+User-agent: FacebookBot
+Disallow: /
+
+# Amazon AI
+User-agent: Amazonbot
+Disallow: /
+
+# Apple AI Data Scraper (Applebot-Extended only; standard Applebot remains allowed)
+User-agent: Applebot-Extended
+Disallow: /
+
+# DeepSeek & Other Emerging AI Bots
+User-agent: DeepSeekBot
+User-agent: Cohere-ai
+User-agent: Diffbot
+User-agent: Omgilibot
+User-agent: YouBot
+Disallow: /
 
 sitemap: https://afenwick.com/sitemap-index.xml
